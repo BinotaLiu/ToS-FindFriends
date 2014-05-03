@@ -1,0 +1,11 @@
+.*.swp
+.*.swo
+._*
+*.*~
+/config.inc.php
+*.debug.php
+*.secret.php
+*.sublime*
+/debug/
+/Debug/
+
