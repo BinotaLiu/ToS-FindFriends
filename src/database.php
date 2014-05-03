@@ -1,6 +1,6 @@
 <?php
 /**
- * Filename: system/source/database.php
+ * Filename: src/database.php
  * $Id$
  * 資料庫模組，放置所有與資料庫相關相關的功能。
  */
