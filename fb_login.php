@@ -2,15 +2,15 @@
 
 session_start();
 
-require_once "Facebook/FacebookRequestException.php";
-require_once "Facebook/FacebookAuthorizationException.php";
-require_once "Facebook/FacebookRedirectLoginHelper.php";
-require_once "Facebook/FacebookResponse.php";
-require_once "Facebook/FacebookRequest.php";
-require_once "Facebook/FacebookSession.php";
-require_once "Facebook/FacebookSDKException.php";
-require_once "Facebook/GraphObject.php";
-require_once "Facebook/GraphUser.php";
+require_once "api/facebook/FacebookRequestException.php";
+require_once "api/facebook/FacebookAuthorizationException.php";
+require_once "api/facebook/FacebookRedirectLoginHelper.php";
+require_once "api/facebook/FacebookResponse.php";
+require_once "api/facebook/FacebookRequest.php";
+require_once "api/facebook/FacebookSession.php";
+require_once "api/facebook/FacebookSDKException.php";
+require_once "api/facebook/GraphObject.php";
+require_once "api/facebook/GraphUser.php";
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
@@ -18,7 +18,7 @@ use Facebook\FacebookRedirectLoginHelper;
 use Facebook\GraphUser;
 use Facebook\FacebookRequestException;
 
-FacebookSession::setDefaultApplication('647789751957229','4be755661cfac1a710a0bf692e063cfd');
+FacebookSession::setDefaultApplication($config['social']['facebook']['appid'], $config['social']['facebook']['appsecret']);
 
 $helper = new FacebookRedirectLoginHelper('http://localhost/friend/');
 $session = $helper->getSessionFromRedirect();
