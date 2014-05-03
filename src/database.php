@@ -104,7 +104,11 @@ Class Database
         }
         $mySelects = substr($mySelects, 0, -1);
 
-        $result = @mysql_query("SELECT {$select} FROM {$table} WHERE {$myWhere}");
+        $queryString = "SELECT {$mySelects} FROM {$table} WHERE {$myWhere}";
+        $result = @mysql_query($queryString);
+
+        //var_dump($queryString);
+
         if($result){
             if($num <= 0 or $num > @mysql_num_rows($result) - $start){
                 $rows = @mysql_num_rows($result) - $start;
