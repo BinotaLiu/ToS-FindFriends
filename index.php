@@ -11,6 +11,8 @@ session_start();
 require_once 'config.inc.php';
 require_once 'src/database.php';
 
+$db = new Database;
+
 //检查用户登录状态
 if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $checkToken = md5($config['secret']['key'][1] . md5($_SESSION['user_id'] . $config['secret']['key'][0]));
@@ -35,9 +37,28 @@ if($loginStatus){
 
 include 'var/view/header.php';
 
-include 'var/view/main.php';
+include 'var/view/main_search.php';
+
+if($loginStatus){
+  //先抓自己的代表資訊：
+  $myCard = $db->fetch_where('user_card', array('*'), array('uid' => $data['uid']));
+  if($myCard){
+    $cardInfo = $db->fetch_where('card', array('*'), array('card_id' => $myCard[0]['cardId']));
+    $data['card']['card_id'] = $myCard[0]['card_id'];
+    $data['card']['name'] = $cardInfo[0]['card_name'];
+    $data['card']['card_level'] = $myCard[0]['card_level'];
+    $data['card']['skill_level'] = $myCard[0]['skill_level'];
+  }else{
+    //還沒登錄過代表資訊：
+    $data['card']['card_id'] = 0;
+    $data['card']['name'] = "尚未登錄代表";
+    $data['card']['card_level'] = "0";
+    $data['card']['skill_level'] = "0";
+    $data['card']['detail'] = "若要登錄代表，請點擊下方「編輯我的代表資訊」。";
+  }
+  include 'var/view/main_loggedin.php';
+}else
+  include 'var/view/main_nologin.php';
 
 include 'var/view/footer.php';
-
-var_dump($_SESSION);
 
