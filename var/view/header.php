@@ -19,5 +19,25 @@
         <li class="name">
           <h1><a href="#"><?=$data['nav_title']?></a></h1>
         </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>功能表</span></a></li>
       </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="has-dropdown">
+<?php if($loginStatus == 1): ?>
+            <a href="#"><?=$data['userName']?></a>
+            <ul class="dropdown">
+              <li><a href="#">設定</a></li>
+              <li><a href="#">登出</a></li>
+            </ul>
+<?php else: ?>
+            <a href="#">您好，遊客！</a>
+            <ul class="dropdown">
+              <li><a href="#">Facebook 登入</a></li>
+              <li><a href="#">Persona 登入</a></li>
+            </ul>
+<?php endif; ?>
+          </li>
+        </ul>
+      </section>
     </nav>
