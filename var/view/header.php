@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="utf-8">
+<html lang="zh-TW">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$data['title']?></title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/foundation.css"> 
     <script src="js/vendor/modernizr.js"></script>
     <style type="text/css">
       body {
@@ -19,25 +19,19 @@
         <li class="name">
           <h1><a href="#"><?=$data['nav_title']?></a></h1>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>功能表</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>您好，<?php if($loginStatus){ echo $data['userName']; }else{?>遊客<?php } ?>！</span></a></li>
       </ul>
       <section class="top-bar-section">
         <ul class="right">
-          <li class="has-dropdown">
 <?php if($loginStatus == 1): ?>
-            <a href="#"><?=$data['userName']?></a>
-            <ul class="dropdown">
-              <li><a href="#">設定</a></li>
-              <li><a href="#">登出</a></li>
-            </ul>
+          <li class="show-for-medium-up"><a href="home.php">您好，<?=$data['userName']?>！</a></li>
+          <li><a href="setting.php">個人設定</a></li>
+          <li><a href="mycard.php">編輯代表資訊</a></li>
+          <li><a href="logout">登出</a></li>
 <?php else: ?>
-            <a href="#">您好，遊客！</a>
-            <ul class="dropdown">
-              <li><a href="#">Facebook 登入</a></li>
-              <li><a href="#">Persona 登入</a></li>
-            </ul>
+          <li><a href="login.php?method=facebook">Facebook 登入</a></li>
+          <li><a href="login.php?method=persona">Persona 登入</a></li>
 <?php endif; ?>
-          </li>
         </ul>
       </section>
     </nav>
