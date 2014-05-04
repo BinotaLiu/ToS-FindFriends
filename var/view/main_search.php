@@ -1,3 +1,4 @@
+    <?php include 'var/view/cards_option.php'; ?>
     <div class="row">
       <div class="large_12 column">
         <h1 class="centered">徵戰友</h1>
@@ -13,6 +14,7 @@
                 <div class="small-7 column">
                   <select>
                     <option value="0">-- 選擇卡片 --</option>
+                    <?php showCardList(null); ?>
                   </select>
                 </div>
                 <div class="small-5 column">
