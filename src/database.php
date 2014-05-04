@@ -157,10 +157,6 @@ Class Database
 
     public static function fix_string($string)
     {
-        if(get_magic_quotes_gpc()){
-            return htmlentities(mysql_real_escape_string(stripslashes($string)));
-        } else {
-            return mysql_real_escape_string(stripslashes($string));
-        }
+        return htmlentities(mysql_real_escape_string(stripslashes($string)));
     }
 }
