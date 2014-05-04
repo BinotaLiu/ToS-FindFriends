@@ -35,6 +35,50 @@ $db = new Database;
 $db->connect($config['database']['host'], $config['database']['user'], $config['database']['passwd']);
 $db->select($config['database']['name']);
 
+//检查用户登录状态
+if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
+  $checkToken = md5($config['secret']['key'][1] . md5($_SESSION['user_id'] . $config['secret']['key'][0]));
+  if($_SESSION['user_token'] == $checkToken)
+    $loginStatus = 1;
+  else{
+    $loginStatus = 0;
+    unset($_SESSION['user_id']);
+    unset($_SESSION['user_token']);
+    unset($_SESSION['user_name']);
+  }
+}else{
+  $loginStatus = 0;
+}
+
+$data['title'] = "徵戰友 | 遇見先鋒 - Powered by MouGE";
+$data['nav_title'] = "徵戰友";
+if($loginStatus){
+  $data['uid'] = $_SESSION['user_id'];
+  $data['userName'] = $_SESSION['user_name'];
+}
+
+if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
+  //銷毀 SESSION，提示登出。
+  $data['url'] = "/friend";
+  $data['notice'] = "已登出！感謝您的使用，正在回到首頁";
+  include 'var/view/header.php';
+  include 'var/view/redirect.php';
+  include 'var/view/footer.php';
+  unset($_SESSION['user_id']);
+  unset($_SESSION['user_token']);
+  unset($_SESSION['user_name']);
+  die();
+}
+
+if($loginStatus){
+  $data['url'] = "/friend";
+  $data['notice'] = "您已登入！無需重複登入，正在回到首頁";
+  include 'var/view/header.php';
+  include 'var/view/redirect.php';
+  include 'var/view/footer.php';
+  die();
+}
+
 if($_GET['method'] == "persona"){
   $body = $email = NULL;
 if (isset($_POST['assertion'])) {
@@ -97,7 +141,7 @@ _PERSONA;
   }
   $session = $helper->getSessionFromRedirect();
   if(!$session)
-     header("Location: {$helper->getLoginUrl()}", true, 302); //跳轉至 Facebook 登入頁。
+    header("Location: {$helper->getLoginUrl()}", true, 302); //跳轉至 Facebook 登入頁。
 
   if($session) {
     try {
@@ -118,7 +162,12 @@ _PERSONA;
       $_SESSION['user_token'] = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
       $_SESSION['user_name']  = $name;
 
-      header('Location: /friend', 302);
+    //header('Location: /friend', 302);
+      $data['url'] = "/friend";
+      $data['notice'] = "登入成功，正在回到首頁";
+      include 'var/view/header.php';
+      include 'var/view/redirect.php';
+      include 'var/view/footer.php';
     } catch(FacebookRequestException $e) {
       //顯示錯誤頁。
       echo "Exception occured, code: " . $e->getCode();
