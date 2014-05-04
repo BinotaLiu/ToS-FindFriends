@@ -31,13 +31,20 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $loginStatus = 0;
 }
 
-if(!$loginStatus) die("Please login first!");
-
 $data['title'] = "徵戰友 | 遇見先鋒 - Powered by MouGE";
 $data['nav_title'] = "徵戰友";
 if($loginStatus){
   $data['uid'] = $_SESSION['user_id'];
   $data['userName'] = $_SESSION['user_name'];
+}
+
+if(!$loginStatus) {
+  $data['url'] = "/friend";
+  $data['notice'] = "請先登入";
+  include 'var/view/header.php';
+  include 'var/view/redirect.php';
+  include 'var/view/footer.php';
+  die();
 }
 
 $myInfo = $db->fetch_where('user', array('*'), array('uid' => $data['uid']));

@@ -29,8 +29,6 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $loginStatus = 0;
 }
 
-if(!$loginStatus) die("Please log in first");
-
 $data['title'] = "徵戰友 | 遇見先鋒 - Powered by MouGE";
 $data['nav_title'] = "徵戰友";
 if($loginStatus){
@@ -39,6 +37,15 @@ if($loginStatus){
 }
 $data['success'] = false;
 $data['expire'] = false;
+
+if(!$loginStatus) {
+  $data['url'] = "/friend";
+  $data['notice'] = "請先登入";
+  include 'var/view/header.php';
+  include 'var/view/redirect.php';
+  include 'var/view/footer.php';
+  die();
+}
 
 $card_record = $db->fetch_where('user_card', array('*'), array('uid' => $data['uid']));
 $second_record = $db->fetch_where('user_card_second', array('*'), array('uid' => $data['uid']));
