@@ -68,6 +68,7 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
   unset($_SESSION['user_token']);
   unset($_SESSION['user_name']);
   unset($_SESSION['login_method']);
+  unset($_SESSION['email']);
   die();
 }
 
@@ -100,7 +101,7 @@ if($_GET['method'] == "persona"){
       $_SESSION['user_id']      = $uid;
       $_SESSION['user_token']   = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
       $_SESSION['user_name']    = $name;
-      $_SESSION['email']        = $result->email;
+      $_SESSION['email']        = "'$result->email'";
       $_SESSION['login_method'] = 'persona';
 
       $data['url'] = "/friend";

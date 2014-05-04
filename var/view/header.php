@@ -7,7 +7,7 @@
     <title><?=$data['title']?></title>
     <link rel="stylesheet" href="css/foundation.css"> 
     <script src="js/vendor/modernizr.js"></script>
-<?php if(!$loginStatus or (!empty($_SESSION['method']) && $_SESSION['method'])): ?>
+<?php if(!$loginStatus or (!empty($_SESSION['login_method']) && $_SESSION['login_method'] == "persona")): ?>
     <script src="https://login.persona.org/include.js"></script>
     <script>
       navigator.id.watch({
