@@ -22,7 +22,7 @@
                 <label class="right inline" for="nickname">昵稱</label>
               </div>
               <div class="small-9 column">
-                <input type="text" id="nickname" name="nickname" value="<?=$data['form']['nickname']?>">
+                <input type="text" id="nickname" name="nickname" value="<?=$data['form']['nickname']?>" placeholder="請輸入昵稱">
               </div>
             </div>
           </div>
