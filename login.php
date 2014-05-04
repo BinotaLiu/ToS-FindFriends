@@ -67,6 +67,7 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
   unset($_SESSION['user_id']);
   unset($_SESSION['user_token']);
   unset($_SESSION['user_name']);
+  unset($_SESSION['login_method']);
   die();
 }
 
@@ -80,58 +81,47 @@ if($loginStatus){
 }
 
 if($_GET['method'] == "persona"){
-  $body = $email = NULL;
-if (isset($_POST['assertion'])) {
+  if (isset($_POST['assertion'])) {
     $persona = new Persona();
     $result = $persona->verifyAssertion($_POST['assertion']);
 
     if ($result->status === 'okay') {
-        $body = "<p>Logged in as: " . $result->email . "</p>";
-        $body .= '<p><a href="javascript:navigator.id.logout()">Logout</a></p>';
-        $email = $result->email;
+      //檢查用戶是否存在
+      $db_result = $db->fetch_where('user', array('*'), array('email'  => $result->email));
+      if(!$db_result){
+        $name = split("@", $result->email)[0];
+        $uid  = $db->insert('user', array('nickname' => $name, 'email' => $result->email, 'regtime' => time()));
+      } else {
+        $db->update('user', array('lastlogin' => time()), array('uid' => $db_result[0]['uid']));
+        $uid  = $db_result[0]['uid'];
+        $name = $db_result[0]['nickname'];
+      }
+
+      $_SESSION['user_id']      = $uid;
+      $_SESSION['user_token']   = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
+      $_SESSION['user_name']    = $name;
+      $_SESSION['email']        = $result->email;
+      $_SESSION['login_method'] = 'persona';
+
+      $data['url'] = "/friend";
+      $data['notice'] = "登入成功，正在回到首頁";
+      include 'var/view/header.php';
+      include 'var/view/redirect.php';
+      include 'var/view/footer.php';
     } else {
-        $body = "<p>Error: " . $result->reason . "</p>";
+      $data['url'] = "/friend";
+      $data['notice'] = "錯誤，詳細訊息：" . $result->reason;
+      include 'var/view/header.php';
+      include 'var/view/redirect.php';
+      include 'var/view/footer.php';
     }
-    $body .= "<p><a href=\"testPersona.php\">Back to login page</a></p>";
-} elseif (!empty($_GET['logout'])) {
-    $body = "<p>You have logged out.</p>";
-    $body .= "<p><a href=\"testPersona.php\">Back to login page</a></p>";
-} else {
-    $body = "<p><a class=\"persona-button\" href=\"javascript:navigator.id.request()\"><span>Login with Persona</span></a></p>";
-}
-  echo <<<_PERSONA
-<!DOCTYPE html>
-<html>
-<head><meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<link rel="stylesheet" type="text/css" href="css/persona-buttons.css"
-</head>
-<body>
-<form id="login-form" method="POST" action="testPersona.php">
-<input id="assertion-field" type="hidden" name="assertion" value="">
-</form>
-$body
-<script src="https://login.persona.org/include.js"></script>
-<script>
-navigator.id.watch({
-loggedInUser:
-_PERSONA;
-  echo $email ? "'$email'" : 'null';
-echo <<<_PERSONA
-,
-onlogin: function (assertion) {
-var assertion_field = document.getElementById("assertion-field");
-assertion_field.value = assertion;
-var login_form = document.getElementById("login-form");
-login_form.submit();
-},
-onlogout: function () {
-window.location = '?logout=1';
-}
-});
-</script>
-</body>
-</html> 
-_PERSONA;
+  } else {
+    $data['url'] = "/friend";
+    $data['notice'] = "錯誤，正在回到首頁";
+    include 'var/view/header.php';
+    include 'var/view/redirect.php';
+    include 'var/view/footer.php';
+  }
 } else {
   try{
     FacebookSession::setDefaultApplication($config['social']['facebook']['appid'], $config['social']['facebook']['appsecret']);
@@ -158,9 +148,10 @@ _PERSONA;
         $name = $result[0]['nickname'];
       }
 
-      $_SESSION['user_id']    = $uid;
-      $_SESSION['user_token'] = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
-      $_SESSION['user_name']  = $name;
+      $_SESSION['user_id']      = $uid;
+      $_SESSION['user_token']   = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
+      $_SESSION['user_name']    = $name;
+      $_SESSION['login_method'] = 'facebook';
 
     //header('Location: /friend', 302);
       $data['url'] = "/friend";
