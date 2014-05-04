@@ -69,14 +69,16 @@ Class Database
 
     public static function fetch($table, $select = "*", $start = 0, $num = 0)
     {
-        $result = @mysql_query("SELECT {$select} FROM {$table}");
+        $queryString = "SELECT {$select} FROM {$table}";
+        if($start && $num)
+            $queryString .= " LIMIT {$start}, {$num}";
+        $result = @mysql_query($queryString);
         if($result){
-            if($num <= 0 or $num > @mysql_num_rows($result) - $start){
-                $rows = @mysql_num_rows($result) - $start;
+            if($num <= 0 or $num > @mysql_num_rows($result)){
+                $rows = @mysql_num_rows($result);
             } else {
                 $rows = $num;
             }
-            @mysql_data_seek($result, $start);
             $array = array();
             for($i = 0; $i < $rows; $i++){
                 $array[$i] = mysql_fetch_array($result);
@@ -105,17 +107,18 @@ Class Database
         $mySelects = substr($mySelects, 0, -1);
 
         $queryString = "SELECT {$mySelects} FROM {$table} WHERE {$myWhere}";
+        if($start && $num)
+            $queryString .= " LIMIT {$start}, {$num}";
         $result = @mysql_query($queryString);
 
         //var_dump($queryString);
 
         if($result){
-            if($num <= 0 or $num > @mysql_num_rows($result) - $start){
-                $rows = @mysql_num_rows($result) - $start;
+            if($num <= 0 or $num > @mysql_num_rows($result)){
+                $rows = @mysql_num_rows($result);
             } else {
                 $rows = $num;
             }
-            @mysql_data_seek($result, $start);
             $array = array();
             for($i = 0; $i < $rows; $i++){
                 $array[$i] = mysql_fetch_array($result);
