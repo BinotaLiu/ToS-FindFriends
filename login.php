@@ -114,8 +114,8 @@ _PERSONA;
 
       $_SESSION['user_id']    = $uid;
       $_SESSION['user_token'] = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
-      var_dump($_SESSION);
-      //入庫，寫Session，跳轉回前頁
+
+      header('Location: /friend', 302);
     } catch(FacebookRequestException $e) {
       //顯示錯誤頁。
       echo "Exception occured, code: " . $e->getCode();
