@@ -105,15 +105,18 @@ _PERSONA;
         $session, 'GET', '/me'
       ))->execute()->getGraphObject(GraphUser::className());
       $result = $db->fetch_where('user',array('*'), array('facebook_id'=>$user_profile->getId()));
-      if(!$result)
-        $uid = $db->insert('user', array('nickname'=>$user_profile->getName(),'facebook_id'=>$user_profile->getId(),'regtime'=>time()));
-      else{
+      if(!$result){
+        $uid  = $db->insert('user', array('nickname'=>$user_profile->getName(),'facebook_id'=>$user_profile->getId(),'regtime'=>time()));
+        $name = $user_profile->getName();
+      }else{
         $db->update('user', array('lastlogin'=>time()), array('uid'=>$result[0]['uid']));
-        $uid = $result[0]['uid'];
+        $uid  = $result[0]['uid'];
+        $name = $result[0]['nickname'];
       }
 
       $_SESSION['user_id']    = $uid;
       $_SESSION['user_token'] = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
+      $_SESSION['user_name']  = $name;
 
       header('Location: /friend', 302);
     } catch(FacebookRequestException $e) {
