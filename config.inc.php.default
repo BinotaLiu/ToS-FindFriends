@@ -1,0 +1,35 @@
+<?php
+/*
+ * File: config.inc.php
+ * $Id$
+ * Author: $Author$
+ * Last Modified: $LastModified$
+ * !This file will not be upload to our git server.
+*/
+
+if(!IN_MOUGE)
+  die("Access denied");
+
+$config = array();
+
+$config['system']['version']  = "0.0.3 Build 20140505.c";
+
+$config['database']['host']   = "";
+$config['database']['name']   = "";
+$config['database']['user']   = "";
+$config['database']['passwd'] = "";
+
+$config['social']['facebook']['appid']     = "";
+$config['social']['facebook']['appsecret'] = "";
+$config['social']['plurk']['appid']        = "";
+$config['social']['plurk']['appsecret']    = "";
+$config['social']['twitter']['appid']      = "";
+$config['social']['twitter']['appsecret']  = "";
+
+$config['secret']['key'][0] = '';
+$config['secret']['key'][1] = '';
+$config['secret']['key'][2] = '';
+$config['secret']['key'][3] = '';
+$config['secret']['key'][4] = '';
+$config['secret']['key'][5] = '';
+

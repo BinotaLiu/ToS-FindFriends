@@ -47,16 +47,11 @@ Class Database
         return $result ? mysql_insert_id() : false;
     }
 
-    public static function query($query, $start = 0, $num = 0)
+    public static function query($query)
     {
         $result = @mysql_query($query);
         if($result){
-            if($num <= 0 or $num > @mysql_num_rows($result) - $start){
-                $rows = @mysql_num_rows($result) - $start;
-            } else {
-                $rows = $num;
-            }
-            @mysql_data_seek($result, $start);
+            $rows = @mysql_num_rows($result);
             $array = array();
             for($i = 0; $i < $rows; $i++){
                 $array[$i] = mysql_fetch_row($result);
