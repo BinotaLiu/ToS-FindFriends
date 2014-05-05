@@ -73,7 +73,7 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
 }
 
 if($loginStatus){
-  $data['url'] = "/friend";
+  $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "您已登入！無需重複登入，正在回到首頁";
   include 'var/view/header.php';
   include 'var/view/redirect.php';
@@ -104,20 +104,27 @@ if($_GET['method'] == "persona"){
       $_SESSION['email']        = "'$result->email'";
       $_SESSION['login_method'] = 'persona';
 
-      $data['url'] = "/friend";
+      $data['url'] = $config['system']['basicurl'];
       $data['notice'] = "登入成功，正在回到首頁";
       include 'var/view/header.php';
       include 'var/view/redirect.php';
       include 'var/view/footer.php';
     } else {
-      $data['url'] = "/friend";
+      //先銷毀Cookie：
+      unset($_SESSION['user_id']);
+      unset($_SESSION['user_token']);
+      unset($_SESSION['user_name']);
+      unset($_SESSION['login_method']);
+      unset($_SESSION['email']);
+
+      $data['url'] = $config['system']['basicurl'];
       $data['notice'] = "錯誤，詳細訊息：" . $result->reason;
       include 'var/view/header.php';
       include 'var/view/redirect.php';
       include 'var/view/footer.php';
     }
   } else {
-    $data['url'] = "/friend";
+    $data['url'] = $config['system']['basicurl'];
     $data['notice'] = "錯誤，正在回到首頁";
     include 'var/view/header.php';
     include 'var/view/redirect.php';
@@ -126,7 +133,7 @@ if($_GET['method'] == "persona"){
 } else {
   try{
     FacebookSession::setDefaultApplication($config['social']['facebook']['appid'], $config['social']['facebook']['appsecret']);
-    $helper = new FacebookRedirectLoginHelper('http://localhost/friend/login.php?method=facebook');
+    $helper = new FacebookRedirectLoginHelper($config['social']['facebook']['redirect']);
   } catch(FacebookRequestException $e){
     echo "Error, can't load facebook sdk with following debug infomation: " . $e;
   }
@@ -155,7 +162,7 @@ if($_GET['method'] == "persona"){
       $_SESSION['login_method'] = 'facebook';
 
     //header('Location: /friend', 302);
-      $data['url'] = "/friend";
+      $data['url'] = $config['system']['basicurl'];
       $data['notice'] = "登入成功，正在回到首頁";
       include 'var/view/header.php';
       include 'var/view/redirect.php';

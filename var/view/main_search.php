@@ -11,24 +11,24 @@
           <div class="row">
             <div class="large-6 column">
               <div class="row collapse">
-                <div class="small-7 column">
+                <div class="small-10 column">
                   <select name="card">
                     <option value="0">-- 選擇卡片 --</option>
                     <?php showCardList(null); ?>
                   </select>
                 </div>
-                <div class="small-5 column">
-                  <button class="postfix" type="submit" value="0">找戰友！</button>
+                <div class="small-2 column">
+                  <button class="postfix" type="submit" value="0">找！</button>
                 </div>
               </div>
             </div>
             <div class="large-6 column">
               <div class="row collapse">
-                <div class="small-7 column">
+                <div class="small-10 column">
                   <input type="text" name="keyword" placeholder="依卡片名稱搜尋"></input>
                 </div>
-                <div class="small-5 column">
-                  <button class="postfix" type="submit" value="1">找戰友！</button>
+                <div class="small-2 column">
+                  <button class="postfix" type="submit" value="1">找！</button>
                 </div>
               </div>
             </div>
