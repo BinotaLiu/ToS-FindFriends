@@ -50,18 +50,42 @@ if(!$loginStatus) {
 $card_record = $db->fetch_where('user_card', array('*'), array('uid' => $data['uid']));
 $second_record = $db->fetch_where('user_card_second', array('*'), array('uid' => $data['uid']));
 
+if($card_record)
+  if(time() - $card_record[0]['logtime'] >= 60*60*24*60)
+    $data['expire'] = true;
+
+$data['error'] = "";
 //檢查 POST 
 if(!empty($_POST['tos_id'])){
+  if(strlen($_POST['tos_id']) < 9 || strlen($_POST['tos_id']) > 10)
+    $data['error'] = "您的玩家 UID 有誤，請確認<br>";
+  else{
+   if(substr($_POST['tos_id'], 0, 1) == "9" && strlen($_POST['tos_id']) > 9)
+     $data['error'] = "您的玩家 UID 有誤，請確認<br>";
+   else if(strlen($_POST['tos_id']) > 10)
+     $data['error'] = "您的玩家 UID 有誤，請確認<br>";
+  }
+
+  if(intval($_POST['card_id']) > 563 || intval($_POST['card_id']) <= 0)
+    $data['error'] .= "您選擇的卡片有誤，請確認<br>";
+
+  if(intval($_POST['card_level']) > 99 || intval($_POST['card_level']) <= 0)
+    $data['error'] .= "您的卡片等級不正確，請確認<br>";
+
+  if(intval($_POST['skill_level']) > 15 || intval($_POST['skill_level']) <=0)
+    if(intval($_POST['skill_level']) != -1)
+      $data['error'] = "您的技能等級有誤，請確認";
+
   //保存入庫
   //檢查是否已有記錄
-  if($card_record){
+  if(empty($data['error']) && $card_record){
     //已有記錄 -> Update
     $db->update('user_card', array(
                                'tos_id' => $_POST['tos_id'],
                                'detail' => $_POST['detail'],
                               'card_id' => $_POST['card_id'],
                            'card_level' => $_POST['card_level'],
-                          'skill_level' => $_POST['skill_level'],
+                          'skill_level' => ($_POST['skill_level'] == -1) ? "MAX" : $_POST['skill_level'],
                               'logtime' => time()), array('uid' => $data['uid']));
   } else {
     $db->insert('user_card', array(
@@ -70,7 +94,7 @@ if(!empty($_POST['tos_id'])){
                                'detail' => $_POST['detail'],
                               'card_id' => $_POST['card_id'],
                            'card_level' => $_POST['card_level'],
-                          'skill_level' => $_POST['skill_level'],
+                          'skill_level' => ($_POST['skill_level'] == -1) ? "MAX" : $_POST['skill_level'],
                               'logtime' => time()));
   }
 
@@ -102,7 +126,7 @@ if(!empty($_POST['tos_id'])){
   $data['form']['card3_id'] = $_POST['card3_id'];
   $data['form']['card4_id'] = $_POST['card4_id'];
 
-  $data['success'] = true;
+  $data['success'] = empty($data['error']);
 } else {
   //無 POST 記錄，直接將資料庫內容寫入表單。
   if($card_record){

@@ -40,6 +40,8 @@ if($loginStatus){
 
 //先看看要查詢的東西：
 $page = empty($_GET['page']) ? 0 : intval($_GET['page']) - 1;
+$keyword = empty($_GET['keyword']) ? "" : $db->fix_string($_GET['keyword']);
+$card = empty($_GET['keyword']) ? 1 : $db->fix_string($_GET['card']);
 if(!empty($_GET['keyword'])){
   //先找卡片名稱：
   $findCardsName = $db->query("SELECT `card_id` FROM `card` WHERE `card_name` REGEXP '.*" . $db->fix_string($_GET['keyword']) . ".*'");
@@ -49,8 +51,12 @@ if(!empty($_GET['keyword'])){
   $queryCardName = substr($queryCardName, 0, -3);
 
   //查資料：
-  $data['cardName'] = "包含「" . $db->fix_string($_GET['keyword']) . "」的卡片";
-  $data['dbResult'] = $db->query("SELECT * FROM `user_card` WHERE" . $queryCardName . " LIMIT " . $page*10 . ", 10");
+  $data['searchName'] = "包含「" . $db->fix_string($_GET['keyword']) . "」的卡片";
+  $data['dbResult'] = $db->query("SELECT * FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . " LIMIT " . $page*10 . ", 10");
+  $data['totalPage'] = $db->query("SELECT COUNT(*) FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . " LIMIT " . $page*10 . ", 10")[0][0];
+  foreach($data['dbResult'] as $count => $value){
+    $data['cardName'][$count] = $db->fetch_where('card', array('card_name'), array('card_id' => $value['card_id']))[0]['card_name'];
+  }
   $data['usersName'] = array();
   foreach($data['dbResult'] as $user)
     $data['usersName'][] = $db->fetch_where('user', array('nickname'), array('uid' => $user['uid']))[0]['nickname'];
@@ -59,8 +65,10 @@ if(!empty($_GET['keyword'])){
   if(!empty($_GET['card'])){
     $card_id = intval($_GET['card']);
     //先抓卡片名稱
-    $data['cardName'] = $db->fetch_where('card', array('card_name'), array('card_id' => $card_id))[0]['card_name'];
-    $data['dbResult'] = $db->fetch_where('user_card', array('*'), array('card_id' => $card_id), $page*10, 10);
+    $data['searchName'] = $db->fetch_where('card', array('card_name'), array('card_id' => $card_id))[0]['card_name'];
+    $data['dbResult'] = $db->query("SELECT * FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " LIMIT " . $page*10 . ", 10");
+    $data['totalPage'] = $db->query("SELECT COUNT(*) FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " LIMIT " . $page*10 . ", 10")[0][0];
+    for($i=0;$i<4;$i++) $data['cardName'][$i] = $data['searchName'];
     $data['usersName'] = array();
     foreach($data['dbResult'] as $user){
       $data['usersName'][] = $db->fetch_where('user', array('nickname'), array('uid' => $user['uid']))[0]['nickname'];

@@ -2,13 +2,22 @@
 <div class="row">
   <?php if($data['success']): ?>
   <div data-alert class="alert-box success radius">
-    資料更新成功！
+    <h4>資料更新成功！</h4>
     <a href="#" class="close">&times;</a>
   </div>
   <?php endif; ?>
   <?php if($data['expire']): ?>
-  <div data-alert class="alert-box warning radius">
-    您的資料已經 60 天沒有更新了！系統已自動凍結您的資料，並且不會在搜尋結果中顯示出來。若要解除凍結，您只需要更新資料，即可恢復。
+  <div data-alert class="alert-box warning radius medium-6 medium-offset-3">
+    <h5>您的資料已經 60 天沒有更新了！<br>
+        系統已自動凍結您的資料，<br>
+        並且不會在搜尋結果中顯示出來。<br>
+        若要恢復，您只需要更新資料即可。</h5>
+    <a href="#" class="close">&times;</a>
+  </div>
+  <?php endif; ?>
+  <?php if($data['error']): ?>
+  <div data-alert class="alert-box alert radius">
+    <h4><?=$data['error']?></h4>
     <a href="#" class="close">&times;</a>
   </div>
   <?php endif; ?>
@@ -75,7 +84,7 @@
               <label for="skill_level" class="right inline">技能等級</label>
             </div>
             <div class="small-9 column">
-              <input type="number" id="skill_level" name="skill_level" value="<?=$data['form']['skill_level']?>" placeholder="請輸入技能等級" min="1" max="15">
+              <input type="number" id="skill_level" name="skill_level" value="<?=$data['form']['skill_level']?>" placeholder="請輸入技能等級" min="-1" max="15">
             </div>
           </div>
         </div>
