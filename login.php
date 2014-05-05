@@ -92,10 +92,12 @@ if($_GET['method'] == "persona"){
       if(!$db_result){
         $name = split("@", $result->email)[0];
         $uid  = $db->insert('user', array('nickname' => $name, 'email' => $result->email, 'regtime' => time()));
+        $redirectUrl = $config['system']['basicurl'] . "/setting.php";
       } else {
         $db->update('user', array('lastlogin' => time()), array('uid' => $db_result[0]['uid']));
         $uid  = $db_result[0]['uid'];
         $name = $db_result[0]['nickname'];
+        $redirectUrl = $config['system']['basicurl'];
       }
 
       $_SESSION['user_id']      = $uid;
@@ -104,7 +106,7 @@ if($_GET['method'] == "persona"){
       $_SESSION['email']        = "'$result->email'";
       $_SESSION['login_method'] = 'persona';
 
-      $data['url'] = $config['system']['basicurl'];
+      $data['url'] = $redirectUrl;
       $data['notice'] = "登入成功，正在回到首頁";
       include 'var/view/header.php';
       include 'var/view/redirect.php';
@@ -150,10 +152,12 @@ if($_GET['method'] == "persona"){
       if(!$result){
         $uid  = $db->insert('user', array('nickname'=>$user_profile->getName(),'facebook_id'=>$user_profile->getId(),'regtime'=>time()));
         $name = $user_profile->getName();
+        $redirectUrl = $config['system']['basicurl'] . "/setting.php";
       }else{
         $db->update('user', array('lastlogin'=>time()), array('uid'=>$result[0]['uid']));
         $uid  = $result[0]['uid'];
         $name = $result[0]['nickname'];
+        $redirectUrl = $config['system']['basicurl'];
       }
 
       $_SESSION['user_id']      = $uid;
@@ -161,8 +165,7 @@ if($_GET['method'] == "persona"){
       $_SESSION['user_name']    = $name;
       $_SESSION['login_method'] = 'facebook';
 
-    //header('Location: /friend', 302);
-      $data['url'] = $config['system']['basicurl'];
+      $data['url'] = $redirectUrl;
       $data['notice'] = "登入成功，正在回到首頁";
       include 'var/view/header.php';
       include 'var/view/redirect.php';
