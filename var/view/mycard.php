@@ -111,8 +111,8 @@
       <?php endfor; ?>
     </div>
   </div>
-  <div class="small-4 small-offset-8">
-    <button type="submit">保存</button>
+  <div class="small-4 small-offset-7 medium-3 medium-offset-8 large-2 large-offset-10">
+    <button class="small-12 large radius" type="submit">保存</button>
   </div>
   </form>
 </div>

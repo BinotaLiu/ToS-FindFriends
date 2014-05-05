@@ -4,10 +4,10 @@
       <h1>設定</h1>
     </div>
     <div class="clear"></div>
+    <form action="setting.php" method="post">
     <div class="small-12 panel column">
       <h3>個人資料</h3>
       <div class="row">
-        <form action="setting.php" method="post">
           <div class="small-12 column">
             <div class="row">
               <div class="small-3 column">
@@ -26,10 +26,12 @@
               </div>
             </div>
           </div>
-          <button class="small-4 column medium" type="submit">保存</button>
-        </form>
       </div>
     </div>
+    <div class="small-4 small-offset-7 medium-3 medium-offset-8 large-2 large-offset-10">
+      <button class="small-12 large radius" type="submit">保存</button>
+    </div>
+    </form>
 
 </div>
 
