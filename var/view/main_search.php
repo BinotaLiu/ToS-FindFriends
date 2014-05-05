@@ -25,7 +25,7 @@
             <div class="large-6 column">
               <div class="row collapse">
                 <div class="small-7 column">
-                  <input type="text" placeholder="依卡片名稱搜尋"></input>
+                  <input type="text" name="keyword" placeholder="依卡片名稱搜尋"></input>
                 </div>
                 <div class="small-5 column">
                   <button class="postfix" type="submit" value="1">找戰友！</button>

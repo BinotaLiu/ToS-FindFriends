@@ -54,7 +54,7 @@ Class Database
             $rows = @mysql_num_rows($result);
             $array = array();
             for($i = 0; $i < $rows; $i++){
-                $array[$i] = mysql_fetch_row($result);
+                $array[$i] = mysql_fetch_array($result);
             }
             return $array;
         } else {

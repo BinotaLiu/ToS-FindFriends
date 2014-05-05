@@ -4,7 +4,12 @@
   </div>
 <?php foreach($data['dbResult'] as $count => $value): ?>
     <div class="large-12 panel column">
-      <h3><?=$data['usersName'][$count]?>，ID：<?=$value['tos_id']?></h3>
+      <h3><?=$data['usersName'][$count]?>，ID：<?php
+  if($loginStatus)
+    echo $value['tos_id'];
+  else
+    echo substr($value['tos_id'],0,3) . "********" . substr($value['tos_id'],-3,3) . "（登入以檢視完整 ID ）";
+?></h3>
       <div class="clear"></div>
       <div class="row ">
         <div class="small-3 medium-2 column">

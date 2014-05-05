@@ -70,7 +70,6 @@ if(!empty($_GET['keyword'])){
   //輸出錯誤頁
 }
 
-
 include 'var/view/header.php';
 
 include 'var/view/search.php';
