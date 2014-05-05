@@ -12,7 +12,7 @@ if(!IN_MOUGE)
 
 $config = array();
 
-$config['system']['version']  = "0.0.3 Build 20140505.c";
+$config['system']['version']  = "0.1.0 Build 20140505.a";
 
 $config['database']['host']   = "";
 $config['database']['name']   = "";
