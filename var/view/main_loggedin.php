@@ -4,7 +4,7 @@
         <div class="clear"></div>
         <div class="row ">
           <div class="small-3 medium-2 column">
-            <img style="width=100%;height=auto;" src="cards/<?=$data['card']['card_id']?>.png">
+            <a href="mycard.php"><img style="width=100%;height=auto;" src="cards/<?=$data['card']['card_id']?>.png"></a>
           </div>
           <div class="small-9 column">
             <h3>目前代表：<?=$data['card']['name']?></h3>
