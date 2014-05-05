@@ -1,3 +1,7 @@
+<?php
+if(!defined('IN_MOUGE'))
+  die("Access Denied");
+?>
 
     <div class="row">
       <div class="small-11 small-offset-1 medium-offset-0 column">

@@ -5,6 +5,9 @@
  * 資料庫模組，放置所有與資料庫相關相關的功能。
  */
 
+if(!defined('IN_MOUGE'))
+  die("Access Denied");
+
 Class Database
 {
     public static function connect($host, $username, $password){

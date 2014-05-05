@@ -1,4 +1,8 @@
-    <?php include 'var/view/cards_option.php'; ?>
+<?php
+if(!defined('IN_MOUGE'))
+  die("Access Denied");
+include 'var/view/cards_option.php';
+?>
     <div class="row">
       <div class="large_12 column">
         <h1 class="centered">徵戰友</h1>

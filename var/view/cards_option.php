@@ -1,4 +1,7 @@
 <?php
+if(!defined('IN_MOUGE'))
+  die("Access Denied");
+
 function showCardList($id)
 {
 ?>

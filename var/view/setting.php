@@ -1,4 +1,7 @@
-
+<?php
+if(!defined('IN_MOUGE'))
+  die("Access Denied");
+?>
 <div class="row">
     <div class="small-12 column">
       <h1>設定</h1>

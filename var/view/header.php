@@ -1,3 +1,7 @@
+<?php
+if(!defined('IN_MOUGE'))
+  die("Access Denied");
+?>
 <!doctype html>
 <html lang="zh-TW">
   <head>
