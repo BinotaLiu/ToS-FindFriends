@@ -21,10 +21,10 @@ if(!defined('IN_MOUGE'))
     </h3>
     <div class="clear"></div>
     <div class="row">
-      <div class="small-3 medium-2 column">
+      <div class="small-3 medium-2 large-2 column">
         <img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$value['card_id']}.png")) ? $value['card_id'] : "0"?>.png">
       </div>
-      <div class="small-9 medium-10 column">
+      <div class="small-9 medium-10 large-8 column">
         <h3>目前代表：<?=$data['cardName'][$count]?></h3>
         <h4>
           <ul class="inline-list">
@@ -36,18 +36,52 @@ if(!defined('IN_MOUGE'))
           <?=$value['detail']?>
         </h6>
       </div>
+      <div class="large-2 show-for-large-only column">
+        <div class="large-12">
+          <h4>候補代表：</h4>
+        </div>
+        <div class="large-12">
+          <ul class="large-block-grid-2">
+            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card1_id']}.png")) ? $data['second'][$count]['card1_id'] : "0"?>.png"></li>
+            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card2_id']}.png")) ? $data['second'][$count]['card2_id'] : "0"?>.png"></li>
+          </ul>
+        </div>
+        <div class="larg-12">
+          <ul class="large-block-grid-2">
+            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card3_id']}.png")) ? $data['second'][$count]['card3_id'] : "0"?>.png"></li>
+            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card4_id']}.png")) ? $data['second'][$count]['card4_id'] : "0"?>.png"></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 <?php endforeach;?>
   <div class="small-12 column">
-    <div class="small-12 medium-5 medium-offset-7 panel column">
+    <div class="small-12 medium-7 medium-offset-5 panel column">
       <ul class="inline-list">
+        <li>
+<?php if($page>0) { ?><a href="search.php?card=<?=$card?>&keyword=<?=$keyword?>&page=<?=$page?>"><? } ?>
+          ‹
+<?php if($page>0){ ?></a><?php } ?>
+        </li>
 <?php for($i = 1, $pPage = $page + 1;
-          $i <= 10 && $pPage + $i <= $data['totalCount'];
-          $i++, $pPage++): ?>
+          $i <= 10 && $pPage <= $data['totalPage'];
+          $i++, $pPage++):
+      /*[Note]: 停止條件：
+                  1. 輸出了 10 頁以上。
+                  2. 輸出的頁數超過了總頁數。*/?>
         <li><a href="search.php?card=<?=$card?>&keyword=<?=$keyword?>&page=<?=$pPage?>"><?=$pPage?></a></li>
 <?php endfor; ?>
-        <li>...</li>
+        <li>
+<?php if($page+10<$data['totalPage']) { ?><a href="search.php?card=<?$card?>&keyword=<?=$keyword?>&page=<?=$page+10?>"><? } ?>
+        ...
+<?php if($page+10<$data['totalPage']) { ?></a><?php } ?>
+        </li>
+        <li>
+<?php if($page+1<$data['totalPage']) { ?><a href="search.php?card=<?=$card?>&keyword=<?=$keyword?>&page=<?=$page+2?>"><? } ?>
+      ›
+<?php if($page+1<$data['totalPage']){ ?></a><?php } ?>
+        </li>
       </ul>
     </div>
   </div>

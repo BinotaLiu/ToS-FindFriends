@@ -60,7 +60,9 @@ if(!empty($_GET['keyword'])){
   $data['totalCount'] = $db->query(
                              "SELECT COUNT(*) FROM `user_card` " . 
                              "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . 
-                             "LIMIT " . $page*10 . ", 10")[0][0] / 10 + 1;
+                             "LIMIT " . $page*10 . ", 10")[0][0];
+  //總頁數 = 總數/10 後無條件進入
+  $data['totalPage'] = ceil($data['totalCount'] / 10);
   foreach($data['dbResult'] as $count => $value){
     $data['cardName'][$count] = $db->fetch_where(
                                        'card',
@@ -68,8 +70,11 @@ if(!empty($_GET['keyword'])){
                                        array('card_id' => $value['card_id']))[0]['card_name'];
   }
   $data['usersName'] = array();
-  foreach($data['dbResult'] as $user)
+  $data['second']    = array();
+  foreach($data['dbResult'] as $user){
     $data['usersName'][] = $db->fetch_where('user', array('nickname'), array('uid' => $user['uid']))[0]['nickname'];
+    $data['second'][]    = $db->fetch_where('user_card_second', array('*'), array('uid' => $user['uid']))[0];
+  }
 }else if(!empty($_GET['card'])){
   if($page < 0) $page = 0;
   if(!empty($_GET['card'])){
@@ -85,11 +90,14 @@ if(!empty($_GET['keyword'])){
     $data['totalCount'] = $db->query(
                                "SELECT COUNT(*) FROM `user_card` " . 
                                "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " " . 
-                               "LIMIT " . $page*10 . ", 10")[0][0] / 10 + 1;
+                               "LIMIT " . $page*10 . ", 10")[0][0];
+    $data['totalPage']  = ceil($data['totalCount'] / 10);
     for($i=0;$i<4;$i++) $data['cardName'][$i] = $data['searchName'];
     $data['usersName'] = array();
+    $data['second'][]  = array();
     foreach($data['dbResult'] as $user){
       $data['usersName'][] = $db->fetch_where('user', array('nickname'), array('uid' => $user['uid']))[0]['nickname'];
+      $data['second'][]    = $db->fetch_where('user_card_second', array('*'), array('uid' => $user['uid']))[0];
     }
   }
 }else {
