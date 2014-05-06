@@ -1,7 +1,7 @@
 <?php
 if(!defined('IN_MOUGE'))
   die("Access Denied");
-include 'var/view/cards_option.php';
+include 'views/cards_option.php';
 ?>
 <div class="row">
   <?php if($data['success']): ?>
