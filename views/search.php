@@ -4,9 +4,10 @@ if(!defined('IN_MOUGE'))
 ?>
 <div class="row">
   <div class="small-12 column">
-    <h1>搜尋：<?=$data['searchName']?></h1>
+    <h1>搜尋：<?=empty($data['searchName'])?"":$data['searchName']?></h1>
   </div>
-<?php foreach($data['dbResult'] as $count => $value): ?>
+<?php if(!empty($data['dbResult'])){
+      foreach($data['dbResult'] as $count => $value): ?>
   <div class="large-12 panel column">
     <h3>
 <?php
@@ -51,8 +52,8 @@ if(!defined('IN_MOUGE'))
     </div>
   </div>
 <?php
-include 'views/cards_option.php'; 
-if(count($data['dbResult']) == 0): ?>
+}else{
+include 'views/cards_option.php'; ?>
   <div class="small-12 panel column">
     <h3>這裡什麼都沒有，要不要換個東西搜尋看看？</h3>
         <form action="search.php" method="get">
@@ -83,5 +84,5 @@ if(count($data['dbResult']) == 0): ?>
           </div>
         </form>
   </div>
-<?php endif; ?>
+<?php } ?>
 </div>
