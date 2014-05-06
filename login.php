@@ -134,23 +134,30 @@ if($_GET['method'] == "persona"){
   }
 } else {
   try{
-    FacebookSession::setDefaultApplication($config['social']['facebook']['appid'], $config['social']['facebook']['appsecret']);
+    FacebookSession::setDefaultApplication(
+        $config['social']['facebook']['appid'],
+        $config['social']['facebook']['appsecret']);
     $helper = new FacebookRedirectLoginHelper($config['social']['facebook']['redirect']);
   } catch(FacebookRequestException $e){
-    echo "Error, can't load facebook sdk with following debug infomation: " . $e;
+    $data['url'] = $config['system']['basicurl'];
+    $data['notice'] = "載入 Facebook SDK 時發生錯誤，錯誤訊息：<br>" . $e;
+    include 'var/view/header.php';
+    include 'var/view/redirect.php';
+    include 'var/view/redirect.php';
   }
   $session = $helper->getSessionFromRedirect();
-  if(!$session)
-    header("Location: {$helper->getLoginUrl()}", true, 302); //跳轉至 Facebook 登入頁。
 
-  if($session) {
+  if($session){
     try {
       $user_profile = (new FacebookRequest(
         $session, 'GET', '/me'
       ))->execute()->getGraphObject(GraphUser::className());
       $result = $db->fetch_where('user',array('*'), array('facebook_id'=>$user_profile->getId()));
       if(!$result){
-        $uid  = $db->insert('user', array('nickname'=>$user_profile->getName(),'facebook_id'=>$user_profile->getId(),'regtime'=>time()));
+        $uid  = $db->insert('user', array(
+                                      'nickname' => $user_profile->getName(),
+                                   'facebook_id' => $user_profile->getId(),
+                                       'regtime' => time() ));
         $name = $user_profile->getName();
         $redirectUrl = $config['system']['basicurl'] . "/setting.php";
       }else{
@@ -167,14 +174,16 @@ if($_GET['method'] == "persona"){
 
       $data['url'] = $redirectUrl;
       $data['notice'] = "登入成功，正在回到首頁";
-      include 'var/view/header.php';
-      include 'var/view/redirect.php';
-      include 'var/view/footer.php';
     } catch(FacebookRequestException $e) {
-      //顯示錯誤頁。
-      echo "Exception occured, code: " . $e->getCode();
-      echo " with message: " . $e->getMessage();
+      $data['url'] = $config['system']['basicurl'];
+      $data['notice'] = "發生錯誤，代碼 " . $e->getCode() . "，詳細訊息<br>" . $e->getMessage();
     }//catch
-  }//if
+
+    include 'var/view/header.php';
+    include 'var/view/redirect.php';
+    include 'var/view/footer.php';
+  }else{
+    header("Location: {$helper->getLoginUrl()}", true, 302);
+  }
 }
 
