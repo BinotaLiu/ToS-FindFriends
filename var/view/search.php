@@ -21,7 +21,7 @@ if(!defined('IN_MOUGE'))
     <div class="clear"></div>
     <div class="row">
       <div class="small-3 medium-2 column">
-        <img style="width=100%;height=auto;" src="cards/<?=$value['card_id']?>.png">
+        <img style="width=100%;height=auto;" src="cards/<?=(file_exists("cards/{$value['card_id']}.png")) ? $value['card_id'] : "0"?>.png">
       </div>
       <div class="small-9 medium-10 column">
         <h3>目前代表：<?=$data['cardName'][$count]?></h3>
@@ -41,7 +41,7 @@ if(!defined('IN_MOUGE'))
   <div class="small-12 column">
     <div class="small-12 medium-5 medium-offset-7 panel column">
       <ul class="inline-list">
-<?php for($i = 1, $pPage = $page + 1, $tPage = $data['totalCount'] / 10 + 1;
+<?php for($i = 1, $pPage = $page + 1;
           $i <= 10 && $pPage + $i <= $data['totalCount'];
           $i++, $pPage++): ?>
         <li><a href="search.php?card=<?=$card?>&keyword=<?=$keyword?>&page=<?=$pPage?>"><?=$pPage?></a></li>

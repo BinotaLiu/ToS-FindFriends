@@ -60,7 +60,7 @@ if(!empty($_GET['keyword'])){
   $data['totalCount'] = $db->query(
                              "SELECT COUNT(*) FROM `user_card` " . 
                              "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . 
-                             "LIMIT " . $page*10 . ", 10")[0][0];
+                             "LIMIT " . $page*10 . ", 10")[0][0] / 10 + 1;
   foreach($data['dbResult'] as $count => $value){
     $data['cardName'][$count] = $db->fetch_where(
                                        'card',
@@ -83,7 +83,7 @@ if(!empty($_GET['keyword'])){
     $data['totalCount'] = $db->query(
                                "SELECT COUNT(*) FROM `user_card` " . 
                                "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " " . 
-                               "LIMIT " . $page*10 . ", 10")[0][0];
+                               "LIMIT " . $page*10 . ", 10")[0][0] / 10 + 1;
     for($i=0;$i<4;$i++) $data['cardName'][$i] = $data['searchName'];
     $data['usersName'] = array();
     foreach($data['dbResult'] as $user){
