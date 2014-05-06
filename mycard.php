@@ -127,6 +127,7 @@ if(!empty($_POST['tos_id'])){
   $data['form']['card4_id'] = $_POST['card4_id'];
 
   $data['success'] = empty($data['error']);
+  unset($_SESSION['card']);
 } else {
   //無 POST 記錄，直接將資料庫內容寫入表單。
   if($card_record){
