@@ -105,6 +105,7 @@ if($_GET['method'] == "persona"){
       $_SESSION['user_name']    = $name;
       $_SESSION['email']        = "'$result->email'";
       $_SESSION['login_method'] = 'persona';
+      $_SESSION['user_level']   = $db_result[0]['user_level'];
 
       $data['url'] = $redirectUrl;
       $data['notice'] = "登入成功，正在回到首頁";
@@ -171,6 +172,7 @@ if($_GET['method'] == "persona"){
       $_SESSION['user_token']   = md5($config['secret']['key'][1] . md5($uid . $config['secret']['key'][0]));
       $_SESSION['user_name']    = $name;
       $_SESSION['login_method'] = 'facebook';
+      $_SESSION['user_level']   = $result[0]['user_level'];
 
       $data['url'] = $redirectUrl;
       $data['notice'] = "登入成功，正在回到首頁";
