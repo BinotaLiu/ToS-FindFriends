@@ -8,7 +8,7 @@ if(!defined('IN_MOUGE'))
   </div>
   <div class="small-12 column panel">
     <div class="small-12 column info">
-      <span>作者：<?=$data['topic']['author_name']?> ，發佈時間：<?=$data['topic']['time']?></span>
+      <span>作者：<?=$data['topic']['author_name']?> ，發佈時間：<?=date("Y-m-d G:i:s", $data['topic']['time'])?></span>
     </div>
     <div class="small-12 column">
       <?=$data['topic']['content']?>
