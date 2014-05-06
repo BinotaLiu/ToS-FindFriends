@@ -38,9 +38,8 @@ if($loginStatus){
   $data['userName'] = $_SESSION['user_name'];
 }
 
-include 'var/view/header.php';
-
-include 'var/view/main_search.php';
+include 'views/header.php';
+include 'views/main_search.php';
 
 if($loginStatus){
   //先抓自己的代表資訊：
