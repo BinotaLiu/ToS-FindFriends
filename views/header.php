@@ -45,6 +45,11 @@ if(!defined('IN_MOUGE'))
       .alert-box h4 {
         color: #EEE;
       }
+      .info {
+        color: #777;
+        size: .6em;
+        margin-bottom: .6em;
+      }
     </style>
   </head>
   <body>
