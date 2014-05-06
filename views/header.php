@@ -72,6 +72,9 @@ if(!defined('IN_MOUGE'))
           <li class="show-for-medium-up"><a href="#">您好，<?=$data['userName']?>！</a></li>
           <li><a href="setting.php">個人設定</a></li>
           <li><a href="mycard.php">編輯代表資訊</a></li>
+<?php if($_SESSION['user_level'] == 1): ?>
+          <li><a href="admin.php">管理中心</a></li>
+<?php endif; ?>
           <li><a href="<?php if(!empty($_SESSION['login_method']) && $_SESSION['login_method'] == 'persona') { ?>javascript:navigator.id.logout()<?php } else { ?>login.php?logout=true<?php } ?>">登出</a></li>
 <?php else: ?>
           <li><a href="login.php?method=facebook">Facebook 登入</a></li>
