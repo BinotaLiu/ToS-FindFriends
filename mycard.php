@@ -39,7 +39,7 @@ $data['success'] = false;
 $data['expire'] = false;
 
 if(!$loginStatus) {
-  $data['url'] = "/friend";
+  $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "請先登入";
   include 'var/view/header.php';
   include 'var/view/redirect.php';
