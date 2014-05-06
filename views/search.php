@@ -51,7 +51,7 @@ if(!defined('IN_MOUGE'))
     </div>
   </div>
 <?php
-include 'var/view/cards_option.php'; 
+include 'views/cards_option.php'; 
 if(count($data['dbResult']) == 0): ?>
   <div class="small-12 panel column">
     <h3>這裡什麼都沒有，要不要換個東西搜尋看看？</h3>
