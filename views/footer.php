@@ -9,8 +9,8 @@ if(!defined('IN_MOUGE'))
       </div>
     </div>
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="res/js/vendor/jquery.js"></script>
+    <script src="res/js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>
