@@ -68,7 +68,9 @@ if($loginStatus){
 }else
   include 'views/main_nologin.php';
 
-$data['topic'] = $db->fetch('official_topic', array('tid', 'time', 'title', 'content'));
+$data['topic'] = $db->query('SELECT `tid`, `time`, `title`, `content`' .
+                            'FROM `official_topic`' .
+                            'ORDER BY -`time`');
 include 'views/main_official-topic.php';
 
 include 'views/footer.php';
