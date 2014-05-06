@@ -59,7 +59,7 @@ if($loginStatus){
 
 if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
   //銷毀 SESSION，提示登出。
-  $data['url'] = "/friend";
+  $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "已登出！感謝您的使用，正在回到首頁";
   include 'var/view/header.php';
   include 'var/view/redirect.php';

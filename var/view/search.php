@@ -1,7 +1,7 @@
 <?php
 if(!defined('IN_MOUGE'))
   die("Access Denied");
-?
+?>
 <div class="row">
   <div class="small-12 column">
     <h1>搜尋：<?=$data['searchName']?></h1>
