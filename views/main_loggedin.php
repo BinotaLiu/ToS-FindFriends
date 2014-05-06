@@ -8,7 +8,7 @@ if(!defined('IN_MOUGE'))
         <div class="clear"></div>
         <div class="row">
           <div class="small-3 medium-2 column">
-            <a href="mycard.php"><img style="width=100%;height=auto;" src="cards/<?=(file_exists("cards/{$data['card']['card_id']}.png")) ? $data['card']['card_id'] : "0"?>.png"></a>
+            <a href="mycard.php"><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("cards/{$data['card']['card_id']}.png")) ? $data['card']['card_id'] : "0"?>.png"></a>
           </div>
           <div class="small-9 medium-10 column">
             <h3>目前代表：<?=$data['card']['name']?></h3>
