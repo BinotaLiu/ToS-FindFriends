@@ -68,5 +68,8 @@ if($loginStatus){
 }else
   include 'views/main_nologin.php';
 
+$data['topic'] = $db->fetch('official_topic', array('tid', 'time', 'title', 'content'));
+include 'views/main_official-topic.php';
+
 include 'views/footer.php';
 

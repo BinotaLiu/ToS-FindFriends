@@ -50,6 +50,11 @@ if(!defined('IN_MOUGE'))
         size: .6em;
         margin-bottom: .6em;
       }
+      #topic i{
+        color: #999;
+        size: .3em;
+        margin-left: 1em;
+      }
     </style>
   </head>
   <body>

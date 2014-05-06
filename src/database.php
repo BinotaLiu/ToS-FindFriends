@@ -65,9 +65,15 @@ Class Database
         }   
     }
 
-    public static function fetch($table, $select = "*", $start = 0, $num = 0)
+    public static function fetch($table, $selects = array('*'), $start = 0, $num = 0)
     {
-        $queryString = "SELECT {$select} FROM {$table}";
+        $mySelects = "";
+        foreach ($selects as $value) {
+            $mySelects .= "{$value},";
+        }
+        $mySelects = substr($mySelects, 0, -1);
+
+        $queryString = "SELECT {$mySelects} FROM {$table}";
         if($start && $num)
             $queryString .= " LIMIT {$start}, {$num}";
         $result = @mysql_query($queryString);
