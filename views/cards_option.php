@@ -4,569 +4,1693 @@ if(!defined('IN_MOUGE'))
 
 function showCardList($id)
 {
-?>
-<option value="1" <?php if($id=="1"){ ?>selected="selected"<?php }?>>No.1 - 莫莉 （2星）</option>
-<option value="2" <?php if($id=="2"){ ?>selected="selected"<?php }?>>No.2 - 高級水術士莫莉 （3星）</option>
-<option value="3" <?php if($id=="3"){ ?>selected="selected"<?php }?>>No.3 - 水魔法師莫莉 （4星）</option>
-<option value="4" <?php if($id=="4"){ ?>selected="selected"<?php }?>>No.4 - 水元素賢者莫莉 （5星）</option>
-<option value="5" <?php if($id=="5"){ ?>selected="selected"<?php }?>>No.5 - 肖恩 （2星）</option>
-<option value="6" <?php if($id=="6"){ ?>selected="selected"<?php }?>>No.6 - 高級劍士肖恩 （3星）</option>
-<option value="7" <?php if($id=="7"){ ?>selected="selected"<?php }?>>No.7 - 火焰劍士肖恩 （4星）</option>
-<option value="8" <?php if($id=="8"){ ?>selected="selected"<?php }?>>No.8 - 紅蓮劍士肖恩 （5星）</option>
-<option value="9" <?php if($id=="9"){ ?>selected="selected"<?php }?>>No.9 - 鄧肯 （2星）</option>
-<option value="10" <?php if($id=="10"){ ?>selected="selected"<?php }?>>No.10 - 牧者鄧肯 （3星）</option>
-<option value="11" <?php if($id=="11"){ ?>selected="selected"<?php }?>>No.11 - 德魯依鄧肯 （4星）</option>
-<option value="12" <?php if($id=="12"){ ?>selected="selected"<?php }?>>No.12 - 森林王者鄧肯 （5星）</option>
-<option value="13" <?php if($id=="13"){ ?>selected="selected"<?php }?>>No.13 - 男爵奈寶尼 （2星）</option>
-<option value="14" <?php if($id=="14"){ ?>selected="selected"<?php }?>>No.14 - 子爵奈寶尼 （3星）</option>
-<option value="15" <?php if($id=="15"){ ?>selected="selected"<?php }?>>No.15 - 伯爵奈寶尼 （4星）</option>
-<option value="16" <?php if($id=="16"){ ?>selected="selected"<?php }?>>No.16 - 侯爵奈寶尼 （5星）</option>
-<option value="17" <?php if($id=="17"){ ?>selected="selected"<?php }?>>No.17 - 暗修導士安多 （2星）</option>
-<option value="18" <?php if($id=="18"){ ?>selected="selected"<?php }?>>No.18 - 高級暗修導士安多 （3星）</option>
-<option value="19" <?php if($id=="19"){ ?>selected="selected"<?php }?>>No.19 - 死靈術士安多 （4星）</option>
-<option value="20" <?php if($id=="20"){ ?>selected="selected"<?php }?>>No.20 - 死靈祭師安多 （5星）</option>
-<option value="21" <?php if($id=="21"){ ?>selected="selected"<?php }?>>No.21 - 水方士 （2星）</option>
-<option value="22" <?php if($id=="22"){ ?>selected="selected"<?php }?>>No.22 - 清川真人 （3星）</option>
-<option value="23" <?php if($id=="23"){ ?>selected="selected"<?php }?>>No.23 - 靈江仙人 （4星）</option>
-<option value="24" <?php if($id=="24"){ ?>selected="selected"<?php }?>>No.24 - 青龍孟章神君 （5星）</option>
-<option value="25" <?php if($id=="25"){ ?>selected="selected"<?php }?>>No.25 - 火方士 （2星）</option>
-<option value="26" <?php if($id=="26"){ ?>selected="selected"<?php }?>>No.26 - 赤灶真人 （3星）</option>
-<option value="27" <?php if($id=="27"){ ?>selected="selected"<?php }?>>No.27 - 真火仙人 （4星）</option>
-<option value="28" <?php if($id=="28"){ ?>selected="selected"<?php }?>>No.28 - 朱雀陵光神君 （5星）</option>
-<option value="29" <?php if($id=="29"){ ?>selected="selected"<?php }?>>No.29 - 木方士 （2星）</option>
-<option value="30" <?php if($id=="30"){ ?>selected="selected"<?php }?>>No.30 - 九地真人 （3星）</option>
-<option value="31" <?php if($id=="31"){ ?>selected="selected"<?php }?>>No.31 - 虛土仙人 （4星）</option>
-<option value="32" <?php if($id=="32"){ ?>selected="selected"<?php }?>>No.32 - 玄武執明神君 （5星）</option>
-<option value="33" <?php if($id=="33"){ ?>selected="selected"<?php }?>>No.33 - 陽方士 （2星）</option>
-<option value="34" <?php if($id=="34"){ ?>selected="selected"<?php }?>>No.34 - 聖明真人 （3星）</option>
-<option value="35" <?php if($id=="35"){ ?>selected="selected"<?php }?>>No.35 - 耀尊仙人 （4星）</option>
-<option value="36" <?php if($id=="36"){ ?>selected="selected"<?php }?>>No.36 - 白虎監兵神君 （5星）</option>
-<option value="37" <?php if($id=="37"){ ?>selected="selected"<?php }?>>No.37 - 陰方士 （2星）</option>
-<option value="38" <?php if($id=="38"){ ?>selected="selected"<?php }?>>No.38 - 幽陵真人 （3星）</option>
-<option value="39" <?php if($id=="39"){ ?>selected="selected"<?php }?>>No.39 - 紫微妖仙 （4星）</option>
-<option value="40" <?php if($id=="40"){ ?>selected="selected"<?php }?>>No.40 - 饕餮渾沌魔君 （5星）</option>
-<option value="41" <?php if($id=="41"){ ?>selected="selected"<?php }?>>No.41 - 冰花龍 （3星）</option>
-<option value="42" <?php if($id=="42"){ ?>selected="selected"<?php }?>>No.42 - 冰晶龍 （4星）</option>
-<option value="43" <?php if($id=="43"){ ?>selected="selected"<?php }?>>No.43 - 冰晶龍王 （5星）</option>
-<option value="44" <?php if($id=="44"){ ?>selected="selected"<?php }?>>No.44 - 洋燭龍 （3星）</option>
-<option value="45" <?php if($id=="45"){ ?>selected="selected"<?php }?>>No.45 - 星火龍 （4星）</option>
-<option value="46" <?php if($id=="46"){ ?>selected="selected"<?php }?>>No.46 - 硝鐵火龍 （5星）</option>
-<option value="47" <?php if($id=="47"){ ?>selected="selected"<?php }?>>No.47 - 碧甲龍 （3星）</option>
-<option value="48" <?php if($id=="48"){ ?>selected="selected"<?php }?>>No.48 - 碧甲巖龍 （4星）</option>
-<option value="49" <?php if($id=="49"){ ?>selected="selected"<?php }?>>No.49 - 靈山龍龜 （5星）</option>
-<option value="50" <?php if($id=="50"){ ?>selected="selected"<?php }?>>No.50 - 光輝龍 （3星）</option>
-<option value="51" <?php if($id=="51"){ ?>selected="selected"<?php }?>>No.51 - 閃耀龍 （4星）</option>
-<option value="52" <?php if($id=="52"){ ?>selected="selected"<?php }?>>No.52 - 聖衡機龍 （5星）</option>
-<option value="53" <?php if($id=="53"){ ?>selected="selected"<?php }?>>No.53 - 無頭龍 （3星）</option>
-<option value="54" <?php if($id=="54"){ ?>selected="selected"<?php }?>>No.54 - 斷頭龍 （4星）</option>
-<option value="55" <?php if($id=="55"){ ?>selected="selected"<?php }?>>No.55 - 魂索邪龍 （5星）</option>
-<option value="56" <?php if($id=="56"){ ?>selected="selected"<?php }?>>No.56 - 冰原地精 （2星）</option>
-<option value="57" <?php if($id=="57"){ ?>selected="selected"<?php }?>>No.57 - 淵寒大地精 （3星）</option>
-<option value="58" <?php if($id=="58"){ ?>selected="selected"<?php }?>>No.58 - 火山地精 （2星）</option>
-<option value="59" <?php if($id=="59"){ ?>selected="selected"<?php }?>>No.59 - 熾岩大地精 （3星）</option>
-<option value="60" <?php if($id=="60"){ ?>selected="selected"<?php }?>>No.60 - 森林地精 （2星）</option>
-<option value="61" <?php if($id=="61"){ ?>selected="selected"<?php }?>>No.61 - 碧石大地精 （3星）</option>
-<option value="62" <?php if($id=="62"){ ?>selected="selected"<?php }?>>No.62 - 光明地精 （2星）</option>
-<option value="63" <?php if($id=="63"){ ?>selected="selected"<?php }?>>No.63 - 輝芒大地精 （3星）</option>
-<option value="64" <?php if($id=="64"){ ?>selected="selected"<?php }?>>No.64 - 黑暗地精 （2星）</option>
-<option value="65" <?php if($id=="65"){ ?>selected="selected"<?php }?>>No.65 - 冥土大地精 （3星）</option>
-<option value="66" <?php if($id=="66"){ ?>selected="selected"<?php }?>>No.66 - 海精靈 （2星）</option>
-<option value="67" <?php if($id=="67"){ ?>selected="selected"<?php }?>>No.67 - 海躍精靈 （3星）</option>
-<option value="68" <?php if($id=="68"){ ?>selected="selected"<?php }?>>No.68 - 火精靈 （2星）</option>
-<option value="69" <?php if($id=="69"){ ?>selected="selected"<?php }?>>No.69 - 火舞精靈 （3星）</option>
-<option value="70" <?php if($id=="70"){ ?>selected="selected"<?php }?>>No.70 - 花精靈 （2星）</option>
-<option value="71" <?php if($id=="71"){ ?>selected="selected"<?php }?>>No.71 - 花冠精靈 （3星）</option>
-<option value="72" <?php if($id=="72"){ ?>selected="selected"<?php }?>>No.72 - 月精靈 （2星）</option>
-<option value="73" <?php if($id=="73"){ ?>selected="selected"<?php }?>>No.73 - 月光精靈 （3星）</option>
-<option value="74" <?php if($id=="74"){ ?>selected="selected"<?php }?>>No.74 - 夜精靈 （2星）</option>
-<option value="75" <?php if($id=="75"){ ?>selected="selected"<?php }?>>No.75 - 夜迷精靈 （3星）</option>
-<option value="76" <?php if($id=="76"){ ?>selected="selected"<?php }?>>No.76 - 冰蜥蝪戰士 （2星）</option>
-<option value="77" <?php if($id=="77"){ ?>selected="selected"<?php }?>>No.77 - 冰河蜥蝪戰士 （3星）</option>
-<option value="78" <?php if($id=="78"){ ?>selected="selected"<?php }?>>No.78 - 赤蜥蝪戰士 （2星）</option>
-<option value="79" <?php if($id=="79"){ ?>selected="selected"<?php }?>>No.79 - 赤焰蜥蝪戰士 （3星）</option>
-<option value="80" <?php if($id=="80"){ ?>selected="selected"<?php }?>>No.80 - 翠蜥蝪戰士 （2星）</option>
-<option value="81" <?php if($id=="81"){ ?>selected="selected"<?php }?>>No.81 - 森林蜥蝪戰士 （3星）</option>
-<option value="82" <?php if($id=="82"){ ?>selected="selected"<?php }?>>No.82 - 光蜥蝪戰士 （2星）</option>
-<option value="83" <?php if($id=="83"){ ?>selected="selected"<?php }?>>No.83 - 金光蜥蝪戰士 （3星）</option>
-<option value="84" <?php if($id=="84"){ ?>selected="selected"<?php }?>>No.84 - 暗蜥蝪戰士 （2星）</option>
-<option value="85" <?php if($id=="85"){ ?>selected="selected"<?php }?>>No.85 - 漆黑蜥蝪戰士 （3星）</option>
-<option value="86" <?php if($id=="86"){ ?>selected="selected"<?php }?>>No.86 - 小魔女愛莉絲 （2星）</option>
-<option value="87" <?php if($id=="87"){ ?>selected="selected"<?php }?>>No.87 - 占星士愛莉絲 （3星）</option>
-<option value="88" <?php if($id=="88"){ ?>selected="selected"<?php }?>>No.88 - 小魔女瑪莉曼 （2星）</option>
-<option value="89" <?php if($id=="89"){ ?>selected="selected"<?php }?>>No.89 - 火巫女瑪莉曼 （3星）</option>
-<option value="90" <?php if($id=="90"){ ?>selected="selected"<?php }?>>No.90 - 小魔女凱莉絲 （2星）</option>
-<option value="91" <?php if($id=="91"){ ?>selected="selected"<?php }?>>No.91 - 修道者凱莉絲 （3星）</option>
-<option value="92" <?php if($id=="92"){ ?>selected="selected"<?php }?>>No.92 - 小魔女安迪莉亞 （2星）</option>
-<option value="93" <?php if($id=="93"){ ?>selected="selected"<?php }?>>No.93 - 傳教士安迪莉亞 （3星）</option>
-<option value="94" <?php if($id=="94"){ ?>selected="selected"<?php }?>>No.94 - 小魔女莉莉絲 （2星）</option>
-<option value="95" <?php if($id=="95"){ ?>selected="selected"<?php }?>>No.95 - 鍊金士莉莉絲 （3星）</option>
-<option value="96" <?php if($id=="96"){ ?>selected="selected"<?php }?>>No.96 - 水史萊姆 （1星）</option>
-<option value="97" <?php if($id=="97"){ ?>selected="selected"<?php }?>>No.97 - 液態史萊姆 （2星）</option>
-<option value="98" <?php if($id=="98"){ ?>selected="selected"<?php }?>>No.98 - 火史萊姆 （1星）</option>
-<option value="99" <?php if($id=="99"){ ?>selected="selected"<?php }?>>No.99 - 燃燒史萊姆 （2星）</option>
-<option value="100" <?php if($id=="100"){ ?>selected="selected"<?php }?>>No.100 - 木史萊姆 （1星）</option>
-<option value="101" <?php if($id=="101"){ ?>selected="selected"<?php }?>>No.101 - 翠綠史萊姆 （2星）</option>
-<option value="102" <?php if($id=="102"){ ?>selected="selected"<?php }?>>No.102 - 光史萊姆 （1星）</option>
-<option value="103" <?php if($id=="103"){ ?>selected="selected"<?php }?>>No.103 - 天使史萊姆 （2星）</option>
-<option value="104" <?php if($id=="104"){ ?>selected="selected"<?php }?>>No.104 - 暗史萊姆 （1星）</option>
-<option value="105" <?php if($id=="105"){ ?>selected="selected"<?php }?>>No.105 - 幽靈史萊姆 （2星）</option>
-<option value="106" <?php if($id=="106"){ ?>selected="selected"<?php }?>>No.106 - 蒼幽狼 （2星）</option>
-<option value="107" <?php if($id=="107"){ ?>selected="selected"<?php }?>>No.107 - 蒼幽狼人 （3星）</option>
-<option value="108" <?php if($id=="108"){ ?>selected="selected"<?php }?>>No.108 - 赤幽狼 （2星）</option>
-<option value="109" <?php if($id=="109"){ ?>selected="selected"<?php }?>>No.109 - 赤幽狼人 （3星）</option>
-<option value="110" <?php if($id=="110"){ ?>selected="selected"<?php }?>>No.110 - 青幽狼 （2星）</option>
-<option value="111" <?php if($id=="111"){ ?>selected="selected"<?php }?>>No.111 - 青幽狼人 （3星）</option>
-<option value="112" <?php if($id=="112"){ ?>selected="selected"<?php }?>>No.112 - 白幽狼 （2星）</option>
-<option value="113" <?php if($id=="113"){ ?>selected="selected"<?php }?>>No.113 - 白幽狼人 （3星）</option>
-<option value="114" <?php if($id=="114"){ ?>selected="selected"<?php }?>>No.114 - 黑幽狼 （2星）</option>
-<option value="115" <?php if($id=="115"){ ?>selected="selected"<?php }?>>No.115 - 黑幽狼人 （3星）</option>
-<option value="116" <?php if($id=="116"){ ?>selected="selected"<?php }?>>No.116 - 烏爾德 （3星）</option>
-<option value="117" <?php if($id=="117"){ ?>selected="selected"<?php }?>>No.117 - 過去之烏爾德 （4星）</option>
-<option value="118" <?php if($id=="118"){ ?>selected="selected"<?php }?>>No.118 - 歷史之烏爾德 （5星）</option>
-<option value="119" <?php if($id=="119"){ ?>selected="selected"<?php }?>>No.119 - 斯庫爾德 （3星）</option>
-<option value="120" <?php if($id=="120"){ ?>selected="selected"<?php }?>>No.120 - 未來之斯庫爾德 （4星）</option>
-<option value="121" <?php if($id=="121"){ ?>selected="selected"<?php }?>>No.121 - 無常之斯庫爾德 （5星）</option>
-<option value="122" <?php if($id=="122"){ ?>selected="selected"<?php }?>>No.122 - 薇兒丹蒂 （3星）</option>
-<option value="123" <?php if($id=="123"){ ?>selected="selected"<?php }?>>No.123 - 現在之薇兒丹蒂 （4星）</option>
-<option value="124" <?php if($id=="124"){ ?>selected="selected"<?php }?>>No.124 - 命運之薇兒丹蒂 （5星）</option>
-<option value="125" <?php if($id=="125"){ ?>selected="selected"<?php }?>>No.125 - 伊登 （3星）</option>
-<option value="126" <?php if($id=="126"){ ?>selected="selected"<?php }?>>No.126 - 聖果之伊登 （4星）</option>
-<option value="127" <?php if($id=="127"){ ?>selected="selected"<?php }?>>No.127 - 永生之伊登 （5星）</option>
-<option value="128" <?php if($id=="128"){ ?>selected="selected"<?php }?>>No.128 - 英靈殿侍女 （3星）</option>
-<option value="129" <?php if($id=="129"){ ?>selected="selected"<?php }?>>No.129 - 戰魂之瓦爾基麗 （4星）</option>
-<option value="130" <?php if($id=="130"){ ?>selected="selected"<?php }?>>No.130 - 催魂之瓦爾基麗 （5星）</option>
-<option value="131" <?php if($id=="131"){ ?>selected="selected"<?php }?>>No.131 - 水遊俠 （3星）</option>
-<option value="132" <?php if($id=="132"){ ?>selected="selected"<?php }?>>No.132 - 水舞劍士 （4星）</option>
-<option value="133" <?php if($id=="133"){ ?>selected="selected"<?php }?>>No.133 - 水舞劍神 （5星）</option>
-<option value="134" <?php if($id=="134"){ ?>selected="selected"<?php }?>>No.134 - 火遊俠 （3星）</option>
-<option value="135" <?php if($id=="135"){ ?>selected="selected"<?php }?>>No.135 - 火焰戰士 （4星）</option>
-<option value="136" <?php if($id=="136"){ ?>selected="selected"<?php }?>>No.136 - 炎舞軍神 （5星）</option>
-<option value="137" <?php if($id=="137"){ ?>selected="selected"<?php }?>>No.137 - 木遊俠 （3星）</option>
-<option value="138" <?php if($id=="138"){ ?>selected="selected"<?php }?>>No.138 - 翠綠狙擊手 （4星）</option>
-<option value="139" <?php if($id=="139"){ ?>selected="selected"<?php }?>>No.139 - 疾風神射手 （5星）</option>
-<option value="140" <?php if($id=="140"){ ?>selected="selected"<?php }?>>No.140 - 光遊俠 （3星）</option>
-<option value="141" <?php if($id=="141"){ ?>selected="selected"<?php }?>>No.141 - 聖光遊俠 （4星）</option>
-<option value="142" <?php if($id=="142"){ ?>selected="selected"<?php }?>>No.142 - 萬劍遊俠 （5星）</option>
-<option value="143" <?php if($id=="143"){ ?>selected="selected"<?php }?>>No.143 - 暗遊俠 （3星）</option>
-<option value="144" <?php if($id=="144"){ ?>selected="selected"<?php }?>>No.144 - 暗夜刺客 （4星）</option>
-<option value="145" <?php if($id=="145"){ ?>selected="selected"<?php }?>>No.145 - 暗影劍豪 （5星）</option>
-<option value="146" <?php if($id=="146"){ ?>selected="selected"<?php }?>>No.146 - 冰耀巨像 （3星）</option>
-<option value="147" <?php if($id=="147"){ ?>selected="selected"<?php }?>>No.147 - 冰耀巨像‧解放 （4星）</option>
-<option value="148" <?php if($id=="148"){ ?>selected="selected"<?php }?>>No.148 - 冰耀巨鱷 （5星）</option>
-<option value="149" <?php if($id=="149"){ ?>selected="selected"<?php }?>>No.149 - 烙紅巨像 （3星）</option>
-<option value="150" <?php if($id=="150"){ ?>selected="selected"<?php }?>>No.150 - 烙紅巨像‧解放 （4星）</option>
-<option value="151" <?php if($id=="151"){ ?>selected="selected"<?php }?>>No.151 - 烙紅龍蜥 （5星）</option>
-<option value="152" <?php if($id=="152"){ ?>selected="selected"<?php }?>>No.152 - 碧青巨像 （3星）</option>
-<option value="153" <?php if($id=="153"){ ?>selected="selected"<?php }?>>No.153 - 碧青巨像‧解放 （4星）</option>
-<option value="154" <?php if($id=="154"){ ?>selected="selected"<?php }?>>No.154 - 碧青行者 （5星）</option>
-<option value="155" <?php if($id=="155"){ ?>selected="selected"<?php }?>>No.155 - 聖靈巨像 （3星）</option>
-<option value="156" <?php if($id=="156"){ ?>selected="selected"<?php }?>>No.156 - 聖靈巨像‧解放 （4星）</option>
-<option value="157" <?php if($id=="157"){ ?>selected="selected"<?php }?>>No.157 - 聖靈怒獅 （5星）</option>
-<option value="158" <?php if($id=="158"){ ?>selected="selected"<?php }?>>No.158 - 暗月巨像 （3星）</option>
-<option value="159" <?php if($id=="159"){ ?>selected="selected"<?php }?>>No.159 - 暗月巨像‧解放 （4星）</option>
-<option value="160" <?php if($id=="160"){ ?>selected="selected"<?php }?>>No.160 - 暗月夜龍 （5星）</option>
-<option value="161" <?php if($id=="161"){ ?>selected="selected"<?php }?>>No.161 - 機械鯨鯊 （2星）</option>
-<option value="162" <?php if($id=="162"){ ?>selected="selected"<?php }?>>No.162 - 強化機械鯨鯊 （3星）</option>
-<option value="163" <?php if($id=="163"){ ?>selected="selected"<?php }?>>No.163 - 變異機械鯨鯊 （4星）</option>
-<option value="164" <?php if($id=="164"){ ?>selected="selected"<?php }?>>No.164 - 機械獅子 （2星）</option>
-<option value="165" <?php if($id=="165"){ ?>selected="selected"<?php }?>>No.165 - 強化機械獅子 （3星）</option>
-<option value="166" <?php if($id=="166"){ ?>selected="selected"<?php }?>>No.166 - 狂暴機械獅子 （4星）</option>
-<option value="167" <?php if($id=="167"){ ?>selected="selected"<?php }?>>No.167 - 機械犀牛 （2星）</option>
-<option value="168" <?php if($id=="168"){ ?>selected="selected"<?php }?>>No.168 - 強化機械犀牛 （3星）</option>
-<option value="169" <?php if($id=="169"){ ?>selected="selected"<?php }?>>No.169 - 野蠻機械犀牛 （4星）</option>
-<option value="170" <?php if($id=="170"){ ?>selected="selected"<?php }?>>No.170 - 機械狼 （2星）</option>
-<option value="171" <?php if($id=="171"){ ?>selected="selected"<?php }?>>No.171 - 強化機械狼 （3星）</option>
-<option value="172" <?php if($id=="172"){ ?>selected="selected"<?php }?>>No.172 - 重甲機械狼 （4星）</option>
-<option value="173" <?php if($id=="173"){ ?>selected="selected"<?php }?>>No.173 - 機械豹 （2星）</option>
-<option value="174" <?php if($id=="174"){ ?>selected="selected"<?php }?>>No.174 - 強化機械豹 （3星）</option>
-<option value="175" <?php if($id=="175"){ ?>selected="selected"<?php }?>>No.175 - 掠奪機械豹 （4星）</option>
-<option value="176" <?php if($id=="176"){ ?>selected="selected"<?php }?>>No.176 - 海獸 （3星）</option>
-<option value="177" <?php if($id=="177"){ ?>selected="selected"<?php }?>>No.177 - 克蘇魯 （4星）</option>
-<option value="178" <?php if($id=="178"){ ?>selected="selected"<?php }?>>No.178 - 邪神克蘇魯 （5星）</option>
-<option value="179" <?php if($id=="179"){ ?>selected="selected"<?php }?>>No.179 - 地獄三頭犬 （3星）</option>
-<option value="180" <?php if($id=="180"){ ?>selected="selected"<?php }?>>No.180 - 基路比魯斯 （4星）</option>
-<option value="181" <?php if($id=="181"){ ?>selected="selected"<?php }?>>No.181 - 冥府兇獸基路比魯斯 （5星）</option>
-<option value="182" <?php if($id=="182"){ ?>selected="selected"<?php }?>>No.182 - 蛇妖 （3星）</option>
-<option value="183" <?php if($id=="183"){ ?>selected="selected"<?php }?>>No.183 - 美杜莎 （4星）</option>
-<option value="184" <?php if($id=="184"){ ?>selected="selected"<?php }?>>No.184 - 妖女美杜莎 （5星）</option>
-<option value="185" <?php if($id=="185"){ ?>selected="selected"<?php }?>>No.185 - 鷹頭獸 （3星）</option>
-<option value="186" <?php if($id=="186"){ ?>selected="selected"<?php }?>>No.186 - 獅鷲 （4星）</option>
-<option value="187" <?php if($id=="187"){ ?>selected="selected"<?php }?>>No.187 - 獅鷲獸王 （5星）</option>
-<option value="188" <?php if($id=="188"){ ?>selected="selected"<?php }?>>No.188 - 魔羊 （3星）</option>
-<option value="189" <?php if($id=="189"){ ?>selected="selected"<?php }?>>No.189 - 魔羊怪 （4星）</option>
-<option value="190" <?php if($id=="190"){ ?>selected="selected"<?php }?>>No.190 - 惡魔巴風特 （5星）</option>
-<option value="191" <?php if($id=="191"){ ?>selected="selected"<?php }?>>No.191 - 波塞頓 （5星）</option>
-<option value="192" <?php if($id=="192"){ ?>selected="selected"<?php }?>>No.192 - 海神波塞頓 （6星）</option>
-<option value="193" <?php if($id=="193"){ ?>selected="selected"<?php }?>>No.193 - 赫淮斯托斯 （5星）</option>
-<option value="194" <?php if($id=="194"){ ?>selected="selected"<?php }?>>No.194 - 奧林火神赫淮斯托斯 （6星）</option>
-<option value="195" <?php if($id=="195"){ ?>selected="selected"<?php }?>>No.195 - 雅典娜 （5星）</option>
-<option value="196" <?php if($id=="196"){ ?>selected="selected"<?php }?>>No.196 - 智慧女神雅典娜 （6星）</option>
-<option value="197" <?php if($id=="197"){ ?>selected="selected"<?php }?>>No.197 - 阿波羅 （5星）</option>
-<option value="198" <?php if($id=="198"){ ?>selected="selected"<?php }?>>No.198 - 光明之神阿波羅 （6星）</option>
-<option value="199" <?php if($id=="199"){ ?>selected="selected"<?php }?>>No.199 - 阿提密斯 （5星）</option>
-<option value="200" <?php if($id=="200"){ ?>selected="selected"<?php }?>>No.200 - 月之狩獵女神阿提密斯 （6星）</option>
-<option value="201" <?php if($id=="201"){ ?>selected="selected"<?php }?>>No.201 - 費雷 （5星）</option>
-<option value="202" <?php if($id=="202"){ ?>selected="selected"<?php }?>>No.202 - 勝利海神費雷 （6星）</option>
-<option value="203" <?php if($id=="203"){ ?>selected="selected"<?php }?>>No.203 - 提爾 （5星）</option>
-<option value="204" <?php if($id=="204"){ ?>selected="selected"<?php }?>>No.204 - 獨臂戰神提爾 （6星）</option>
-<option value="205" <?php if($id=="205"){ ?>selected="selected"<?php }?>>No.205 - 費蕾雅 （5星）</option>
-<option value="206" <?php if($id=="206"){ ?>selected="selected"<?php }?>>No.206 - 妙曼愛神費蕾雅 （6星）</option>
-<option value="207" <?php if($id=="207"){ ?>selected="selected"<?php }?>>No.207 - 索爾 （5星）</option>
-<option value="208" <?php if($id=="208"){ ?>selected="selected"<?php }?>>No.208 - 轟天雷神索爾 （6星）</option>
-<option value="209" <?php if($id=="209"){ ?>selected="selected"<?php }?>>No.209 - 洛基 （5星）</option>
-<option value="210" <?php if($id=="210"){ ?>selected="selected"<?php }?>>No.210 - 黃昏號角洛基 （6星）</option>
-<option value="211" <?php if($id=="211"){ ?>selected="selected"<?php }?>>No.211 - 泰芙努特 （5星）</option>
-<option value="212" <?php if($id=="212"){ ?>selected="selected"<?php }?>>No.212 - 雨神泰芙努特 （6星）</option>
-<option value="213" <?php if($id=="213"){ ?>selected="selected"<?php }?>>No.213 - 賽特 （5星）</option>
-<option value="214" <?php if($id=="214"){ ?>selected="selected"<?php }?>>No.214 - 戰爭之神賽特 （6星）</option>
-<option value="215" <?php if($id=="215"){ ?>selected="selected"<?php }?>>No.215 - 舒 （5星）</option>
-<option value="216" <?php if($id=="216"){ ?>selected="selected"<?php }?>>No.216 - 天空之神‧舒 （6星）</option>
-<option value="217" <?php if($id=="217"){ ?>selected="selected"<?php }?>>No.217 - 拉 （5星）</option>
-<option value="218" <?php if($id=="218"){ ?>selected="selected"<?php }?>>No.218 - 太陽之子拉 （6星）</option>
-<option value="219" <?php if($id=="219"){ ?>selected="selected"<?php }?>>No.219 - 奧西利斯 （5星）</option>
-<option value="220" <?php if($id=="220"){ ?>selected="selected"<?php }?>>No.220 - 不死冥王奧西利斯 （6星）</option>
-<option value="221" <?php if($id=="221"){ ?>selected="selected"<?php }?>>No.221 - 海龍 （5星）</option>
-<option value="222" <?php if($id=="222"){ ?>selected="selected"<?php }?>>No.222 - 東海龍王‧敖廣 （6星）</option>
-<option value="223" <?php if($id=="223"){ ?>selected="selected"<?php }?>>No.223 - 蓮藕仔 （5星）</option>
-<option value="224" <?php if($id=="224"){ ?>selected="selected"<?php }?>>No.224 - 三太子‧哪吒 （6星）</option>
-<option value="225" <?php if($id=="225"){ ?>selected="selected"<?php }?>>No.225 - 大力王 （5星）</option>
-<option value="226" <?php if($id=="226"){ ?>selected="selected"<?php }?>>No.226 - 平天大聖‧牛魔王 （6星）</option>
-<option value="227" <?php if($id=="227"){ ?>selected="selected"<?php }?>>No.227 - 美猴王 （5星）</option>
-<option value="228" <?php if($id=="228"){ ?>selected="selected"<?php }?>>No.228 - 齊天大聖‧孫悟空 （6星）</option>
-<option value="229" <?php if($id=="229"){ ?>selected="selected"<?php }?>>No.229 - 妖狐 （5星）</option>
-<option value="230" <?php if($id=="230"){ ?>selected="selected"<?php }?>>No.230 - 白臉金毛‧妲己 （6星）</option>
-<option value="231" <?php if($id=="231"){ ?>selected="selected"<?php }?>>No.231 - 機械水龍 （5星）</option>
-<option value="232" <?php if($id=="232"){ ?>selected="selected"<?php }?>>No.232 - 機械水神龍‧內拉羅斯 （6星）</option>
-<option value="233" <?php if($id=="233"){ ?>selected="selected"<?php }?>>No.233 - 機械火龍 （5星）</option>
-<option value="234" <?php if($id=="234"){ ?>selected="selected"<?php }?>>No.234 - 機械火神龍‧伊索爾德 （6星）</option>
-<option value="235" <?php if($id=="235"){ ?>selected="selected"<?php }?>>No.235 - 機械地龍 （5星）</option>
-<option value="236" <?php if($id=="236"){ ?>selected="selected"<?php }?>>No.236 - 機械地神龍‧卡斯迪 （6星）</option>
-<option value="237" <?php if($id=="237"){ ?>selected="selected"<?php }?>>No.237 - 機械聖龍 （5星）</option>
-<option value="238" <?php if($id=="238"){ ?>selected="selected"<?php }?>>No.238 - 機械聖皇龍‧泰瑞那斯 （6星）</option>
-<option value="239" <?php if($id=="239"){ ?>selected="selected"<?php }?>>No.239 - 機械闍龍 （5星）</option>
-<option value="240" <?php if($id=="240"){ ?>selected="selected"<?php }?>>No.240 - 機械冥王龍‧萊瑞姆 （6星）</option>
-<option value="241" <?php if($id=="241"){ ?>selected="selected"<?php }?>>No.241 - 破碎之蒼魂 （1星）</option>
-<option value="242" <?php if($id=="242"){ ?>selected="selected"<?php }?>>No.242 - 破碎之赤魂 （1星）</option>
-<option value="243" <?php if($id=="243"){ ?>selected="selected"<?php }?>>No.243 - 破碎之青魂 （1星）</option>
-<option value="244" <?php if($id=="244"){ ?>selected="selected"<?php }?>>No.244 - 破碎之白魂 （1星）</option>
-<option value="245" <?php if($id=="245"){ ?>selected="selected"<?php }?>>No.245 - 破碎之黑魂 （1星）</option>
-<option value="246" <?php if($id=="246"){ ?>selected="selected"<?php }?>>No.246 - 重生之蒼魂 （2星）</option>
-<option value="247" <?php if($id=="247"){ ?>selected="selected"<?php }?>>No.247 - 重生之赤魂 （2星）</option>
-<option value="248" <?php if($id=="248"){ ?>selected="selected"<?php }?>>No.248 - 重生之青魂 （2星）</option>
-<option value="249" <?php if($id=="249"){ ?>selected="selected"<?php }?>>No.249 - 重生之白魂 （2星）</option>
-<option value="250" <?php if($id=="250"){ ?>selected="selected"<?php }?>>No.250 - 重生之黑魂 （2星）</option>
-<option value="251" <?php if($id=="251"){ ?>selected="selected"<?php }?>>No.251 - 共生之蒼魂 （3星）</option>
-<option value="252" <?php if($id=="252"){ ?>selected="selected"<?php }?>>No.252 - 共生之赤魂 （3星）</option>
-<option value="253" <?php if($id=="253"){ ?>selected="selected"<?php }?>>No.253 - 共生之青魂 （3星）</option>
-<option value="254" <?php if($id=="254"){ ?>selected="selected"<?php }?>>No.254 - 共生之白魂 （3星）</option>
-<option value="255" <?php if($id=="255"){ ?>selected="selected"<?php }?>>No.255 - 共生之黑魂 （3星）</option>
-<option value="256" <?php if($id=="256"){ ?>selected="selected"<?php }?>>No.256 - 永恆之蒼魂 （4星）</option>
-<option value="257" <?php if($id=="257"){ ?>selected="selected"<?php }?>>No.257 - 永恆之赤魂 （4星）</option>
-<option value="258" <?php if($id=="258"){ ?>selected="selected"<?php }?>>No.258 - 永恆之青魂 （4星）</option>
-<option value="259" <?php if($id=="259"){ ?>selected="selected"<?php }?>>No.259 - 永恆之白魂 （4星）</option>
-<option value="260" <?php if($id=="260"){ ?>selected="selected"<?php }?>>No.260 - 永恆之黑魂 （4星）</option>
-<option value="261" <?php if($id=="261"){ ?>selected="selected"<?php }?>>No.261 - 水晶龍蛋 （1星）</option>
-<option value="262" <?php if($id=="262"){ ?>selected="selected"<?php }?>>No.262 - 破殼水晶龍 （3星）</option>
-<option value="263" <?php if($id=="263"){ ?>selected="selected"<?php }?>>No.263 - 稀有水晶龍 （5星）</option>
-<option value="264" <?php if($id=="264"){ ?>selected="selected"<?php }?>>No.264 - 詛咒之劍 （1星）</option>
-<option value="265" <?php if($id=="265"){ ?>selected="selected"<?php }?>>No.265 - 殺戮之劍 （3星）</option>
-<option value="266" <?php if($id=="266"){ ?>selected="selected"<?php }?>>No.266 - 魔神之劍 （5星）</option>
-<option value="267" <?php if($id=="267"){ ?>selected="selected"<?php }?>>No.267 - 蜜涎獸 （1星）</option>
-<option value="268" <?php if($id=="268"){ ?>selected="selected"<?php }?>>No.268 - 蜜羽獸 （3星）</option>
-<option value="269" <?php if($id=="269"){ ?>selected="selected"<?php }?>>No.269 - 蜜月獸 （5星）</option>
-<option value="270" <?php if($id=="270"){ ?>selected="selected"<?php }?>>No.270 - 海洋小靈魂石 （1星）</option>
-<option value="271" <?php if($id=="271"){ ?>selected="selected"<?php }?>>No.271 - 火焰小靈魂石 （1星）</option>
-<option value="272" <?php if($id=="272"){ ?>selected="selected"<?php }?>>No.272 - 大地小靈魂石 （1星）</option>
-<option value="273" <?php if($id=="273"){ ?>selected="selected"<?php }?>>No.273 - 神聖小靈魂石 （1星）</option>
-<option value="274" <?php if($id=="274"){ ?>selected="selected"<?php }?>>No.274 - 鬼魅小靈魂石 （1星）</option>
-<option value="275" <?php if($id=="275"){ ?>selected="selected"<?php }?>>No.275 - 海洋靈魂石 （2星）</option>
-<option value="276" <?php if($id=="276"){ ?>selected="selected"<?php }?>>No.276 - 火焰靈魂石 （2星）</option>
-<option value="277" <?php if($id=="277"){ ?>selected="selected"<?php }?>>No.277 - 大地靈魂石 （2星）</option>
-<option value="278" <?php if($id=="278"){ ?>selected="selected"<?php }?>>No.278 - 神聖靈魂石 （2星）</option>
-<option value="279" <?php if($id=="279"){ ?>selected="selected"<?php }?>>No.279 - 鬼魅靈魂石 （2星）</option>
-<option value="280" <?php if($id=="280"){ ?>selected="selected"<?php }?>>No.280 - 海洋千年靈魂石 （3星）</option>
-<option value="281" <?php if($id=="281"){ ?>selected="selected"<?php }?>>No.281 - 火焰千年靈魂石 （3星）</option>
-<option value="282" <?php if($id=="282"){ ?>selected="selected"<?php }?>>No.282 - 大地千年靈魂石 （3星）</option>
-<option value="283" <?php if($id=="283"){ ?>selected="selected"<?php }?>>No.283 - 神聖千年靈魂石 （3星）</option>
-<option value="284" <?php if($id=="284"){ ?>selected="selected"<?php }?>>No.284 - 鬼魅千年靈魂石 （3星）</option>
-<option value="285" <?php if($id=="285"){ ?>selected="selected"<?php }?>>No.285 - 元素操縱者 - 迪亞布羅 （7星）</option>
-<option value="286" <?php if($id=="286"){ ?>selected="selected"<?php }?>>No.286 - 萬魔之王 - 薩魯曼 （7星）</option>
-<option value="287" <?php if($id=="287"){ ?>selected="selected"<?php }?>>No.287 - 碑紋騎士 - 奧丁 （7星）</option>
-<option value="288" <?php if($id=="288"){ ?>selected="selected"<?php }?>>No.288 - 雙體共生 - 噬日狼 （7星）</option>
-<option value="289" <?php if($id=="289"){ ?>selected="selected"<?php }?>>No.289 - 雙體共生 - 喰月狼 （7星）</option>
-<option value="290" <?php if($id=="290"){ ?>selected="selected"<?php }?>>No.290 - 雖死猶在 - 毒龍尼德霍格 （7星）</option>
-<option value="291" <?php if($id=="291"){ ?>selected="selected"<?php }?>>No.291 - 鬼魅萬年靈魂石 （6星）</option>
-<option value="292" <?php if($id=="292"){ ?>selected="selected"<?php }?>>No.292 - 人面怪鳥 （6星）</option>
-<option value="293" <?php if($id=="293"){ ?>selected="selected"<?php }?>>No.293 - 米迦勒‧路西法 （6星）</option>
-<option value="294" <?php if($id=="294"){ ?>selected="selected"<?php }?>>No.294 - 通透的蛋 （3星）</option>
-<option value="295" <?php if($id=="295"){ ?>selected="selected"<?php }?>>No.295 - 海拉 （4星）</option>
-<option value="296" <?php if($id=="296"){ ?>selected="selected"<?php }?>>No.296 - 幻夢魚仙‧伊德海拉 （5星）</option>
-<option value="297" <?php if($id=="297"){ ?>selected="selected"<?php }?>>No.297 - 火紅的蛋 （3星）</option>
-<option value="298" <?php if($id=="298"){ ?>selected="selected"<?php }?>>No.298 - 梅格 （4星）</option>
-<option value="299" <?php if($id=="299"){ ?>selected="selected"<?php }?>>No.299 - 龍裔‧梅格籣斯 （5星）</option>
-<option value="300" <?php if($id=="300"){ ?>selected="selected"<?php }?>>No.300 - 翠綠的蛋 （3星）</option>
-<option value="301" <?php if($id=="301"){ ?>selected="selected"<?php }?>>No.301 - 伊薇特 （4星）</option>
-<option value="302" <?php if($id=="302"){ ?>selected="selected"<?php }?>>No.302 - 蝶妖伊薇特 （5星）</option>
-<option value="303" <?php if($id=="303"){ ?>selected="selected"<?php }?>>No.303 - 閃亮的蛋 （3星）</option>
-<option value="304" <?php if($id=="304"){ ?>selected="selected"<?php }?>>No.304 - 瑪格 （4星）</option>
-<option value="305" <?php if($id=="305"){ ?>selected="selected"<?php }?>>No.305 - 聖蜂后‧瑪格莉特 （5星）</option>
-<option value="306" <?php if($id=="306"){ ?>selected="selected"<?php }?>>No.306 - 暗啞的蛋 （3星）</option>
-<option value="307" <?php if($id=="307"){ ?>selected="selected"<?php }?>>No.307 - 伊莎貝爾 （4星）</option>
-<option value="308" <?php if($id=="308"){ ?>selected="selected"<?php }?>>No.308 - 黑寡婦伊莎貝爾 （5星）</option>
-<option value="309" <?php if($id=="309"){ ?>selected="selected"<?php }?>>No.309 - 水之異界龍 （4星）</option>
-<option value="310" <?php if($id=="310"){ ?>selected="selected"<?php }?>>No.310 - 深潛者之父‧達貢 （5星）</option>
-<option value="311" <?php if($id=="311"){ ?>selected="selected"<?php }?>>No.311 - 火之異界龍 （4星）</option>
-<option value="312" <?php if($id=="312"){ ?>selected="selected"<?php }?>>No.312 - 火焰共生者‧克圖格亞 （5星）</option>
-<option value="313" <?php if($id=="313"){ ?>selected="selected"<?php }?>>No.313 - 風之異界龍 （4星）</option>
-<option value="314" <?php if($id=="314"){ ?>selected="selected"<?php }?>>No.314 - 不朽尖吼者‧拜亞基 （5星）</option>
-<option value="315" <?php if($id=="315"){ ?>selected="selected"<?php }?>>No.315 - 光之異界龍 （4星）</option>
-<option value="316" <?php if($id=="316"){ ?>selected="selected"<?php }?>>No.316 - 招蕩的輝芒‧圖爾茲查 （5星）</option>
-<option value="317" <?php if($id=="317"){ ?>selected="selected"<?php }?>>No.317 - 暗之異界龍 （4星）</option>
-<option value="318" <?php if($id=="318"){ ?>selected="selected"<?php }?>>No.318 - 群山中之恐怖‧法格恩 （5星）</option>
-<option value="319" <?php if($id=="319"){ ?>selected="selected"<?php }?>>No.319 - 破損的海神守護石像 （2星）</option>
-<option value="320" <?php if($id=="320"){ ?>selected="selected"<?php }?>>No.320 - 海神守護石像 （3星）</option>
-<option value="321" <?php if($id=="321"){ ?>selected="selected"<?php }?>>No.321 - 破損的火神守護石像 （2星）</option>
-<option value="322" <?php if($id=="322"){ ?>selected="selected"<?php }?>>No.322 - 火神守護石像 （3星）</option>
-<option value="323" <?php if($id=="323"){ ?>selected="selected"<?php }?>>No.323 - 破損的女戰神守護石像 （2星）</option>
-<option value="324" <?php if($id=="324"){ ?>selected="selected"<?php }?>>No.324 - 女戰神守護石像 （3星）</option>
-<option value="325" <?php if($id=="325"){ ?>selected="selected"<?php }?>>No.325 - 破損的太陽神守護石像 （2星）</option>
-<option value="326" <?php if($id=="326"){ ?>selected="selected"<?php }?>>No.326 - 太陽神守護石像 （3星）</option>
-<option value="327" <?php if($id=="327"){ ?>selected="selected"<?php }?>>No.327 - 破損的月神守護石像 （2星）</option>
-<option value="328" <?php if($id=="328"){ ?>selected="selected"<?php }?>>No.328 - 月神守護石像 （3星）</option>
-<option value="329" <?php if($id=="329"){ ?>selected="selected"<?php }?>>No.329 - 浪濤史萊姆 （4星）</option>
-<option value="330" <?php if($id=="330"){ ?>selected="selected"<?php }?>>No.330 - 烈炎史萊姆 （4星）</option>
-<option value="331" <?php if($id=="331"){ ?>selected="selected"<?php }?>>No.331 - 花豔史萊姆 （4星）</option>
-<option value="332" <?php if($id=="332"){ ?>selected="selected"<?php }?>>No.332 - 神聖史萊姆 （4星）</option>
-<option value="333" <?php if($id=="333"){ ?>selected="selected"<?php }?>>No.333 - 邪魔史萊姆 （4星）</option>
-<option value="334" <?php if($id=="334"){ ?>selected="selected"<?php }?>>No.334 - 海韻女皇 （4星）</option>
-<option value="335" <?php if($id=="335"){ ?>selected="selected"<?php }?>>No.335 - 火岩領主 （4星）</option>
-<option value="336" <?php if($id=="336"){ ?>selected="selected"<?php }?>>No.336 - 花冠貴婦 （4星）</option>
-<option value="337" <?php if($id=="337"){ ?>selected="selected"<?php }?>>No.337 - 月耀公主 （4星）</option>
-<option value="338" <?php if($id=="338"){ ?>selected="selected"<?php }?>>No.338 - 夜影魔女 （4星）</option>
-<option value="339" <?php if($id=="339"){ ?>selected="selected"<?php }?>>No.339 - 冰谷蜥蜴騎士 （4星）</option>
-<option value="340" <?php if($id=="340"){ ?>selected="selected"<?php }?>>No.340 - 岩漿蜥蜴騎士 （4星）</option>
-<option value="341" <?php if($id=="341"){ ?>selected="selected"<?php }?>>No.341 - 密林蜥蜴騎士 （4星）</option>
-<option value="342" <?php if($id=="342"){ ?>selected="selected"<?php }?>>No.342 - 聖光蜥蜴騎士 （4星）</option>
-<option value="343" <?php if($id=="343"){ ?>selected="selected"<?php }?>>No.343 - 黑雷蜥蜴騎士 （4星）</option>
-<option value="344" <?php if($id=="344"){ ?>selected="selected"<?php }?>>No.344 - 特洛伊公主 （5星）</option>
-<option value="345" <?php if($id=="345"){ ?>selected="selected"<?php }?>>No.345 - 受詛咒的先知‧卡珊德拉 （6星）</option>
-<option value="346" <?php if($id=="346"){ ?>selected="selected"<?php }?>>No.346 - 科耳喀斯皇女 （5星）</option>
-<option value="347" <?php if($id=="347"){ ?>selected="selected"<?php }?>>No.347 - 愛與恨的魔女‧美狄亞 （6星）</option>
-<option value="348" <?php if($id=="348"){ ?>selected="selected"<?php }?>>No.348 - 薩爾瑪提亞女皇 （5星）</option>
-<option value="349" <?php if($id=="349"){ ?>selected="selected"<?php }?>>No.349 - 黑魔法女巫‧喀耳刻 （6星）</option>
-<option value="350" <?php if($id=="350"){ ?>selected="selected"<?php }?>>No.350 - 寒霧劍塚‧卡戎 （6星）</option>
-<option value="351" <?php if($id=="351"){ ?>selected="selected"<?php }?>>No.351 - 機關傀儡‧紅月 （6星）</option>
-<option value="352" <?php if($id=="352"){ ?>selected="selected"<?php }?>>No.352 - 腐林魔女‧布萊爾 （6星）</option>
-<option value="353" <?php if($id=="353"){ ?>selected="selected"<?php }?>>No.353 - 鐵處女像‧浮士德 （6星）</option>
-<option value="354" <?php if($id=="354"){ ?>selected="selected"<?php }?>>No.354 - 貓公爵‧費利克斯 （6星）</option>
-<option value="355" <?php if($id=="355"){ ?>selected="selected"<?php }?>>No.355 - 持劍侍女‧波比 （5星）</option>
-<option value="356" <?php if($id=="356"){ ?>selected="selected"<?php }?>>No.356 - 白羊宮‧波比 （6星）</option>
-<option value="357" <?php if($id=="357"){ ?>selected="selected"<?php }?>>No.357 - 攻城者‧阿姆土唐 （5星）</option>
-<option value="358" <?php if($id=="358"){ ?>selected="selected"<?php }?>>No.358 - 金牛宮‧阿姆土唐 （6星）</option>
-<option value="359" <?php if($id=="359"){ ?>selected="selected"<?php }?>>No.359 - 雙劍士‧波魯克斯 （5星）</option>
-<option value="360" <?php if($id=="360"){ ?>selected="selected"<?php }?>>No.360 - 雙子宮‧加斯陀與波魯克斯 （6星）</option>
-<option value="361" <?php if($id=="361"){ ?>selected="selected"<?php }?>>No.361 - 暗影刺客‧約翰 （5星）</option>
-<option value="362" <?php if($id=="362"){ ?>selected="selected"<?php }?>>No.362 - 巨蟹宮‧約翰 （6星）</option>
-<option value="363" <?php if($id=="363"){ ?>selected="selected"<?php }?>>No.363 - 重劍士‧加里昂 （5星）</option>
-<option value="364" <?php if($id=="364"){ ?>selected="selected"<?php }?>>No.364 - 獅子宮‧加里昂 （6星）</option>
-<option value="365" <?php if($id=="365"){ ?>selected="selected"<?php }?>>No.365 - 割穗少女‧普西芬妮 （5星）</option>
-<option value="366" <?php if($id=="366"){ ?>selected="selected"<?php }?>>No.366 - 處女宮‧普西芬妮 （6星）</option>
-<option value="367" <?php if($id=="367"){ ?>selected="selected"<?php }?>>No.367 - 聖殿武士‧露娜 （5星）</option>
-<option value="368" <?php if($id=="368"){ ?>selected="selected"<?php }?>>No.368 - 天秤宮‧露娜 （6星）</option>
-<option value="369" <?php if($id=="369"){ ?>selected="selected"<?php }?>>No.369 - 重鐮刺客‧艾瑪 （5星）</option>
-<option value="370" <?php if($id=="370"){ ?>selected="selected"<?php }?>>No.370 - 天蠍宮‧艾瑪 （6星）</option>
-<option value="371" <?php if($id=="371"){ ?>selected="selected"<?php }?>>No.371 - 綠林行者‧赫茲 （5星）</option>
-<option value="372" <?php if($id=="372"){ ?>selected="selected"<?php }?>>No.372 - 人馬宮‧赫茲 （6星）</option>
-<option value="373" <?php if($id=="373"){ ?>selected="selected"<?php }?>>No.373 - 碎岩武者‧杜門 （5星）</option>
-<option value="374" <?php if($id=="374"){ ?>selected="selected"<?php }?>>No.374 - 山羊宮‧杜門 （6星）</option>
-<option value="375" <?php if($id=="375"){ ?>selected="selected"<?php }?>>No.375 - 鬼魅舞者‧凱莉 （5星）</option>
-<option value="376" <?php if($id=="376"){ ?>selected="selected"<?php }?>>No.376 - 水瓶宮‧凱莉 （6星）</option>
-<option value="377" <?php if($id=="377"){ ?>selected="selected"<?php }?>>No.377 - 海浪騎士‧卡秋婭與拉維妮斯 （5星）</option>
-<option value="378" <?php if($id=="378"){ ?>selected="selected"<?php }?>>No.378 - 雙魚宮‧卡秋婭與拉維妮斯 （6星）</option>
-<option value="379" <?php if($id=="379"){ ?>selected="selected"<?php }?>>No.379 - 黃道星靈‧水 （4星）</option>
-<option value="380" <?php if($id=="380"){ ?>selected="selected"<?php }?>>No.380 - 黃道星靈‧火 （4星）</option>
-<option value="381" <?php if($id=="381"){ ?>selected="selected"<?php }?>>No.381 - 黃道星靈‧木 （4星）</option>
-<option value="382" <?php if($id=="382"){ ?>selected="selected"<?php }?>>No.382 - 黃道星靈‧光 （4星）</option>
-<option value="383" <?php if($id=="383"){ ?>selected="selected"<?php }?>>No.383 - 黃道星靈‧暗 （4星）</option>
-<option value="384" <?php if($id=="384"){ ?>selected="selected"<?php }?>>No.384 - 占星者 （5星）</option>
-<option value="385" <?php if($id=="385"){ ?>selected="selected"<?php }?>>No.385 - 見習小丑 （1星）</option>
-<option value="386" <?php if($id=="386"){ ?>selected="selected"<?php }?>>No.386 - 無頭小丑 （3星）</option>
-<option value="387" <?php if($id=="387"){ ?>selected="selected"<?php }?>>No.387 - 午夜之丑角 （5星）</option>
-<option value="388" <?php if($id=="388"){ ?>selected="selected"<?php }?>>No.388 - 不懼的鬼戰士 （5星）</option>
-<option value="389" <?php if($id=="389"){ ?>selected="selected"<?php }?>>No.389 - 屠龍者‧貝奧武夫 （6星）</option>
-<option value="390" <?php if($id=="390"){ ?>selected="selected"<?php }?>>No.390 - 不仁的鬼鬥士 （5星）</option>
-<option value="391" <?php if($id=="391"){ ?>selected="selected"<?php }?>>No.391 - 戰神‧阿基里斯 （6星）</option>
-<option value="392" <?php if($id=="392"){ ?>selected="selected"<?php }?>>No.392 - 不幸的鬼騎士 （5星）</option>
-<option value="393" <?php if($id=="393"){ ?>selected="selected"<?php }?>>No.393 - 薔薇雙槍‧迪爾姆德 （6星）</option>
-<option value="394" <?php if($id=="394"){ ?>selected="selected"<?php }?>>No.394 - 不惑的鬼武士 （5星）</option>
-<option value="395" <?php if($id=="395"){ ?>selected="selected"<?php }?>>No.395 - 遮那王‧源義經 （6星）</option>
-<option value="396" <?php if($id=="396"){ ?>selected="selected"<?php }?>>No.396 - 不義的鬼將士 （5星）</option>
-<option value="397" <?php if($id=="397"){ ?>selected="selected"<?php }?>>No.397 - 鬼神‧呂布 （6星）</option>
-<option value="398" <?php if($id=="398"){ ?>selected="selected"<?php }?>>No.398 - 光輝萬年靈魂石 （6星）</option>
-<option value="399" <?php if($id=="399"){ ?>selected="selected"<?php }?>>No.399 - 暴食史萊姆王 （6星）</option>
-<option value="400" <?php if($id=="400"){ ?>selected="selected"<?php }?>>No.400 - 瘋頭 （6星）</option>
-<option value="401" <?php if($id=="401"){ ?>selected="selected"<?php }?>>No.401 - 聖言歌姬‧妍 （6星）</option>
-<option value="402" <?php if($id=="402"){ ?>selected="selected"<?php }?>>No.402 - 夜言歌姬‧希 （6星）</option>
-<option value="403" <?php if($id=="403"){ ?>selected="selected"<?php }?>>No.403 - 波拉 （3星）</option>
-<option value="404" <?php if($id=="404"){ ?>selected="selected"<?php }?>>No.404 - 奇美拉 （3星）</option>
-<option value="405" <?php if($id=="405"){ ?>selected="selected"<?php }?>>No.405 - 潘 （3星）</option>
-<option value="406" <?php if($id=="406"){ ?>selected="selected"<?php }?>>No.406 - 福魯斯 （3星）</option>
-<option value="407" <?php if($id=="407"){ ?>selected="selected"<?php }?>>No.407 - 拉彌亞 （3星）</option>
-<option value="408" <?php if($id=="408"){ ?>selected="selected"<?php }?>>No.408 - 大魔導士莫莉 （6星）</option>
-<option value="409" <?php if($id=="409"){ ?>selected="selected"<?php }?>>No.409 - 龍焰騎士肖恩 （6星）</option>
-<option value="410" <?php if($id=="410"){ ?>selected="selected"<?php }?>>No.410 - 大地霸主鄧肯 （6星）</option>
-<option value="411" <?php if($id=="411"){ ?>selected="selected"<?php }?>>No.411 - 公爵奈寶尼 （6星）</option>
-<option value="412" <?php if($id=="412"){ ?>selected="selected"<?php }?>>No.412 - 死靈魔導安多 （6星）</option>
-<option value="413" <?php if($id=="413"){ ?>selected="selected"<?php }?>>No.413 - 蒼龍魂使 （5星）</option>
-<option value="414" <?php if($id=="414"){ ?>selected="selected"<?php }?>>No.414 - 龍儀姬‧烏蘇拉 （6星）</option>
-<option value="415" <?php if($id=="415"){ ?>selected="selected"<?php }?>>No.415 - 赤龍魂使 （5星）</option>
-<option value="416" <?php if($id=="416"){ ?>selected="selected"<?php }?>>No.416 - 龍儀姬‧愛格德 （6星）</option>
-<option value="417" <?php if($id=="417"){ ?>selected="selected"<?php }?>>No.417 - 青龍魂使 （5星）</option>
-<option value="418" <?php if($id=="418"){ ?>selected="selected"<?php }?>>No.418 - 龍儀姬‧芭芭拉 （6星）</option>
-<option value="419" <?php if($id=="419"){ ?>selected="selected"<?php }?>>No.419 - 光龍魂使 （5星）</option>
-<option value="420" <?php if($id=="420"){ ?>selected="selected"<?php }?>>No.420 - 龍脈者‧安納 （6星）</option>
-<option value="421" <?php if($id=="421"){ ?>selected="selected"<?php }?>>No.421 - 暗龍魂使 （5星）</option>
-<option value="422" <?php if($id=="422"){ ?>selected="selected"<?php }?>>No.422 - 龍脈者‧諾瓦利斯 （6星）</option>
-<option value="423" <?php if($id=="423"){ ?>selected="selected"<?php }?>>No.423 - 異域法眼 （1星）</option>
-<option value="424" <?php if($id=="424"){ ?>selected="selected"<?php }?>>No.424 - 機關騎士 （3星）</option>
-<option value="425" <?php if($id=="425"){ ?>selected="selected"<?php }?>>No.425 - 永劫碑文像 （5星）</option>
-<option value="426" <?php if($id=="426"){ ?>selected="selected"<?php }?>>No.426 - 碧海萬年靈魂石 （5星）</option>
-<option value="427" <?php if($id=="427"){ ?>selected="selected"<?php }?>>No.427 - 熾焰萬年靈魂石 （5星）</option>
-<option value="428" <?php if($id=="428"){ ?>selected="selected"<?php }?>>No.428 - 大地萬年靈魂石 （5星）</option>
-<option value="429" <?php if($id=="429"){ ?>selected="selected"<?php }?>>No.429 - 追憶旅人 （3星）</option>
-<option value="430" <?php if($id=="430"){ ?>selected="selected"<?php }?>>No.430 - 號角手加拉爾 （5星）</option>
-<option value="431" <?php if($id=="431"){ ?>selected="selected"<?php }?>>No.431 - 貪婪精靈女王 （6星）</option>
-<option value="432" <?php if($id=="432"){ ?>selected="selected"<?php }?>>No.432 - 奪寶海盜 （5星）</option>
-<option value="433" <?php if($id=="433"){ ?>selected="selected"<?php }?>>No.433 - 冰晶領航者‧奪寶海盜 （6星）</option>
-<option value="434" <?php if($id=="434"){ ?>selected="selected"<?php }?>>No.434 - 紅纓武者 （5星）</option>
-<option value="435" <?php if($id=="435"){ ?>selected="selected"<?php }?>>No.435 - 火靈之舞‧紅纓武者 （6星）</option>
-<option value="436" <?php if($id=="436"){ ?>selected="selected"<?php }?>>No.436 - 捕風酋長 （5星）</option>
-<option value="437" <?php if($id=="437"){ ?>selected="selected"<?php }?>>No.437 - 翡翠獵手‧捕風酋長 （6星）</option>
-<option value="438" <?php if($id=="438"){ ?>selected="selected"<?php }?>>No.438 - 清泉守衛 （6星）</option>
-<option value="439" <?php if($id=="439"){ ?>selected="selected"<?php }?>>No.439 - 炎鎧戰士 （6星）</option>
-<option value="440" <?php if($id=="440"){ ?>selected="selected"<?php }?>>No.440 - 雁目射手 （6星）</option>
-<option value="441" <?php if($id=="441"){ ?>selected="selected"<?php }?>>No.441 - 萬劍寵僕 （6星）</option>
-<option value="442" <?php if($id=="442"){ ?>selected="selected"<?php }?>>No.442 - 暗影鬥士 （6星）</option>
-<option value="443" <?php if($id=="443"){ ?>selected="selected"<?php }?>>No.443 - 占星蛙法師 （3星）</option>
-<option value="444" <?php if($id=="444"){ ?>selected="selected"<?php }?>>No.444 - 道法飄蟲 （3星）</option>
-<option value="445" <?php if($id=="445"){ ?>selected="selected"<?php }?>>No.445 - 修道雛鴨 （3星）</option>
-<option value="446" <?php if($id=="446"){ ?>selected="selected"<?php }?>>No.446 - 賜福蜜蜂 （3星）</option>
-<option value="447" <?php if($id=="447"){ ?>selected="selected"<?php }?>>No.447 - 奧秘魚術士 （3星）</option>
-<option value="448" <?php if($id=="448"){ ?>selected="selected"<?php }?>>No.448 - 符靈典範‧綠茵國王 （6星）</option>
-<option value="449" <?php if($id=="449"){ ?>selected="selected"<?php }?>>No.449 - 狂怒蜥蜴暴君 （6星）</option>
-<option value="450" <?php if($id=="450"){ ?>selected="selected"<?php }?>>No.450 - 法則女神 ‧ 姬氏 （6星）</option>
-<option value="451" <?php if($id=="451"){ ?>selected="selected"<?php }?>>No.451 - 地精絞殺者 （4星）</option>
-<option value="452" <?php if($id=="452"){ ?>selected="selected"<?php }?>>No.452 - 地精斬首者 （4星）</option>
-<option value="453" <?php if($id=="453"){ ?>selected="selected"<?php }?>>No.453 - 地精扼喉者 （4星）</option>
-<option value="454" <?php if($id=="454"){ ?>selected="selected"<?php }?>>No.454 - 地精碎骨者 （4星）</option>
-<option value="455" <?php if($id=="455"){ ?>selected="selected"<?php }?>>No.455 - 地精切裂者 （4星）</option>
-<option value="456" <?php if($id=="456"){ ?>selected="selected"<?php }?>>No.456 - 星佑法師愛莉絲 （4星）</option>
-<option value="457" <?php if($id=="457"){ ?>selected="selected"<?php }?>>No.457 - 管狐飼者瑪莉曼 （4星）</option>
-<option value="458" <?php if($id=="458"){ ?>selected="selected"<?php }?>>No.458 - 煉屍術士凱莉絲 （4星）</option>
-<option value="459" <?php if($id=="459"){ ?>selected="selected"<?php }?>>No.459 - 神罰使者安迪莉亞 （4星）</option>
-<option value="460" <?php if($id=="460"){ ?>selected="selected"<?php }?>>No.460 - 鍊金巫師莉莉絲 （4星）</option>
-<option value="461" <?php if($id=="461"){ ?>selected="selected"<?php }?>>No.461 - 冽霜武僧 （4星）</option>
-<option value="462" <?php if($id=="462"){ ?>selected="selected"<?php }?>>No.462 - 岩焰統領 （4星）</option>
-<option value="463" <?php if($id=="463"){ ?>selected="selected"<?php }?>>No.463 - 木靈栽者 （4星）</option>
-<option value="464" <?php if($id=="464"){ ?>selected="selected"<?php }?>>No.464 - 聖裁勇者 （4星）</option>
-<option value="465" <?php if($id=="465"){ ?>selected="selected"<?php }?>>No.465 - 暗影刺客 （4星）</option>
-<option value="466" <?php if($id=="466"){ ?>selected="selected"<?php }?>>No.466 - 貴族伊莉莎白 （5星）</option>
-<option value="467" <?php if($id=="467"){ ?>selected="selected"<?php }?>>No.467 - 血浴美人 ‧ 伊莉莎白 （6星）</option>
-<option value="468" <?php if($id=="468"){ ?>selected="selected"<?php }?>>No.468 - 信差潔琪 （5星）</option>
-<option value="469" <?php if($id=="469"){ ?>selected="selected"<?php }?>>No.469 - 彈簧腿 ‧ 潔琪 （6星）</option>
-<option value="470" <?php if($id=="470"){ ?>selected="selected"<?php }?>>No.470 - 婚約者貝莉 （5星）</option>
-<option value="471" <?php if($id=="471"){ ?>selected="selected"<?php }?>>No.471 - 罌花新娘 ‧ 貝莉 （6星）</option>
-<option value="472" <?php if($id=="472"){ ?>selected="selected"<?php }?>>No.472 - 紳士傑克 （5星）</option>
-<option value="473" <?php if($id=="473"){ ?>selected="selected"<?php }?>>No.473 - 開膛怪傑 ‧ 傑克 （6星）</option>
-<option value="474" <?php if($id=="474"){ ?>selected="selected"<?php }?>>No.474 - 理髮魔偶陶德 （5星）</option>
-<option value="475" <?php if($id=="475"){ ?>selected="selected"<?php }?>>No.475 - 戲謔小丑 ‧ 陶德 （6星）</option>
-<option value="476" <?php if($id=="476"){ ?>selected="selected"<?php }?>>No.476 - 冰雪巫師 ‧ 波葛 （5星）</option>
-<option value="477" <?php if($id=="477"){ ?>selected="selected"<?php }?>>No.477 - 惡作劇精靈 ‧ 波加特 （5星）</option>
-<option value="478" <?php if($id=="478"){ ?>selected="selected"<?php }?>>No.478 - 掃除小精靈 ‧ 布朗尼 （5星）</option>
-<option value="479" <?php if($id=="479"){ ?>selected="selected"<?php }?>>No.479 - 沉思的賢者 ‧ 山特古羅斯 （6星）</option>
-<option value="480" <?php if($id=="480"){ ?>selected="selected"<?php }?>>No.480 - 色慾胎飼魔母 （6星）</option>
-<option value="481" <?php if($id=="481"){ ?>selected="selected"<?php }?>>No.481 - 記憶與遺忘‧女武神烏爾德 （6星）</option>
-<option value="482" <?php if($id=="482"){ ?>selected="selected"<?php }?>>No.482 - 開端與終結‧女武神斯庫爾德 （6星）</option>
-<option value="483" <?php if($id=="483"){ ?>selected="selected"<?php }?>>No.483 - 命定與改變‧女武神薇兒丹蒂 （6星）</option>
-<option value="484" <?php if($id=="484"){ ?>selected="selected"<?php }?>>No.484 - 神木之眷‧永祭之伊登 （6星）</option>
-<option value="485" <?php if($id=="485"){ ?>selected="selected"<?php }?>>No.485 - 破刃之鐮‧布倫希爾德 （6星）</option>
-<option value="486" <?php if($id=="486"){ ?>selected="selected"<?php }?>>No.486 - 水龍牙棋 （3星）</option>
-<option value="487" <?php if($id=="487"){ ?>selected="selected"<?php }?>>No.487 - 火龍牙棋 （3星）</option>
-<option value="488" <?php if($id=="488"){ ?>selected="selected"<?php }?>>No.488 - 木龍牙棋 （3星）</option>
-<option value="489" <?php if($id=="489"){ ?>selected="selected"<?php }?>>No.489 - 光龍牙棋 （3星）</option>
-<option value="490" <?php if($id=="490"){ ?>selected="selected"<?php }?>>No.490 - 暗龍牙棋 （3星）</option>
-<option value="491" <?php if($id=="491"){ ?>selected="selected"<?php }?>>No.491 - 仰望者瘋帽 （6星）</option>
-<option value="492" <?php if($id=="492"){ ?>selected="selected"<?php }?>>No.492 - 狂人三月兔 （6星）</option>
-<option value="493" <?php if($id=="493"){ ?>selected="selected"<?php }?>>No.493 - 建言者書頁蟲 （6星）</option>
-<option value="494" <?php if($id=="494"){ ?>selected="selected"<?php }?>>No.494 - 餐桌騎士睡鼠 （6星）</option>
-<option value="495" <?php if($id=="495"){ ?>selected="selected"<?php }?>>No.495 - 魔郡咧齒貓 （6星）</option>
-<option value="496" <?php if($id=="496"){ ?>selected="selected"<?php }?>>No.496 - 魔境之主 紅心女王 （6星）</option>
-<option value="497" <?php if($id=="497"){ ?>selected="selected"<?php }?>>No.497 - 笑容守護犬 （5星）</option>
-<option value="498" <?php if($id=="498"){ ?>selected="selected"<?php }?>>No.498 - 福德神寵 ‧ 笑犬 （6星）</option>
-<option value="499" <?php if($id=="499"){ ?>selected="selected"<?php }?>>No.499 - 怒顏守護犬 （5星）</option>
-<option value="500" <?php if($id=="500"){ ?>selected="selected"<?php }?>>No.500 - 懲惡神衛 ‧ 怒犬 （6星）</option>
-<option value="501" <?php if($id=="501"){ ?>selected="selected"<?php }?>>No.501 - 韶光仙獸 ‧ 年 （6星）</option>
-<option value="502" <?php if($id=="502"){ ?>selected="selected"<?php }?>>No.502 - 覓果幻獸 （5星）</option>
-<option value="503" <?php if($id=="503"){ ?>selected="selected"<?php }?>>No.503 - 原始滄龍 （0星）</option>
-<option value="504" <?php if($id=="504"){ ?>selected="selected"<?php }?>>No.504 -  （0星）</option>
-<option value="505" <?php if($id=="505"){ ?>selected="selected"<?php }?>>No.505 -  （0星）</option>
-<option value="506" <?php if($id=="506"){ ?>selected="selected"<?php }?>>No.506 - 不滅戰意‧費雷 （7星）</option>
-<option value="507" <?php if($id=="507"){ ?>selected="selected"<?php }?>>No.507 - 烈火懲責‧提爾 （7星）</option>
-<option value="508" <?php if($id=="508"){ ?>selected="selected"<?php }?>>No.508 - 唁魂之喚‧費蕾雅 （7星）</option>
-<option value="509" <?php if($id=="509"){ ?>selected="selected"<?php }?>>No.509 - 轟雷鳴動‧索爾 （7星）</option>
-<option value="510" <?php if($id=="510"){ ?>selected="selected"<?php }?>>No.510 - 不赦眚惡‧洛基 （7星）</option>
-<option value="511" <?php if($id=="511"){ ?>selected="selected"<?php }?>>No.511 - 乾坎天帝‧青龍 （6星）</option>
-<option value="512" <?php if($id=="512"){ ?>selected="selected"<?php }?>>No.512 - 坎艮神鳥‧朱雀 （6星）</option>
-<option value="513" <?php if($id=="513"){ ?>selected="selected"<?php }?>>No.513 - 震巽靈帝‧玄武 （6星）</option>
-<option value="514" <?php if($id=="514"){ ?>selected="selected"<?php }?>>No.514 - 离坤獸皇‧白虎 （6星）</option>
-<option value="515" <?php if($id=="515"){ ?>selected="selected"<?php }?>>No.515 - 兌中邪帝‧饕餮 （6星）</option>
-<option value="516" <?php if($id=="516"){ ?>selected="selected"<?php }?>>No.516 - 復活火鳥 （2星）</option>
-<option value="517" <?php if($id=="517"){ ?>selected="selected"<?php }?>>No.517 - 魅影劍客 （3星）</option>
-<option value="518" <?php if($id=="518"){ ?>selected="selected"<?php }?>>No.518 - 靈光飛刀手 （4星）</option>
-<option value="519" <?php if($id=="519"){ ?>selected="selected"<?php }?>>No.519 - 生命之光‧伊施妲 （6星）</option>
-<option value="520" <?php if($id=="520"){ ?>selected="selected"<?php }?>>No.520 - 傲慢幽狼酋長 （6星）</option>
-<option value="521" <?php if($id=="521"){ ?>selected="selected"<?php }?>>No.521 - 蝦兵‧蟹將 （3星）</option>
-<option value="522" <?php if($id=="522"){ ?>selected="selected"<?php }?>>No.522 - 甲兵‧鎧將 （4星）</option>
-<option value="523" <?php if($id=="523"){ ?>selected="selected"<?php }?>>No.523 - 修道客 （3星）</option>
-<option value="524" <?php if($id=="524"){ ?>selected="selected"<?php }?>>No.524 - 崑崙道士 （4星）</option>
-<option value="525" <?php if($id=="525"){ ?>selected="selected"<?php }?>>No.525 - 桃木精 （3星）</option>
-<option value="526" <?php if($id=="526"){ ?>selected="selected"<?php }?>>No.526 - 千里眼 （4星）</option>
-<option value="527" <?php if($id=="527"){ ?>selected="selected"<?php }?>>No.527 - 尋道者 （3星）</option>
-<option value="528" <?php if($id=="528"){ ?>selected="selected"<?php }?>>No.528 - 散仙神女 （4星）</option>
-<option value="529" <?php if($id=="529"){ ?>selected="selected"<?php }?>>No.529 - 柳鬼 （3星）</option>
-<option value="530" <?php if($id=="530"){ ?>selected="selected"<?php }?>>No.530 - 順風耳 （4星）</option>
-<option value="531" <?php if($id=="531"){ ?>selected="selected"<?php }?>>No.531 - 太師聞仲 （5星）</option>
-<option value="532" <?php if($id=="532"){ ?>selected="selected"<?php }?>>No.532 - 普化天尊‧聞仲 （6星）</option>
-<option value="533" <?php if($id=="533"){ ?>selected="selected"<?php }?>>No.533 - 道僧燃燈 （5星）</option>
-<option value="534" <?php if($id=="534"){ ?>selected="selected"<?php }?>>No.534 - 錠光如來‧燃燈 （6星）</option>
-<option value="535" <?php if($id=="535"){ ?>selected="selected"<?php }?>>No.535 - 靈將楊戩 （5星）</option>
-<option value="536" <?php if($id=="536"){ ?>selected="selected"<?php }?>>No.536 - 清源仙將‧楊戩 （6星）</option>
-<option value="537" <?php if($id=="537"){ ?>selected="selected"<?php }?>>No.537 - 仙道姜尚 （5星）</option>
-<option value="538" <?php if($id=="538"){ ?>selected="selected"<?php }?>>No.538 - 封神仙帥‧姜子牙 （6星）</option>
-<option value="539" <?php if($id=="539"){ ?>selected="selected"<?php }?>>No.539 - 仙道申公豹 （5星）</option>
-<option value="540" <?php if($id=="540"){ ?>selected="selected"<?php }?>>No.540 - 號雷鬥罡‧申公豹 （6星）</option>
-<option value="541" <?php if($id=="541"){ ?>selected="selected"<?php }?>>No.541 - 傀儡仙童 （5星）</option>
-<option value="542" <?php if($id=="542"){ ?>selected="selected"<?php }?>>No.542 - 三清祖師‧元始天尊 （6星）</option>
-<option value="543" <?php if($id=="543"){ ?>selected="selected"<?php }?>>No.543 - 靈寶天尊‧通天教主 （6星）</option>
-<option value="544" <?php if($id=="544"){ ?>selected="selected"<?php }?>>No.544 - 異界使者 （0星）</option>
-<option value="545" <?php if($id=="545"){ ?>selected="selected"<?php }?>>No.545 - 腫脹之女 （0星）</option>
-<option value="546" <?php if($id=="546"){ ?>selected="selected"<?php }?>>No.546 - 諾弗‧刻 （3星）</option>
-<option value="547" <?php if($id=="547"){ ?>selected="selected"<?php }?>>No.547 - 腹蛇異兵 （3星）</option>
-<option value="548" <?php if($id=="548"){ ?>selected="selected"<?php }?>>No.548 - 異神之胎 （3星）</option>
-<option value="549" <?php if($id=="549"){ ?>selected="selected"<?php }?>>No.549 - 銀曉信徒 （3星）</option>
-<option value="550" <?php if($id=="550"){ ?>selected="selected"<?php }?>>No.550 - 噬土魔蟲 （3星）</option>
-<option value="551" <?php if($id=="551"){ ?>selected="selected"<?php }?>>No.551 - 深潛的異族 （5星）</option>
-<option value="552" <?php if($id=="552"){ ?>selected="selected"<?php }?>>No.552 - 深潛者之僕‧蟆鰣 （6星）</option>
-<option value="553" <?php if($id=="553"){ ?>selected="selected"<?php }?>>No.553 - 魔焰吸血鬼 （5星）</option>
-<option value="554" <?php if($id=="554"){ ?>selected="selected"<?php }?>>No.554 - 永焰之渴‧唐納德 （6星）</option>
-<option value="555" <?php if($id=="555"){ ?>selected="selected"<?php }?>>No.555 - 巨蟾異獸 （5星）</option>
-<option value="556" <?php if($id=="556"){ ?>selected="selected"<?php }?>>No.556 - 食魂魔蟾‧札特瓜 （6星）</option>
-<option value="557" <?php if($id=="557"){ ?>selected="selected"<?php }?>>No.557 - 幻神化身 （5星）</option>
-<option value="558" <?php if($id=="558"){ ?>selected="selected"<?php }?>>No.558 - 幻夢古神‧諾斯登 （6星）</option>
-<option value="559" <?php if($id=="559"){ ?>selected="selected"<?php }?>>No.559 - 異域蟲族 （5星）</option>
-<option value="560" <?php if($id=="560"){ ?>selected="selected"<?php }?>>No.560 - 門鑰之僕‧米戈 （6星）</option>
-<option value="561" <?php if($id=="561"){ ?>selected="selected"<?php }?>>No.561 - 奈亞拉托提普 （0星）</option>
-<option value="562" <?php if($id=="562"){ ?>selected="selected"<?php }?>>No.562 - 黃衣魅影‧哈斯塔 （6星）</option>
-<option value="563" <?php if($id=="563"){ ?>selected="selected"<?php }?>>No.563 - 負罪役夫尼祿 （0星）</option>
-<?php
+echo "<option value=\"1\"";
+if($id == 1) echo "selected=\"selected\"";
+echo ">No.1 - 莫莉 （2星）</option>";
+echo "<option value=\"2\"";
+if($id == 2) echo "selected=\"selected\"";
+echo ">No.2 - 高級水術士莫莉 （3星）</option>";
+echo "<option value=\"3\"";
+if($id == 3) echo "selected=\"selected\"";
+echo ">No.3 - 水魔法師莫莉 （4星）</option>";
+echo "<option value=\"4\"";
+if($id == 4) echo "selected=\"selected\"";
+echo ">No.4 - 水元素賢者莫莉 （5星）</option>";
+echo "<option value=\"5\"";
+if($id == 5) echo "selected=\"selected\"";
+echo ">No.5 - 肖恩 （2星）</option>";
+echo "<option value=\"6\"";
+if($id == 6) echo "selected=\"selected\"";
+echo ">No.6 - 高級劍士肖恩 （3星）</option>";
+echo "<option value=\"7\"";
+if($id == 7) echo "selected=\"selected\"";
+echo ">No.7 - 火焰劍士肖恩 （4星）</option>";
+echo "<option value=\"8\"";
+if($id == 8) echo "selected=\"selected\"";
+echo ">No.8 - 紅蓮劍士肖恩 （5星）</option>";
+echo "<option value=\"9\"";
+if($id == 9) echo "selected=\"selected\"";
+echo ">No.9 - 鄧肯 （2星）</option>";
+echo "<option value=\"10\"";
+if($id == 10) echo "selected=\"selected\"";
+echo ">No.10 - 牧者鄧肯 （3星）</option>";
+echo "<option value=\"11\"";
+if($id == 11) echo "selected=\"selected\"";
+echo ">No.11 - 德魯依鄧肯 （4星）</option>";
+echo "<option value=\"12\"";
+if($id == 12) echo "selected=\"selected\"";
+echo ">No.12 - 森林王者鄧肯 （5星）</option>";
+echo "<option value=\"13\"";
+if($id == 13) echo "selected=\"selected\"";
+echo ">No.13 - 男爵奈寶尼 （2星）</option>";
+echo "<option value=\"14\"";
+if($id == 14) echo "selected=\"selected\"";
+echo ">No.14 - 子爵奈寶尼 （3星）</option>";
+echo "<option value=\"15\"";
+if($id == 15) echo "selected=\"selected\"";
+echo ">No.15 - 伯爵奈寶尼 （4星）</option>";
+echo "<option value=\"16\"";
+if($id == 16) echo "selected=\"selected\"";
+echo ">No.16 - 侯爵奈寶尼 （5星）</option>";
+echo "<option value=\"17\"";
+if($id == 17) echo "selected=\"selected\"";
+echo ">No.17 - 暗修導士安多 （2星）</option>";
+echo "<option value=\"18\"";
+if($id == 18) echo "selected=\"selected\"";
+echo ">No.18 - 高級暗修導士安多 （3星）</option>";
+echo "<option value=\"19\"";
+if($id == 19) echo "selected=\"selected\"";
+echo ">No.19 - 死靈術士安多 （4星）</option>";
+echo "<option value=\"20\"";
+if($id == 20) echo "selected=\"selected\"";
+echo ">No.20 - 死靈祭師安多 （5星）</option>";
+echo "<option value=\"21\"";
+if($id == 21) echo "selected=\"selected\"";
+echo ">No.21 - 水方士 （2星）</option>";
+echo "<option value=\"22\"";
+if($id == 22) echo "selected=\"selected\"";
+echo ">No.22 - 清川真人 （3星）</option>";
+echo "<option value=\"23\"";
+if($id == 23) echo "selected=\"selected\"";
+echo ">No.23 - 靈江仙人 （4星）</option>";
+echo "<option value=\"24\"";
+if($id == 24) echo "selected=\"selected\"";
+echo ">No.24 - 青龍孟章神君 （5星）</option>";
+echo "<option value=\"25\"";
+if($id == 25) echo "selected=\"selected\"";
+echo ">No.25 - 火方士 （2星）</option>";
+echo "<option value=\"26\"";
+if($id == 26) echo "selected=\"selected\"";
+echo ">No.26 - 赤灶真人 （3星）</option>";
+echo "<option value=\"27\"";
+if($id == 27) echo "selected=\"selected\"";
+echo ">No.27 - 真火仙人 （4星）</option>";
+echo "<option value=\"28\"";
+if($id == 28) echo "selected=\"selected\"";
+echo ">No.28 - 朱雀陵光神君 （5星）</option>";
+echo "<option value=\"29\"";
+if($id == 29) echo "selected=\"selected\"";
+echo ">No.29 - 木方士 （2星）</option>";
+echo "<option value=\"30\"";
+if($id == 30) echo "selected=\"selected\"";
+echo ">No.30 - 九地真人 （3星）</option>";
+echo "<option value=\"31\"";
+if($id == 31) echo "selected=\"selected\"";
+echo ">No.31 - 虛土仙人 （4星）</option>";
+echo "<option value=\"32\"";
+if($id == 32) echo "selected=\"selected\"";
+echo ">No.32 - 玄武執明神君 （5星）</option>";
+echo "<option value=\"33\"";
+if($id == 33) echo "selected=\"selected\"";
+echo ">No.33 - 陽方士 （2星）</option>";
+echo "<option value=\"34\"";
+if($id == 34) echo "selected=\"selected\"";
+echo ">No.34 - 聖明真人 （3星）</option>";
+echo "<option value=\"35\"";
+if($id == 35) echo "selected=\"selected\"";
+echo ">No.35 - 耀尊仙人 （4星）</option>";
+echo "<option value=\"36\"";
+if($id == 36) echo "selected=\"selected\"";
+echo ">No.36 - 白虎監兵神君 （5星）</option>";
+echo "<option value=\"37\"";
+if($id == 37) echo "selected=\"selected\"";
+echo ">No.37 - 陰方士 （2星）</option>";
+echo "<option value=\"38\"";
+if($id == 38) echo "selected=\"selected\"";
+echo ">No.38 - 幽陵真人 （3星）</option>";
+echo "<option value=\"39\"";
+if($id == 39) echo "selected=\"selected\"";
+echo ">No.39 - 紫微妖仙 （4星）</option>";
+echo "<option value=\"40\"";
+if($id == 40) echo "selected=\"selected\"";
+echo ">No.40 - 饕餮渾沌魔君 （5星）</option>";
+echo "<option value=\"41\"";
+if($id == 41) echo "selected=\"selected\"";
+echo ">No.41 - 冰花龍 （3星）</option>";
+echo "<option value=\"42\"";
+if($id == 42) echo "selected=\"selected\"";
+echo ">No.42 - 冰晶龍 （4星）</option>";
+echo "<option value=\"43\"";
+if($id == 43) echo "selected=\"selected\"";
+echo ">No.43 - 冰晶龍王 （5星）</option>";
+echo "<option value=\"44\"";
+if($id == 44) echo "selected=\"selected\"";
+echo ">No.44 - 洋燭龍 （3星）</option>";
+echo "<option value=\"45\"";
+if($id == 45) echo "selected=\"selected\"";
+echo ">No.45 - 星火龍 （4星）</option>";
+echo "<option value=\"46\"";
+if($id == 46) echo "selected=\"selected\"";
+echo ">No.46 - 硝鐵火龍 （5星）</option>";
+echo "<option value=\"47\"";
+if($id == 47) echo "selected=\"selected\"";
+echo ">No.47 - 碧甲龍 （3星）</option>";
+echo "<option value=\"48\"";
+if($id == 48) echo "selected=\"selected\"";
+echo ">No.48 - 碧甲巖龍 （4星）</option>";
+echo "<option value=\"49\"";
+if($id == 49) echo "selected=\"selected\"";
+echo ">No.49 - 靈山龍龜 （5星）</option>";
+echo "<option value=\"50\"";
+if($id == 50) echo "selected=\"selected\"";
+echo ">No.50 - 光輝龍 （3星）</option>";
+echo "<option value=\"51\"";
+if($id == 51) echo "selected=\"selected\"";
+echo ">No.51 - 閃耀龍 （4星）</option>";
+echo "<option value=\"52\"";
+if($id == 52) echo "selected=\"selected\"";
+echo ">No.52 - 聖衡機龍 （5星）</option>";
+echo "<option value=\"53\"";
+if($id == 53) echo "selected=\"selected\"";
+echo ">No.53 - 無頭龍 （3星）</option>";
+echo "<option value=\"54\"";
+if($id == 54) echo "selected=\"selected\"";
+echo ">No.54 - 斷頭龍 （4星）</option>";
+echo "<option value=\"55\"";
+if($id == 55) echo "selected=\"selected\"";
+echo ">No.55 - 魂索邪龍 （5星）</option>";
+echo "<option value=\"56\"";
+if($id == 56) echo "selected=\"selected\"";
+echo ">No.56 - 冰原地精 （2星）</option>";
+echo "<option value=\"57\"";
+if($id == 57) echo "selected=\"selected\"";
+echo ">No.57 - 淵寒大地精 （3星）</option>";
+echo "<option value=\"58\"";
+if($id == 58) echo "selected=\"selected\"";
+echo ">No.58 - 火山地精 （2星）</option>";
+echo "<option value=\"59\"";
+if($id == 59) echo "selected=\"selected\"";
+echo ">No.59 - 熾岩大地精 （3星）</option>";
+echo "<option value=\"60\"";
+if($id == 60) echo "selected=\"selected\"";
+echo ">No.60 - 森林地精 （2星）</option>";
+echo "<option value=\"61\"";
+if($id == 61) echo "selected=\"selected\"";
+echo ">No.61 - 碧石大地精 （3星）</option>";
+echo "<option value=\"62\"";
+if($id == 62) echo "selected=\"selected\"";
+echo ">No.62 - 光明地精 （2星）</option>";
+echo "<option value=\"63\"";
+if($id == 63) echo "selected=\"selected\"";
+echo ">No.63 - 輝芒大地精 （3星）</option>";
+echo "<option value=\"64\"";
+if($id == 64) echo "selected=\"selected\"";
+echo ">No.64 - 黑暗地精 （2星）</option>";
+echo "<option value=\"65\"";
+if($id == 65) echo "selected=\"selected\"";
+echo ">No.65 - 冥土大地精 （3星）</option>";
+echo "<option value=\"66\"";
+if($id == 66) echo "selected=\"selected\"";
+echo ">No.66 - 海精靈 （2星）</option>";
+echo "<option value=\"67\"";
+if($id == 67) echo "selected=\"selected\"";
+echo ">No.67 - 海躍精靈 （3星）</option>";
+echo "<option value=\"68\"";
+if($id == 68) echo "selected=\"selected\"";
+echo ">No.68 - 火精靈 （2星）</option>";
+echo "<option value=\"69\"";
+if($id == 69) echo "selected=\"selected\"";
+echo ">No.69 - 火舞精靈 （3星）</option>";
+echo "<option value=\"70\"";
+if($id == 70) echo "selected=\"selected\"";
+echo ">No.70 - 花精靈 （2星）</option>";
+echo "<option value=\"71\"";
+if($id == 71) echo "selected=\"selected\"";
+echo ">No.71 - 花冠精靈 （3星）</option>";
+echo "<option value=\"72\"";
+if($id == 72) echo "selected=\"selected\"";
+echo ">No.72 - 月精靈 （2星）</option>";
+echo "<option value=\"73\"";
+if($id == 73) echo "selected=\"selected\"";
+echo ">No.73 - 月光精靈 （3星）</option>";
+echo "<option value=\"74\"";
+if($id == 74) echo "selected=\"selected\"";
+echo ">No.74 - 夜精靈 （2星）</option>";
+echo "<option value=\"75\"";
+if($id == 75) echo "selected=\"selected\"";
+echo ">No.75 - 夜迷精靈 （3星）</option>";
+echo "<option value=\"76\"";
+if($id == 76) echo "selected=\"selected\"";
+echo ">No.76 - 冰蜥蝪戰士 （2星）</option>";
+echo "<option value=\"77\"";
+if($id == 77) echo "selected=\"selected\"";
+echo ">No.77 - 冰河蜥蝪戰士 （3星）</option>";
+echo "<option value=\"78\"";
+if($id == 78) echo "selected=\"selected\"";
+echo ">No.78 - 赤蜥蝪戰士 （2星）</option>";
+echo "<option value=\"79\"";
+if($id == 79) echo "selected=\"selected\"";
+echo ">No.79 - 赤焰蜥蝪戰士 （3星）</option>";
+echo "<option value=\"80\"";
+if($id == 80) echo "selected=\"selected\"";
+echo ">No.80 - 翠蜥蝪戰士 （2星）</option>";
+echo "<option value=\"81\"";
+if($id == 81) echo "selected=\"selected\"";
+echo ">No.81 - 森林蜥蝪戰士 （3星）</option>";
+echo "<option value=\"82\"";
+if($id == 82) echo "selected=\"selected\"";
+echo ">No.82 - 光蜥蝪戰士 （2星）</option>";
+echo "<option value=\"83\"";
+if($id == 83) echo "selected=\"selected\"";
+echo ">No.83 - 金光蜥蝪戰士 （3星）</option>";
+echo "<option value=\"84\"";
+if($id == 84) echo "selected=\"selected\"";
+echo ">No.84 - 暗蜥蝪戰士 （2星）</option>";
+echo "<option value=\"85\"";
+if($id == 85) echo "selected=\"selected\"";
+echo ">No.85 - 漆黑蜥蝪戰士 （3星）</option>";
+echo "<option value=\"86\"";
+if($id == 86) echo "selected=\"selected\"";
+echo ">No.86 - 小魔女愛莉絲 （2星）</option>";
+echo "<option value=\"87\"";
+if($id == 87) echo "selected=\"selected\"";
+echo ">No.87 - 占星士愛莉絲 （3星）</option>";
+echo "<option value=\"88\"";
+if($id == 88) echo "selected=\"selected\"";
+echo ">No.88 - 小魔女瑪莉曼 （2星）</option>";
+echo "<option value=\"89\"";
+if($id == 89) echo "selected=\"selected\"";
+echo ">No.89 - 火巫女瑪莉曼 （3星）</option>";
+echo "<option value=\"90\"";
+if($id == 90) echo "selected=\"selected\"";
+echo ">No.90 - 小魔女凱莉絲 （2星）</option>";
+echo "<option value=\"91\"";
+if($id == 91) echo "selected=\"selected\"";
+echo ">No.91 - 修道者凱莉絲 （3星）</option>";
+echo "<option value=\"92\"";
+if($id == 92) echo "selected=\"selected\"";
+echo ">No.92 - 小魔女安迪莉亞 （2星）</option>";
+echo "<option value=\"93\"";
+if($id == 93) echo "selected=\"selected\"";
+echo ">No.93 - 傳教士安迪莉亞 （3星）</option>";
+echo "<option value=\"94\"";
+if($id == 94) echo "selected=\"selected\"";
+echo ">No.94 - 小魔女莉莉絲 （2星）</option>";
+echo "<option value=\"95\"";
+if($id == 95) echo "selected=\"selected\"";
+echo ">No.95 - 鍊金士莉莉絲 （3星）</option>";
+echo "<option value=\"96\"";
+if($id == 96) echo "selected=\"selected\"";
+echo ">No.96 - 水史萊姆 （1星）</option>";
+echo "<option value=\"97\"";
+if($id == 97) echo "selected=\"selected\"";
+echo ">No.97 - 液態史萊姆 （2星）</option>";
+echo "<option value=\"98\"";
+if($id == 98) echo "selected=\"selected\"";
+echo ">No.98 - 火史萊姆 （1星）</option>";
+echo "<option value=\"99\"";
+if($id == 99) echo "selected=\"selected\"";
+echo ">No.99 - 燃燒史萊姆 （2星）</option>";
+echo "<option value=\"100\"";
+if($id == 100) echo "selected=\"selected\"";
+echo ">No.100 - 木史萊姆 （1星）</option>";
+echo "<option value=\"101\"";
+if($id == 101) echo "selected=\"selected\"";
+echo ">No.101 - 翠綠史萊姆 （2星）</option>";
+echo "<option value=\"102\"";
+if($id == 102) echo "selected=\"selected\"";
+echo ">No.102 - 光史萊姆 （1星）</option>";
+echo "<option value=\"103\"";
+if($id == 103) echo "selected=\"selected\"";
+echo ">No.103 - 天使史萊姆 （2星）</option>";
+echo "<option value=\"104\"";
+if($id == 104) echo "selected=\"selected\"";
+echo ">No.104 - 暗史萊姆 （1星）</option>";
+echo "<option value=\"105\"";
+if($id == 105) echo "selected=\"selected\"";
+echo ">No.105 - 幽靈史萊姆 （2星）</option>";
+echo "<option value=\"106\"";
+if($id == 106) echo "selected=\"selected\"";
+echo ">No.106 - 蒼幽狼 （2星）</option>";
+echo "<option value=\"107\"";
+if($id == 107) echo "selected=\"selected\"";
+echo ">No.107 - 蒼幽狼人 （3星）</option>";
+echo "<option value=\"108\"";
+if($id == 108) echo "selected=\"selected\"";
+echo ">No.108 - 赤幽狼 （2星）</option>";
+echo "<option value=\"109\"";
+if($id == 109) echo "selected=\"selected\"";
+echo ">No.109 - 赤幽狼人 （3星）</option>";
+echo "<option value=\"110\"";
+if($id == 110) echo "selected=\"selected\"";
+echo ">No.110 - 青幽狼 （2星）</option>";
+echo "<option value=\"111\"";
+if($id == 111) echo "selected=\"selected\"";
+echo ">No.111 - 青幽狼人 （3星）</option>";
+echo "<option value=\"112\"";
+if($id == 112) echo "selected=\"selected\"";
+echo ">No.112 - 白幽狼 （2星）</option>";
+echo "<option value=\"113\"";
+if($id == 113) echo "selected=\"selected\"";
+echo ">No.113 - 白幽狼人 （3星）</option>";
+echo "<option value=\"114\"";
+if($id == 114) echo "selected=\"selected\"";
+echo ">No.114 - 黑幽狼 （2星）</option>";
+echo "<option value=\"115\"";
+if($id == 115) echo "selected=\"selected\"";
+echo ">No.115 - 黑幽狼人 （3星）</option>";
+echo "<option value=\"116\"";
+if($id == 116) echo "selected=\"selected\"";
+echo ">No.116 - 烏爾德 （3星）</option>";
+echo "<option value=\"117\"";
+if($id == 117) echo "selected=\"selected\"";
+echo ">No.117 - 過去之烏爾德 （4星）</option>";
+echo "<option value=\"118\"";
+if($id == 118) echo "selected=\"selected\"";
+echo ">No.118 - 歷史之烏爾德 （5星）</option>";
+echo "<option value=\"119\"";
+if($id == 119) echo "selected=\"selected\"";
+echo ">No.119 - 斯庫爾德 （3星）</option>";
+echo "<option value=\"120\"";
+if($id == 120) echo "selected=\"selected\"";
+echo ">No.120 - 未來之斯庫爾德 （4星）</option>";
+echo "<option value=\"121\"";
+if($id == 121) echo "selected=\"selected\"";
+echo ">No.121 - 無常之斯庫爾德 （5星）</option>";
+echo "<option value=\"122\"";
+if($id == 122) echo "selected=\"selected\"";
+echo ">No.122 - 薇兒丹蒂 （3星）</option>";
+echo "<option value=\"123\"";
+if($id == 123) echo "selected=\"selected\"";
+echo ">No.123 - 現在之薇兒丹蒂 （4星）</option>";
+echo "<option value=\"124\"";
+if($id == 124) echo "selected=\"selected\"";
+echo ">No.124 - 命運之薇兒丹蒂 （5星）</option>";
+echo "<option value=\"125\"";
+if($id == 125) echo "selected=\"selected\"";
+echo ">No.125 - 伊登 （3星）</option>";
+echo "<option value=\"126\"";
+if($id == 126) echo "selected=\"selected\"";
+echo ">No.126 - 聖果之伊登 （4星）</option>";
+echo "<option value=\"127\"";
+if($id == 127) echo "selected=\"selected\"";
+echo ">No.127 - 永生之伊登 （5星）</option>";
+echo "<option value=\"128\"";
+if($id == 128) echo "selected=\"selected\"";
+echo ">No.128 - 英靈殿侍女 （3星）</option>";
+echo "<option value=\"129\"";
+if($id == 129) echo "selected=\"selected\"";
+echo ">No.129 - 戰魂之瓦爾基麗 （4星）</option>";
+echo "<option value=\"130\"";
+if($id == 130) echo "selected=\"selected\"";
+echo ">No.130 - 催魂之瓦爾基麗 （5星）</option>";
+echo "<option value=\"131\"";
+if($id == 131) echo "selected=\"selected\"";
+echo ">No.131 - 水遊俠 （3星）</option>";
+echo "<option value=\"132\"";
+if($id == 132) echo "selected=\"selected\"";
+echo ">No.132 - 水舞劍士 （4星）</option>";
+echo "<option value=\"133\"";
+if($id == 133) echo "selected=\"selected\"";
+echo ">No.133 - 水舞劍神 （5星）</option>";
+echo "<option value=\"134\"";
+if($id == 134) echo "selected=\"selected\"";
+echo ">No.134 - 火遊俠 （3星）</option>";
+echo "<option value=\"135\"";
+if($id == 135) echo "selected=\"selected\"";
+echo ">No.135 - 火焰戰士 （4星）</option>";
+echo "<option value=\"136\"";
+if($id == 136) echo "selected=\"selected\"";
+echo ">No.136 - 炎舞軍神 （5星）</option>";
+echo "<option value=\"137\"";
+if($id == 137) echo "selected=\"selected\"";
+echo ">No.137 - 木遊俠 （3星）</option>";
+echo "<option value=\"138\"";
+if($id == 138) echo "selected=\"selected\"";
+echo ">No.138 - 翠綠狙擊手 （4星）</option>";
+echo "<option value=\"139\"";
+if($id == 139) echo "selected=\"selected\"";
+echo ">No.139 - 疾風神射手 （5星）</option>";
+echo "<option value=\"140\"";
+if($id == 140) echo "selected=\"selected\"";
+echo ">No.140 - 光遊俠 （3星）</option>";
+echo "<option value=\"141\"";
+if($id == 141) echo "selected=\"selected\"";
+echo ">No.141 - 聖光遊俠 （4星）</option>";
+echo "<option value=\"142\"";
+if($id == 142) echo "selected=\"selected\"";
+echo ">No.142 - 萬劍遊俠 （5星）</option>";
+echo "<option value=\"143\"";
+if($id == 143) echo "selected=\"selected\"";
+echo ">No.143 - 暗遊俠 （3星）</option>";
+echo "<option value=\"144\"";
+if($id == 144) echo "selected=\"selected\"";
+echo ">No.144 - 暗夜刺客 （4星）</option>";
+echo "<option value=\"145\"";
+if($id == 145) echo "selected=\"selected\"";
+echo ">No.145 - 暗影劍豪 （5星）</option>";
+echo "<option value=\"146\"";
+if($id == 146) echo "selected=\"selected\"";
+echo ">No.146 - 冰耀巨像 （3星）</option>";
+echo "<option value=\"147\"";
+if($id == 147) echo "selected=\"selected\"";
+echo ">No.147 - 冰耀巨像‧解放 （4星）</option>";
+echo "<option value=\"148\"";
+if($id == 148) echo "selected=\"selected\"";
+echo ">No.148 - 冰耀巨鱷 （5星）</option>";
+echo "<option value=\"149\"";
+if($id == 149) echo "selected=\"selected\"";
+echo ">No.149 - 烙紅巨像 （3星）</option>";
+echo "<option value=\"150\"";
+if($id == 150) echo "selected=\"selected\"";
+echo ">No.150 - 烙紅巨像‧解放 （4星）</option>";
+echo "<option value=\"151\"";
+if($id == 151) echo "selected=\"selected\"";
+echo ">No.151 - 烙紅龍蜥 （5星）</option>";
+echo "<option value=\"152\"";
+if($id == 152) echo "selected=\"selected\"";
+echo ">No.152 - 碧青巨像 （3星）</option>";
+echo "<option value=\"153\"";
+if($id == 153) echo "selected=\"selected\"";
+echo ">No.153 - 碧青巨像‧解放 （4星）</option>";
+echo "<option value=\"154\"";
+if($id == 154) echo "selected=\"selected\"";
+echo ">No.154 - 碧青行者 （5星）</option>";
+echo "<option value=\"155\"";
+if($id == 155) echo "selected=\"selected\"";
+echo ">No.155 - 聖靈巨像 （3星）</option>";
+echo "<option value=\"156\"";
+if($id == 156) echo "selected=\"selected\"";
+echo ">No.156 - 聖靈巨像‧解放 （4星）</option>";
+echo "<option value=\"157\"";
+if($id == 157) echo "selected=\"selected\"";
+echo ">No.157 - 聖靈怒獅 （5星）</option>";
+echo "<option value=\"158\"";
+if($id == 158) echo "selected=\"selected\"";
+echo ">No.158 - 暗月巨像 （3星）</option>";
+echo "<option value=\"159\"";
+if($id == 159) echo "selected=\"selected\"";
+echo ">No.159 - 暗月巨像‧解放 （4星）</option>";
+echo "<option value=\"160\"";
+if($id == 160) echo "selected=\"selected\"";
+echo ">No.160 - 暗月夜龍 （5星）</option>";
+echo "<option value=\"161\"";
+if($id == 161) echo "selected=\"selected\"";
+echo ">No.161 - 機械鯨鯊 （2星）</option>";
+echo "<option value=\"162\"";
+if($id == 162) echo "selected=\"selected\"";
+echo ">No.162 - 強化機械鯨鯊 （3星）</option>";
+echo "<option value=\"163\"";
+if($id == 163) echo "selected=\"selected\"";
+echo ">No.163 - 變異機械鯨鯊 （4星）</option>";
+echo "<option value=\"164\"";
+if($id == 164) echo "selected=\"selected\"";
+echo ">No.164 - 機械獅子 （2星）</option>";
+echo "<option value=\"165\"";
+if($id == 165) echo "selected=\"selected\"";
+echo ">No.165 - 強化機械獅子 （3星）</option>";
+echo "<option value=\"166\"";
+if($id == 166) echo "selected=\"selected\"";
+echo ">No.166 - 狂暴機械獅子 （4星）</option>";
+echo "<option value=\"167\"";
+if($id == 167) echo "selected=\"selected\"";
+echo ">No.167 - 機械犀牛 （2星）</option>";
+echo "<option value=\"168\"";
+if($id == 168) echo "selected=\"selected\"";
+echo ">No.168 - 強化機械犀牛 （3星）</option>";
+echo "<option value=\"169\"";
+if($id == 169) echo "selected=\"selected\"";
+echo ">No.169 - 野蠻機械犀牛 （4星）</option>";
+echo "<option value=\"170\"";
+if($id == 170) echo "selected=\"selected\"";
+echo ">No.170 - 機械狼 （2星）</option>";
+echo "<option value=\"171\"";
+if($id == 171) echo "selected=\"selected\"";
+echo ">No.171 - 強化機械狼 （3星）</option>";
+echo "<option value=\"172\"";
+if($id == 172) echo "selected=\"selected\"";
+echo ">No.172 - 重甲機械狼 （4星）</option>";
+echo "<option value=\"173\"";
+if($id == 173) echo "selected=\"selected\"";
+echo ">No.173 - 機械豹 （2星）</option>";
+echo "<option value=\"174\"";
+if($id == 174) echo "selected=\"selected\"";
+echo ">No.174 - 強化機械豹 （3星）</option>";
+echo "<option value=\"175\"";
+if($id == 175) echo "selected=\"selected\"";
+echo ">No.175 - 掠奪機械豹 （4星）</option>";
+echo "<option value=\"176\"";
+if($id == 176) echo "selected=\"selected\"";
+echo ">No.176 - 海獸 （3星）</option>";
+echo "<option value=\"177\"";
+if($id == 177) echo "selected=\"selected\"";
+echo ">No.177 - 克蘇魯 （4星）</option>";
+echo "<option value=\"178\"";
+if($id == 178) echo "selected=\"selected\"";
+echo ">No.178 - 邪神克蘇魯 （5星）</option>";
+echo "<option value=\"179\"";
+if($id == 179) echo "selected=\"selected\"";
+echo ">No.179 - 地獄三頭犬 （3星）</option>";
+echo "<option value=\"180\"";
+if($id == 180) echo "selected=\"selected\"";
+echo ">No.180 - 基路比魯斯 （4星）</option>";
+echo "<option value=\"181\"";
+if($id == 181) echo "selected=\"selected\"";
+echo ">No.181 - 冥府兇獸基路比魯斯 （5星）</option>";
+echo "<option value=\"182\"";
+if($id == 182) echo "selected=\"selected\"";
+echo ">No.182 - 蛇妖 （3星）</option>";
+echo "<option value=\"183\"";
+if($id == 183) echo "selected=\"selected\"";
+echo ">No.183 - 美杜莎 （4星）</option>";
+echo "<option value=\"184\"";
+if($id == 184) echo "selected=\"selected\"";
+echo ">No.184 - 妖女美杜莎 （5星）</option>";
+echo "<option value=\"185\"";
+if($id == 185) echo "selected=\"selected\"";
+echo ">No.185 - 鷹頭獸 （3星）</option>";
+echo "<option value=\"186\"";
+if($id == 186) echo "selected=\"selected\"";
+echo ">No.186 - 獅鷲 （4星）</option>";
+echo "<option value=\"187\"";
+if($id == 187) echo "selected=\"selected\"";
+echo ">No.187 - 獅鷲獸王 （5星）</option>";
+echo "<option value=\"188\"";
+if($id == 188) echo "selected=\"selected\"";
+echo ">No.188 - 魔羊 （3星）</option>";
+echo "<option value=\"189\"";
+if($id == 189) echo "selected=\"selected\"";
+echo ">No.189 - 魔羊怪 （4星）</option>";
+echo "<option value=\"190\"";
+if($id == 190) echo "selected=\"selected\"";
+echo ">No.190 - 惡魔巴風特 （5星）</option>";
+echo "<option value=\"191\"";
+if($id == 191) echo "selected=\"selected\"";
+echo ">No.191 - 波塞頓 （5星）</option>";
+echo "<option value=\"192\"";
+if($id == 192) echo "selected=\"selected\"";
+echo ">No.192 - 海神波塞頓 （6星）</option>";
+echo "<option value=\"193\"";
+if($id == 193) echo "selected=\"selected\"";
+echo ">No.193 - 赫淮斯托斯 （5星）</option>";
+echo "<option value=\"194\"";
+if($id == 194) echo "selected=\"selected\"";
+echo ">No.194 - 奧林火神赫淮斯托斯 （6星）</option>";
+echo "<option value=\"195\"";
+if($id == 195) echo "selected=\"selected\"";
+echo ">No.195 - 雅典娜 （5星）</option>";
+echo "<option value=\"196\"";
+if($id == 196) echo "selected=\"selected\"";
+echo ">No.196 - 智慧女神雅典娜 （6星）</option>";
+echo "<option value=\"197\"";
+if($id == 197) echo "selected=\"selected\"";
+echo ">No.197 - 阿波羅 （5星）</option>";
+echo "<option value=\"198\"";
+if($id == 198) echo "selected=\"selected\"";
+echo ">No.198 - 光明之神阿波羅 （6星）</option>";
+echo "<option value=\"199\"";
+if($id == 199) echo "selected=\"selected\"";
+echo ">No.199 - 阿提密斯 （5星）</option>";
+echo "<option value=\"200\"";
+if($id == 200) echo "selected=\"selected\"";
+echo ">No.200 - 月之狩獵女神阿提密斯 （6星）</option>";
+echo "<option value=\"201\"";
+if($id == 201) echo "selected=\"selected\"";
+echo ">No.201 - 費雷 （5星）</option>";
+echo "<option value=\"202\"";
+if($id == 202) echo "selected=\"selected\"";
+echo ">No.202 - 勝利海神費雷 （6星）</option>";
+echo "<option value=\"203\"";
+if($id == 203) echo "selected=\"selected\"";
+echo ">No.203 - 提爾 （5星）</option>";
+echo "<option value=\"204\"";
+if($id == 204) echo "selected=\"selected\"";
+echo ">No.204 - 獨臂戰神提爾 （6星）</option>";
+echo "<option value=\"205\"";
+if($id == 205) echo "selected=\"selected\"";
+echo ">No.205 - 費蕾雅 （5星）</option>";
+echo "<option value=\"206\"";
+if($id == 206) echo "selected=\"selected\"";
+echo ">No.206 - 妙曼愛神費蕾雅 （6星）</option>";
+echo "<option value=\"207\"";
+if($id == 207) echo "selected=\"selected\"";
+echo ">No.207 - 索爾 （5星）</option>";
+echo "<option value=\"208\"";
+if($id == 208) echo "selected=\"selected\"";
+echo ">No.208 - 轟天雷神索爾 （6星）</option>";
+echo "<option value=\"209\"";
+if($id == 209) echo "selected=\"selected\"";
+echo ">No.209 - 洛基 （5星）</option>";
+echo "<option value=\"210\"";
+if($id == 210) echo "selected=\"selected\"";
+echo ">No.210 - 黃昏號角洛基 （6星）</option>";
+echo "<option value=\"211\"";
+if($id == 211) echo "selected=\"selected\"";
+echo ">No.211 - 泰芙努特 （5星）</option>";
+echo "<option value=\"212\"";
+if($id == 212) echo "selected=\"selected\"";
+echo ">No.212 - 雨神泰芙努特 （6星）</option>";
+echo "<option value=\"213\"";
+if($id == 213) echo "selected=\"selected\"";
+echo ">No.213 - 賽特 （5星）</option>";
+echo "<option value=\"214\"";
+if($id == 214) echo "selected=\"selected\"";
+echo ">No.214 - 戰爭之神賽特 （6星）</option>";
+echo "<option value=\"215\"";
+if($id == 215) echo "selected=\"selected\"";
+echo ">No.215 - 舒 （5星）</option>";
+echo "<option value=\"216\"";
+if($id == 216) echo "selected=\"selected\"";
+echo ">No.216 - 天空之神‧舒 （6星）</option>";
+echo "<option value=\"217\"";
+if($id == 217) echo "selected=\"selected\"";
+echo ">No.217 - 拉 （5星）</option>";
+echo "<option value=\"218\"";
+if($id == 218) echo "selected=\"selected\"";
+echo ">No.218 - 太陽之子拉 （6星）</option>";
+echo "<option value=\"219\"";
+if($id == 219) echo "selected=\"selected\"";
+echo ">No.219 - 奧西利斯 （5星）</option>";
+echo "<option value=\"220\"";
+if($id == 220) echo "selected=\"selected\"";
+echo ">No.220 - 不死冥王奧西利斯 （6星）</option>";
+echo "<option value=\"221\"";
+if($id == 221) echo "selected=\"selected\"";
+echo ">No.221 - 海龍 （5星）</option>";
+echo "<option value=\"222\"";
+if($id == 222) echo "selected=\"selected\"";
+echo ">No.222 - 東海龍王‧敖廣 （6星）</option>";
+echo "<option value=\"223\"";
+if($id == 223) echo "selected=\"selected\"";
+echo ">No.223 - 蓮藕仔 （5星）</option>";
+echo "<option value=\"224\"";
+if($id == 224) echo "selected=\"selected\"";
+echo ">No.224 - 三太子‧哪吒 （6星）</option>";
+echo "<option value=\"225\"";
+if($id == 225) echo "selected=\"selected\"";
+echo ">No.225 - 大力王 （5星）</option>";
+echo "<option value=\"226\"";
+if($id == 226) echo "selected=\"selected\"";
+echo ">No.226 - 平天大聖‧牛魔王 （6星）</option>";
+echo "<option value=\"227\"";
+if($id == 227) echo "selected=\"selected\"";
+echo ">No.227 - 美猴王 （5星）</option>";
+echo "<option value=\"228\"";
+if($id == 228) echo "selected=\"selected\"";
+echo ">No.228 - 齊天大聖‧孫悟空 （6星）</option>";
+echo "<option value=\"229\"";
+if($id == 229) echo "selected=\"selected\"";
+echo ">No.229 - 妖狐 （5星）</option>";
+echo "<option value=\"230\"";
+if($id == 230) echo "selected=\"selected\"";
+echo ">No.230 - 白臉金毛‧妲己 （6星）</option>";
+echo "<option value=\"231\"";
+if($id == 231) echo "selected=\"selected\"";
+echo ">No.231 - 機械水龍 （5星）</option>";
+echo "<option value=\"232\"";
+if($id == 232) echo "selected=\"selected\"";
+echo ">No.232 - 機械水神龍‧內拉羅斯 （6星）</option>";
+echo "<option value=\"233\"";
+if($id == 233) echo "selected=\"selected\"";
+echo ">No.233 - 機械火龍 （5星）</option>";
+echo "<option value=\"234\"";
+if($id == 234) echo "selected=\"selected\"";
+echo ">No.234 - 機械火神龍‧伊索爾德 （6星）</option>";
+echo "<option value=\"235\"";
+if($id == 235) echo "selected=\"selected\"";
+echo ">No.235 - 機械地龍 （5星）</option>";
+echo "<option value=\"236\"";
+if($id == 236) echo "selected=\"selected\"";
+echo ">No.236 - 機械地神龍‧卡斯迪 （6星）</option>";
+echo "<option value=\"237\"";
+if($id == 237) echo "selected=\"selected\"";
+echo ">No.237 - 機械聖龍 （5星）</option>";
+echo "<option value=\"238\"";
+if($id == 238) echo "selected=\"selected\"";
+echo ">No.238 - 機械聖皇龍‧泰瑞那斯 （6星）</option>";
+echo "<option value=\"239\"";
+if($id == 239) echo "selected=\"selected\"";
+echo ">No.239 - 機械闍龍 （5星）</option>";
+echo "<option value=\"240\"";
+if($id == 240) echo "selected=\"selected\"";
+echo ">No.240 - 機械冥王龍‧萊瑞姆 （6星）</option>";
+echo "<option value=\"241\"";
+if($id == 241) echo "selected=\"selected\"";
+echo ">No.241 - 破碎之蒼魂 （1星）</option>";
+echo "<option value=\"242\"";
+if($id == 242) echo "selected=\"selected\"";
+echo ">No.242 - 破碎之赤魂 （1星）</option>";
+echo "<option value=\"243\"";
+if($id == 243) echo "selected=\"selected\"";
+echo ">No.243 - 破碎之青魂 （1星）</option>";
+echo "<option value=\"244\"";
+if($id == 244) echo "selected=\"selected\"";
+echo ">No.244 - 破碎之白魂 （1星）</option>";
+echo "<option value=\"245\"";
+if($id == 245) echo "selected=\"selected\"";
+echo ">No.245 - 破碎之黑魂 （1星）</option>";
+echo "<option value=\"246\"";
+if($id == 246) echo "selected=\"selected\"";
+echo ">No.246 - 重生之蒼魂 （2星）</option>";
+echo "<option value=\"247\"";
+if($id == 247) echo "selected=\"selected\"";
+echo ">No.247 - 重生之赤魂 （2星）</option>";
+echo "<option value=\"248\"";
+if($id == 248) echo "selected=\"selected\"";
+echo ">No.248 - 重生之青魂 （2星）</option>";
+echo "<option value=\"249\"";
+if($id == 249) echo "selected=\"selected\"";
+echo ">No.249 - 重生之白魂 （2星）</option>";
+echo "<option value=\"250\"";
+if($id == 250) echo "selected=\"selected\"";
+echo ">No.250 - 重生之黑魂 （2星）</option>";
+echo "<option value=\"251\"";
+if($id == 251) echo "selected=\"selected\"";
+echo ">No.251 - 共生之蒼魂 （3星）</option>";
+echo "<option value=\"252\"";
+if($id == 252) echo "selected=\"selected\"";
+echo ">No.252 - 共生之赤魂 （3星）</option>";
+echo "<option value=\"253\"";
+if($id == 253) echo "selected=\"selected\"";
+echo ">No.253 - 共生之青魂 （3星）</option>";
+echo "<option value=\"254\"";
+if($id == 254) echo "selected=\"selected\"";
+echo ">No.254 - 共生之白魂 （3星）</option>";
+echo "<option value=\"255\"";
+if($id == 255) echo "selected=\"selected\"";
+echo ">No.255 - 共生之黑魂 （3星）</option>";
+echo "<option value=\"256\"";
+if($id == 256) echo "selected=\"selected\"";
+echo ">No.256 - 永恆之蒼魂 （4星）</option>";
+echo "<option value=\"257\"";
+if($id == 257) echo "selected=\"selected\"";
+echo ">No.257 - 永恆之赤魂 （4星）</option>";
+echo "<option value=\"258\"";
+if($id == 258) echo "selected=\"selected\"";
+echo ">No.258 - 永恆之青魂 （4星）</option>";
+echo "<option value=\"259\"";
+if($id == 259) echo "selected=\"selected\"";
+echo ">No.259 - 永恆之白魂 （4星）</option>";
+echo "<option value=\"260\"";
+if($id == 260) echo "selected=\"selected\"";
+echo ">No.260 - 永恆之黑魂 （4星）</option>";
+echo "<option value=\"261\"";
+if($id == 261) echo "selected=\"selected\"";
+echo ">No.261 - 水晶龍蛋 （1星）</option>";
+echo "<option value=\"262\"";
+if($id == 262) echo "selected=\"selected\"";
+echo ">No.262 - 破殼水晶龍 （3星）</option>";
+echo "<option value=\"263\"";
+if($id == 263) echo "selected=\"selected\"";
+echo ">No.263 - 稀有水晶龍 （5星）</option>";
+echo "<option value=\"264\"";
+if($id == 264) echo "selected=\"selected\"";
+echo ">No.264 - 詛咒之劍 （1星）</option>";
+echo "<option value=\"265\"";
+if($id == 265) echo "selected=\"selected\"";
+echo ">No.265 - 殺戮之劍 （3星）</option>";
+echo "<option value=\"266\"";
+if($id == 266) echo "selected=\"selected\"";
+echo ">No.266 - 魔神之劍 （5星）</option>";
+echo "<option value=\"267\"";
+if($id == 267) echo "selected=\"selected\"";
+echo ">No.267 - 蜜涎獸 （1星）</option>";
+echo "<option value=\"268\"";
+if($id == 268) echo "selected=\"selected\"";
+echo ">No.268 - 蜜羽獸 （3星）</option>";
+echo "<option value=\"269\"";
+if($id == 269) echo "selected=\"selected\"";
+echo ">No.269 - 蜜月獸 （5星）</option>";
+echo "<option value=\"270\"";
+if($id == 270) echo "selected=\"selected\"";
+echo ">No.270 - 海洋小靈魂石 （1星）</option>";
+echo "<option value=\"271\"";
+if($id == 271) echo "selected=\"selected\"";
+echo ">No.271 - 火焰小靈魂石 （1星）</option>";
+echo "<option value=\"272\"";
+if($id == 272) echo "selected=\"selected\"";
+echo ">No.272 - 大地小靈魂石 （1星）</option>";
+echo "<option value=\"273\"";
+if($id == 273) echo "selected=\"selected\"";
+echo ">No.273 - 神聖小靈魂石 （1星）</option>";
+echo "<option value=\"274\"";
+if($id == 274) echo "selected=\"selected\"";
+echo ">No.274 - 鬼魅小靈魂石 （1星）</option>";
+echo "<option value=\"275\"";
+if($id == 275) echo "selected=\"selected\"";
+echo ">No.275 - 海洋靈魂石 （2星）</option>";
+echo "<option value=\"276\"";
+if($id == 276) echo "selected=\"selected\"";
+echo ">No.276 - 火焰靈魂石 （2星）</option>";
+echo "<option value=\"277\"";
+if($id == 277) echo "selected=\"selected\"";
+echo ">No.277 - 大地靈魂石 （2星）</option>";
+echo "<option value=\"278\"";
+if($id == 278) echo "selected=\"selected\"";
+echo ">No.278 - 神聖靈魂石 （2星）</option>";
+echo "<option value=\"279\"";
+if($id == 279) echo "selected=\"selected\"";
+echo ">No.279 - 鬼魅靈魂石 （2星）</option>";
+echo "<option value=\"280\"";
+if($id == 280) echo "selected=\"selected\"";
+echo ">No.280 - 海洋千年靈魂石 （3星）</option>";
+echo "<option value=\"281\"";
+if($id == 281) echo "selected=\"selected\"";
+echo ">No.281 - 火焰千年靈魂石 （3星）</option>";
+echo "<option value=\"282\"";
+if($id == 282) echo "selected=\"selected\"";
+echo ">No.282 - 大地千年靈魂石 （3星）</option>";
+echo "<option value=\"283\"";
+if($id == 283) echo "selected=\"selected\"";
+echo ">No.283 - 神聖千年靈魂石 （3星）</option>";
+echo "<option value=\"284\"";
+if($id == 284) echo "selected=\"selected\"";
+echo ">No.284 - 鬼魅千年靈魂石 （3星）</option>";
+echo "<option value=\"285\"";
+if($id == 285) echo "selected=\"selected\"";
+echo ">No.285 - 元素操縱者 - 迪亞布羅 （7星）</option>";
+echo "<option value=\"286\"";
+if($id == 286) echo "selected=\"selected\"";
+echo ">No.286 - 萬魔之王 - 薩魯曼 （7星）</option>";
+echo "<option value=\"287\"";
+if($id == 287) echo "selected=\"selected\"";
+echo ">No.287 - 碑紋騎士 - 奧丁 （7星）</option>";
+echo "<option value=\"288\"";
+if($id == 288) echo "selected=\"selected\"";
+echo ">No.288 - 雙體共生 - 噬日狼 （7星）</option>";
+echo "<option value=\"289\"";
+if($id == 289) echo "selected=\"selected\"";
+echo ">No.289 - 雙體共生 - 喰月狼 （7星）</option>";
+echo "<option value=\"290\"";
+if($id == 290) echo "selected=\"selected\"";
+echo ">No.290 - 雖死猶在 - 毒龍尼德霍格 （7星）</option>";
+echo "<option value=\"291\"";
+if($id == 291) echo "selected=\"selected\"";
+echo ">No.291 - 鬼魅萬年靈魂石 （6星）</option>";
+echo "<option value=\"292\"";
+if($id == 292) echo "selected=\"selected\"";
+echo ">No.292 - 人面怪鳥 （6星）</option>";
+echo "<option value=\"293\"";
+if($id == 293) echo "selected=\"selected\"";
+echo ">No.293 - 米迦勒‧路西法 （6星）</option>";
+echo "<option value=\"294\"";
+if($id == 294) echo "selected=\"selected\"";
+echo ">No.294 - 通透的蛋 （3星）</option>";
+echo "<option value=\"295\"";
+if($id == 295) echo "selected=\"selected\"";
+echo ">No.295 - 海拉 （4星）</option>";
+echo "<option value=\"296\"";
+if($id == 296) echo "selected=\"selected\"";
+echo ">No.296 - 幻夢魚仙‧伊德海拉 （5星）</option>";
+echo "<option value=\"297\"";
+if($id == 297) echo "selected=\"selected\"";
+echo ">No.297 - 火紅的蛋 （3星）</option>";
+echo "<option value=\"298\"";
+if($id == 298) echo "selected=\"selected\"";
+echo ">No.298 - 梅格 （4星）</option>";
+echo "<option value=\"299\"";
+if($id == 299) echo "selected=\"selected\"";
+echo ">No.299 - 龍裔‧梅格籣斯 （5星）</option>";
+echo "<option value=\"300\"";
+if($id == 300) echo "selected=\"selected\"";
+echo ">No.300 - 翠綠的蛋 （3星）</option>";
+echo "<option value=\"301\"";
+if($id == 301) echo "selected=\"selected\"";
+echo ">No.301 - 伊薇特 （4星）</option>";
+echo "<option value=\"302\"";
+if($id == 302) echo "selected=\"selected\"";
+echo ">No.302 - 蝶妖伊薇特 （5星）</option>";
+echo "<option value=\"303\"";
+if($id == 303) echo "selected=\"selected\"";
+echo ">No.303 - 閃亮的蛋 （3星）</option>";
+echo "<option value=\"304\"";
+if($id == 304) echo "selected=\"selected\"";
+echo ">No.304 - 瑪格 （4星）</option>";
+echo "<option value=\"305\"";
+if($id == 305) echo "selected=\"selected\"";
+echo ">No.305 - 聖蜂后‧瑪格莉特 （5星）</option>";
+echo "<option value=\"306\"";
+if($id == 306) echo "selected=\"selected\"";
+echo ">No.306 - 暗啞的蛋 （3星）</option>";
+echo "<option value=\"307\"";
+if($id == 307) echo "selected=\"selected\"";
+echo ">No.307 - 伊莎貝爾 （4星）</option>";
+echo "<option value=\"308\"";
+if($id == 308) echo "selected=\"selected\"";
+echo ">No.308 - 黑寡婦伊莎貝爾 （5星）</option>";
+echo "<option value=\"309\"";
+if($id == 309) echo "selected=\"selected\"";
+echo ">No.309 - 水之異界龍 （4星）</option>";
+echo "<option value=\"310\"";
+if($id == 310) echo "selected=\"selected\"";
+echo ">No.310 - 深潛者之父‧達貢 （5星）</option>";
+echo "<option value=\"311\"";
+if($id == 311) echo "selected=\"selected\"";
+echo ">No.311 - 火之異界龍 （4星）</option>";
+echo "<option value=\"312\"";
+if($id == 312) echo "selected=\"selected\"";
+echo ">No.312 - 火焰共生者‧克圖格亞 （5星）</option>";
+echo "<option value=\"313\"";
+if($id == 313) echo "selected=\"selected\"";
+echo ">No.313 - 風之異界龍 （4星）</option>";
+echo "<option value=\"314\"";
+if($id == 314) echo "selected=\"selected\"";
+echo ">No.314 - 不朽尖吼者‧拜亞基 （5星）</option>";
+echo "<option value=\"315\"";
+if($id == 315) echo "selected=\"selected\"";
+echo ">No.315 - 光之異界龍 （4星）</option>";
+echo "<option value=\"316\"";
+if($id == 316) echo "selected=\"selected\"";
+echo ">No.316 - 招蕩的輝芒‧圖爾茲查 （5星）</option>";
+echo "<option value=\"317\"";
+if($id == 317) echo "selected=\"selected\"";
+echo ">No.317 - 暗之異界龍 （4星）</option>";
+echo "<option value=\"318\"";
+if($id == 318) echo "selected=\"selected\"";
+echo ">No.318 - 群山中之恐怖‧法格恩 （5星）</option>";
+echo "<option value=\"319\"";
+if($id == 319) echo "selected=\"selected\"";
+echo ">No.319 - 破損的海神守護石像 （2星）</option>";
+echo "<option value=\"320\"";
+if($id == 320) echo "selected=\"selected\"";
+echo ">No.320 - 海神守護石像 （3星）</option>";
+echo "<option value=\"321\"";
+if($id == 321) echo "selected=\"selected\"";
+echo ">No.321 - 破損的火神守護石像 （2星）</option>";
+echo "<option value=\"322\"";
+if($id == 322) echo "selected=\"selected\"";
+echo ">No.322 - 火神守護石像 （3星）</option>";
+echo "<option value=\"323\"";
+if($id == 323) echo "selected=\"selected\"";
+echo ">No.323 - 破損的女戰神守護石像 （2星）</option>";
+echo "<option value=\"324\"";
+if($id == 324) echo "selected=\"selected\"";
+echo ">No.324 - 女戰神守護石像 （3星）</option>";
+echo "<option value=\"325\"";
+if($id == 325) echo "selected=\"selected\"";
+echo ">No.325 - 破損的太陽神守護石像 （2星）</option>";
+echo "<option value=\"326\"";
+if($id == 326) echo "selected=\"selected\"";
+echo ">No.326 - 太陽神守護石像 （3星）</option>";
+echo "<option value=\"327\"";
+if($id == 327) echo "selected=\"selected\"";
+echo ">No.327 - 破損的月神守護石像 （2星）</option>";
+echo "<option value=\"328\"";
+if($id == 328) echo "selected=\"selected\"";
+echo ">No.328 - 月神守護石像 （3星）</option>";
+echo "<option value=\"329\"";
+if($id == 329) echo "selected=\"selected\"";
+echo ">No.329 - 浪濤史萊姆 （4星）</option>";
+echo "<option value=\"330\"";
+if($id == 330) echo "selected=\"selected\"";
+echo ">No.330 - 烈炎史萊姆 （4星）</option>";
+echo "<option value=\"331\"";
+if($id == 331) echo "selected=\"selected\"";
+echo ">No.331 - 花豔史萊姆 （4星）</option>";
+echo "<option value=\"332\"";
+if($id == 332) echo "selected=\"selected\"";
+echo ">No.332 - 神聖史萊姆 （4星）</option>";
+echo "<option value=\"333\"";
+if($id == 333) echo "selected=\"selected\"";
+echo ">No.333 - 邪魔史萊姆 （4星）</option>";
+echo "<option value=\"334\"";
+if($id == 334) echo "selected=\"selected\"";
+echo ">No.334 - 海韻女皇 （4星）</option>";
+echo "<option value=\"335\"";
+if($id == 335) echo "selected=\"selected\"";
+echo ">No.335 - 火岩領主 （4星）</option>";
+echo "<option value=\"336\"";
+if($id == 336) echo "selected=\"selected\"";
+echo ">No.336 - 花冠貴婦 （4星）</option>";
+echo "<option value=\"337\"";
+if($id == 337) echo "selected=\"selected\"";
+echo ">No.337 - 月耀公主 （4星）</option>";
+echo "<option value=\"338\"";
+if($id == 338) echo "selected=\"selected\"";
+echo ">No.338 - 夜影魔女 （4星）</option>";
+echo "<option value=\"339\"";
+if($id == 339) echo "selected=\"selected\"";
+echo ">No.339 - 冰谷蜥蜴騎士 （4星）</option>";
+echo "<option value=\"340\"";
+if($id == 340) echo "selected=\"selected\"";
+echo ">No.340 - 岩漿蜥蜴騎士 （4星）</option>";
+echo "<option value=\"341\"";
+if($id == 341) echo "selected=\"selected\"";
+echo ">No.341 - 密林蜥蜴騎士 （4星）</option>";
+echo "<option value=\"342\"";
+if($id == 342) echo "selected=\"selected\"";
+echo ">No.342 - 聖光蜥蜴騎士 （4星）</option>";
+echo "<option value=\"343\"";
+if($id == 343) echo "selected=\"selected\"";
+echo ">No.343 - 黑雷蜥蜴騎士 （4星）</option>";
+echo "<option value=\"344\"";
+if($id == 344) echo "selected=\"selected\"";
+echo ">No.344 - 特洛伊公主 （5星）</option>";
+echo "<option value=\"345\"";
+if($id == 345) echo "selected=\"selected\"";
+echo ">No.345 - 受詛咒的先知‧卡珊德拉 （6星）</option>";
+echo "<option value=\"346\"";
+if($id == 346) echo "selected=\"selected\"";
+echo ">No.346 - 科耳喀斯皇女 （5星）</option>";
+echo "<option value=\"347\"";
+if($id == 347) echo "selected=\"selected\"";
+echo ">No.347 - 愛與恨的魔女‧美狄亞 （6星）</option>";
+echo "<option value=\"348\"";
+if($id == 348) echo "selected=\"selected\"";
+echo ">No.348 - 薩爾瑪提亞女皇 （5星）</option>";
+echo "<option value=\"349\"";
+if($id == 349) echo "selected=\"selected\"";
+echo ">No.349 - 黑魔法女巫‧喀耳刻 （6星）</option>";
+echo "<option value=\"350\"";
+if($id == 350) echo "selected=\"selected\"";
+echo ">No.350 - 寒霧劍塚‧卡戎 （6星）</option>";
+echo "<option value=\"351\"";
+if($id == 351) echo "selected=\"selected\"";
+echo ">No.351 - 機關傀儡‧紅月 （6星）</option>";
+echo "<option value=\"352\"";
+if($id == 352) echo "selected=\"selected\"";
+echo ">No.352 - 腐林魔女‧布萊爾 （6星）</option>";
+echo "<option value=\"353\"";
+if($id == 353) echo "selected=\"selected\"";
+echo ">No.353 - 鐵處女像‧浮士德 （6星）</option>";
+echo "<option value=\"354\"";
+if($id == 354) echo "selected=\"selected\"";
+echo ">No.354 - 貓公爵‧費利克斯 （6星）</option>";
+echo "<option value=\"355\"";
+if($id == 355) echo "selected=\"selected\"";
+echo ">No.355 - 持劍侍女‧波比 （5星）</option>";
+echo "<option value=\"356\"";
+if($id == 356) echo "selected=\"selected\"";
+echo ">No.356 - 白羊宮‧波比 （6星）</option>";
+echo "<option value=\"357\"";
+if($id == 357) echo "selected=\"selected\"";
+echo ">No.357 - 攻城者‧阿姆土唐 （5星）</option>";
+echo "<option value=\"358\"";
+if($id == 358) echo "selected=\"selected\"";
+echo ">No.358 - 金牛宮‧阿姆土唐 （6星）</option>";
+echo "<option value=\"359\"";
+if($id == 359) echo "selected=\"selected\"";
+echo ">No.359 - 雙劍士‧波魯克斯 （5星）</option>";
+echo "<option value=\"360\"";
+if($id == 360) echo "selected=\"selected\"";
+echo ">No.360 - 雙子宮‧加斯陀與波魯克斯 （6星）</option>";
+echo "<option value=\"361\"";
+if($id == 361) echo "selected=\"selected\"";
+echo ">No.361 - 暗影刺客‧約翰 （5星）</option>";
+echo "<option value=\"362\"";
+if($id == 362) echo "selected=\"selected\"";
+echo ">No.362 - 巨蟹宮‧約翰 （6星）</option>";
+echo "<option value=\"363\"";
+if($id == 363) echo "selected=\"selected\"";
+echo ">No.363 - 重劍士‧加里昂 （5星）</option>";
+echo "<option value=\"364\"";
+if($id == 364) echo "selected=\"selected\"";
+echo ">No.364 - 獅子宮‧加里昂 （6星）</option>";
+echo "<option value=\"365\"";
+if($id == 365) echo "selected=\"selected\"";
+echo ">No.365 - 割穗少女‧普西芬妮 （5星）</option>";
+echo "<option value=\"366\"";
+if($id == 366) echo "selected=\"selected\"";
+echo ">No.366 - 處女宮‧普西芬妮 （6星）</option>";
+echo "<option value=\"367\"";
+if($id == 367) echo "selected=\"selected\"";
+echo ">No.367 - 聖殿武士‧露娜 （5星）</option>";
+echo "<option value=\"368\"";
+if($id == 368) echo "selected=\"selected\"";
+echo ">No.368 - 天秤宮‧露娜 （6星）</option>";
+echo "<option value=\"369\"";
+if($id == 369) echo "selected=\"selected\"";
+echo ">No.369 - 重鐮刺客‧艾瑪 （5星）</option>";
+echo "<option value=\"370\"";
+if($id == 370) echo "selected=\"selected\"";
+echo ">No.370 - 天蠍宮‧艾瑪 （6星）</option>";
+echo "<option value=\"371\"";
+if($id == 371) echo "selected=\"selected\"";
+echo ">No.371 - 綠林行者‧赫茲 （5星）</option>";
+echo "<option value=\"372\"";
+if($id == 372) echo "selected=\"selected\"";
+echo ">No.372 - 人馬宮‧赫茲 （6星）</option>";
+echo "<option value=\"373\"";
+if($id == 373) echo "selected=\"selected\"";
+echo ">No.373 - 碎岩武者‧杜門 （5星）</option>";
+echo "<option value=\"374\"";
+if($id == 374) echo "selected=\"selected\"";
+echo ">No.374 - 山羊宮‧杜門 （6星）</option>";
+echo "<option value=\"375\"";
+if($id == 375) echo "selected=\"selected\"";
+echo ">No.375 - 鬼魅舞者‧凱莉 （5星）</option>";
+echo "<option value=\"376\"";
+if($id == 376) echo "selected=\"selected\"";
+echo ">No.376 - 水瓶宮‧凱莉 （6星）</option>";
+echo "<option value=\"377\"";
+if($id == 377) echo "selected=\"selected\"";
+echo ">No.377 - 海浪騎士‧卡秋婭與拉維妮斯 （5星）</option>";
+echo "<option value=\"378\"";
+if($id == 378) echo "selected=\"selected\"";
+echo ">No.378 - 雙魚宮‧卡秋婭與拉維妮斯 （6星）</option>";
+echo "<option value=\"379\"";
+if($id == 379) echo "selected=\"selected\"";
+echo ">No.379 - 黃道星靈‧水 （4星）</option>";
+echo "<option value=\"380\"";
+if($id == 380) echo "selected=\"selected\"";
+echo ">No.380 - 黃道星靈‧火 （4星）</option>";
+echo "<option value=\"381\"";
+if($id == 381) echo "selected=\"selected\"";
+echo ">No.381 - 黃道星靈‧木 （4星）</option>";
+echo "<option value=\"382\"";
+if($id == 382) echo "selected=\"selected\"";
+echo ">No.382 - 黃道星靈‧光 （4星）</option>";
+echo "<option value=\"383\"";
+if($id == 383) echo "selected=\"selected\"";
+echo ">No.383 - 黃道星靈‧暗 （4星）</option>";
+echo "<option value=\"384\"";
+if($id == 384) echo "selected=\"selected\"";
+echo ">No.384 - 占星者 （5星）</option>";
+echo "<option value=\"385\"";
+if($id == 385) echo "selected=\"selected\"";
+echo ">No.385 - 見習小丑 （1星）</option>";
+echo "<option value=\"386\"";
+if($id == 386) echo "selected=\"selected\"";
+echo ">No.386 - 無頭小丑 （3星）</option>";
+echo "<option value=\"387\"";
+if($id == 387) echo "selected=\"selected\"";
+echo ">No.387 - 午夜之丑角 （5星）</option>";
+echo "<option value=\"388\"";
+if($id == 388) echo "selected=\"selected\"";
+echo ">No.388 - 不懼的鬼戰士 （5星）</option>";
+echo "<option value=\"389\"";
+if($id == 389) echo "selected=\"selected\"";
+echo ">No.389 - 屠龍者‧貝奧武夫 （6星）</option>";
+echo "<option value=\"390\"";
+if($id == 390) echo "selected=\"selected\"";
+echo ">No.390 - 不仁的鬼鬥士 （5星）</option>";
+echo "<option value=\"391\"";
+if($id == 391) echo "selected=\"selected\"";
+echo ">No.391 - 戰神‧阿基里斯 （6星）</option>";
+echo "<option value=\"392\"";
+if($id == 392) echo "selected=\"selected\"";
+echo ">No.392 - 不幸的鬼騎士 （5星）</option>";
+echo "<option value=\"393\"";
+if($id == 393) echo "selected=\"selected\"";
+echo ">No.393 - 薔薇雙槍‧迪爾姆德 （6星）</option>";
+echo "<option value=\"394\"";
+if($id == 394) echo "selected=\"selected\"";
+echo ">No.394 - 不惑的鬼武士 （5星）</option>";
+echo "<option value=\"395\"";
+if($id == 395) echo "selected=\"selected\"";
+echo ">No.395 - 遮那王‧源義經 （6星）</option>";
+echo "<option value=\"396\"";
+if($id == 396) echo "selected=\"selected\"";
+echo ">No.396 - 不義的鬼將士 （5星）</option>";
+echo "<option value=\"397\"";
+if($id == 397) echo "selected=\"selected\"";
+echo ">No.397 - 鬼神‧呂布 （6星）</option>";
+echo "<option value=\"398\"";
+if($id == 398) echo "selected=\"selected\"";
+echo ">No.398 - 光輝萬年靈魂石 （6星）</option>";
+echo "<option value=\"399\"";
+if($id == 399) echo "selected=\"selected\"";
+echo ">No.399 - 暴食史萊姆王 （6星）</option>";
+echo "<option value=\"400\"";
+if($id == 400) echo "selected=\"selected\"";
+echo ">No.400 - 瘋頭 （6星）</option>";
+echo "<option value=\"401\"";
+if($id == 401) echo "selected=\"selected\"";
+echo ">No.401 - 聖言歌姬‧妍 （6星）</option>";
+echo "<option value=\"402\"";
+if($id == 402) echo "selected=\"selected\"";
+echo ">No.402 - 夜言歌姬‧希 （6星）</option>";
+echo "<option value=\"403\"";
+if($id == 403) echo "selected=\"selected\"";
+echo ">No.403 - 波拉 （3星）</option>";
+echo "<option value=\"404\"";
+if($id == 404) echo "selected=\"selected\"";
+echo ">No.404 - 奇美拉 （3星）</option>";
+echo "<option value=\"405\"";
+if($id == 405) echo "selected=\"selected\"";
+echo ">No.405 - 潘 （3星）</option>";
+echo "<option value=\"406\"";
+if($id == 406) echo "selected=\"selected\"";
+echo ">No.406 - 福魯斯 （3星）</option>";
+echo "<option value=\"407\"";
+if($id == 407) echo "selected=\"selected\"";
+echo ">No.407 - 拉彌亞 （3星）</option>";
+echo "<option value=\"408\"";
+if($id == 408) echo "selected=\"selected\"";
+echo ">No.408 - 大魔導士莫莉 （6星）</option>";
+echo "<option value=\"409\"";
+if($id == 409) echo "selected=\"selected\"";
+echo ">No.409 - 龍焰騎士肖恩 （6星）</option>";
+echo "<option value=\"410\"";
+if($id == 410) echo "selected=\"selected\"";
+echo ">No.410 - 大地霸主鄧肯 （6星）</option>";
+echo "<option value=\"411\"";
+if($id == 411) echo "selected=\"selected\"";
+echo ">No.411 - 公爵奈寶尼 （6星）</option>";
+echo "<option value=\"412\"";
+if($id == 412) echo "selected=\"selected\"";
+echo ">No.412 - 死靈魔導安多 （6星）</option>";
+echo "<option value=\"413\"";
+if($id == 413) echo "selected=\"selected\"";
+echo ">No.413 - 蒼龍魂使 （5星）</option>";
+echo "<option value=\"414\"";
+if($id == 414) echo "selected=\"selected\"";
+echo ">No.414 - 龍儀姬‧烏蘇拉 （6星）</option>";
+echo "<option value=\"415\"";
+if($id == 415) echo "selected=\"selected\"";
+echo ">No.415 - 赤龍魂使 （5星）</option>";
+echo "<option value=\"416\"";
+if($id == 416) echo "selected=\"selected\"";
+echo ">No.416 - 龍儀姬‧愛格德 （6星）</option>";
+echo "<option value=\"417\"";
+if($id == 417) echo "selected=\"selected\"";
+echo ">No.417 - 青龍魂使 （5星）</option>";
+echo "<option value=\"418\"";
+if($id == 418) echo "selected=\"selected\"";
+echo ">No.418 - 龍儀姬‧芭芭拉 （6星）</option>";
+echo "<option value=\"419\"";
+if($id == 419) echo "selected=\"selected\"";
+echo ">No.419 - 光龍魂使 （5星）</option>";
+echo "<option value=\"420\"";
+if($id == 420) echo "selected=\"selected\"";
+echo ">No.420 - 龍脈者‧安納 （6星）</option>";
+echo "<option value=\"421\"";
+if($id == 421) echo "selected=\"selected\"";
+echo ">No.421 - 暗龍魂使 （5星）</option>";
+echo "<option value=\"422\"";
+if($id == 422) echo "selected=\"selected\"";
+echo ">No.422 - 龍脈者‧諾瓦利斯 （6星）</option>";
+echo "<option value=\"423\"";
+if($id == 423) echo "selected=\"selected\"";
+echo ">No.423 - 異域法眼 （1星）</option>";
+echo "<option value=\"424\"";
+if($id == 424) echo "selected=\"selected\"";
+echo ">No.424 - 機關騎士 （3星）</option>";
+echo "<option value=\"425\"";
+if($id == 425) echo "selected=\"selected\"";
+echo ">No.425 - 永劫碑文像 （5星）</option>";
+echo "<option value=\"426\"";
+if($id == 426) echo "selected=\"selected\"";
+echo ">No.426 - 碧海萬年靈魂石 （5星）</option>";
+echo "<option value=\"427\"";
+if($id == 427) echo "selected=\"selected\"";
+echo ">No.427 - 熾焰萬年靈魂石 （5星）</option>";
+echo "<option value=\"428\"";
+if($id == 428) echo "selected=\"selected\"";
+echo ">No.428 - 大地萬年靈魂石 （5星）</option>";
+echo "<option value=\"429\"";
+if($id == 429) echo "selected=\"selected\"";
+echo ">No.429 - 追憶旅人 （3星）</option>";
+echo "<option value=\"430\"";
+if($id == 430) echo "selected=\"selected\"";
+echo ">No.430 - 號角手加拉爾 （5星）</option>";
+echo "<option value=\"431\"";
+if($id == 431) echo "selected=\"selected\"";
+echo ">No.431 - 貪婪精靈女王 （6星）</option>";
+echo "<option value=\"432\"";
+if($id == 432) echo "selected=\"selected\"";
+echo ">No.432 - 奪寶海盜 （5星）</option>";
+echo "<option value=\"433\"";
+if($id == 433) echo "selected=\"selected\"";
+echo ">No.433 - 冰晶領航者‧奪寶海盜 （6星）</option>";
+echo "<option value=\"434\"";
+if($id == 434) echo "selected=\"selected\"";
+echo ">No.434 - 紅纓武者 （5星）</option>";
+echo "<option value=\"435\"";
+if($id == 435) echo "selected=\"selected\"";
+echo ">No.435 - 火靈之舞‧紅纓武者 （6星）</option>";
+echo "<option value=\"436\"";
+if($id == 436) echo "selected=\"selected\"";
+echo ">No.436 - 捕風酋長 （5星）</option>";
+echo "<option value=\"437\"";
+if($id == 437) echo "selected=\"selected\"";
+echo ">No.437 - 翡翠獵手‧捕風酋長 （6星）</option>";
+echo "<option value=\"438\"";
+if($id == 438) echo "selected=\"selected\"";
+echo ">No.438 - 清泉守衛 （6星）</option>";
+echo "<option value=\"439\"";
+if($id == 439) echo "selected=\"selected\"";
+echo ">No.439 - 炎鎧戰士 （6星）</option>";
+echo "<option value=\"440\"";
+if($id == 440) echo "selected=\"selected\"";
+echo ">No.440 - 雁目射手 （6星）</option>";
+echo "<option value=\"441\"";
+if($id == 441) echo "selected=\"selected\"";
+echo ">No.441 - 萬劍寵僕 （6星）</option>";
+echo "<option value=\"442\"";
+if($id == 442) echo "selected=\"selected\"";
+echo ">No.442 - 暗影鬥士 （6星）</option>";
+echo "<option value=\"443\"";
+if($id == 443) echo "selected=\"selected\"";
+echo ">No.443 - 占星蛙法師 （3星）</option>";
+echo "<option value=\"444\"";
+if($id == 444) echo "selected=\"selected\"";
+echo ">No.444 - 道法飄蟲 （3星）</option>";
+echo "<option value=\"445\"";
+if($id == 445) echo "selected=\"selected\"";
+echo ">No.445 - 修道雛鴨 （3星）</option>";
+echo "<option value=\"446\"";
+if($id == 446) echo "selected=\"selected\"";
+echo ">No.446 - 賜福蜜蜂 （3星）</option>";
+echo "<option value=\"447\"";
+if($id == 447) echo "selected=\"selected\"";
+echo ">No.447 - 奧秘魚術士 （3星）</option>";
+echo "<option value=\"448\"";
+if($id == 448) echo "selected=\"selected\"";
+echo ">No.448 - 符靈典範‧綠茵國王 （6星）</option>";
+echo "<option value=\"449\"";
+if($id == 449) echo "selected=\"selected\"";
+echo ">No.449 - 狂怒蜥蜴暴君 （6星）</option>";
+echo "<option value=\"450\"";
+if($id == 450) echo "selected=\"selected\"";
+echo ">No.450 - 法則女神 ‧ 姬氏 （6星）</option>";
+echo "<option value=\"451\"";
+if($id == 451) echo "selected=\"selected\"";
+echo ">No.451 - 地精絞殺者 （4星）</option>";
+echo "<option value=\"452\"";
+if($id == 452) echo "selected=\"selected\"";
+echo ">No.452 - 地精斬首者 （4星）</option>";
+echo "<option value=\"453\"";
+if($id == 453) echo "selected=\"selected\"";
+echo ">No.453 - 地精扼喉者 （4星）</option>";
+echo "<option value=\"454\"";
+if($id == 454) echo "selected=\"selected\"";
+echo ">No.454 - 地精碎骨者 （4星）</option>";
+echo "<option value=\"455\"";
+if($id == 455) echo "selected=\"selected\"";
+echo ">No.455 - 地精切裂者 （4星）</option>";
+echo "<option value=\"456\"";
+if($id == 456) echo "selected=\"selected\"";
+echo ">No.456 - 星佑法師愛莉絲 （4星）</option>";
+echo "<option value=\"457\"";
+if($id == 457) echo "selected=\"selected\"";
+echo ">No.457 - 管狐飼者瑪莉曼 （4星）</option>";
+echo "<option value=\"458\"";
+if($id == 458) echo "selected=\"selected\"";
+echo ">No.458 - 煉屍術士凱莉絲 （4星）</option>";
+echo "<option value=\"459\"";
+if($id == 459) echo "selected=\"selected\"";
+echo ">No.459 - 神罰使者安迪莉亞 （4星）</option>";
+echo "<option value=\"460\"";
+if($id == 460) echo "selected=\"selected\"";
+echo ">No.460 - 鍊金巫師莉莉絲 （4星）</option>";
+echo "<option value=\"461\"";
+if($id == 461) echo "selected=\"selected\"";
+echo ">No.461 - 冽霜武僧 （4星）</option>";
+echo "<option value=\"462\"";
+if($id == 462) echo "selected=\"selected\"";
+echo ">No.462 - 岩焰統領 （4星）</option>";
+echo "<option value=\"463\"";
+if($id == 463) echo "selected=\"selected\"";
+echo ">No.463 - 木靈栽者 （4星）</option>";
+echo "<option value=\"464\"";
+if($id == 464) echo "selected=\"selected\"";
+echo ">No.464 - 聖裁勇者 （4星）</option>";
+echo "<option value=\"465\"";
+if($id == 465) echo "selected=\"selected\"";
+echo ">No.465 - 暗影刺客 （4星）</option>";
+echo "<option value=\"466\"";
+if($id == 466) echo "selected=\"selected\"";
+echo ">No.466 - 貴族伊莉莎白 （5星）</option>";
+echo "<option value=\"467\"";
+if($id == 467) echo "selected=\"selected\"";
+echo ">No.467 - 血浴美人 ‧ 伊莉莎白 （6星）</option>";
+echo "<option value=\"468\"";
+if($id == 468) echo "selected=\"selected\"";
+echo ">No.468 - 信差潔琪 （5星）</option>";
+echo "<option value=\"469\"";
+if($id == 469) echo "selected=\"selected\"";
+echo ">No.469 - 彈簧腿 ‧ 潔琪 （6星）</option>";
+echo "<option value=\"470\"";
+if($id == 470) echo "selected=\"selected\"";
+echo ">No.470 - 婚約者貝莉 （5星）</option>";
+echo "<option value=\"471\"";
+if($id == 471) echo "selected=\"selected\"";
+echo ">No.471 - 罌花新娘 ‧ 貝莉 （6星）</option>";
+echo "<option value=\"472\"";
+if($id == 472) echo "selected=\"selected\"";
+echo ">No.472 - 紳士傑克 （5星）</option>";
+echo "<option value=\"473\"";
+if($id == 473) echo "selected=\"selected\"";
+echo ">No.473 - 開膛怪傑 ‧ 傑克 （6星）</option>";
+echo "<option value=\"474\"";
+if($id == 474) echo "selected=\"selected\"";
+echo ">No.474 - 理髮魔偶陶德 （5星）</option>";
+echo "<option value=\"475\"";
+if($id == 475) echo "selected=\"selected\"";
+echo ">No.475 - 戲謔小丑 ‧ 陶德 （6星）</option>";
+echo "<option value=\"476\"";
+if($id == 476) echo "selected=\"selected\"";
+echo ">No.476 - 冰雪巫師 ‧ 波葛 （5星）</option>";
+echo "<option value=\"477\"";
+if($id == 477) echo "selected=\"selected\"";
+echo ">No.477 - 惡作劇精靈 ‧ 波加特 （5星）</option>";
+echo "<option value=\"478\"";
+if($id == 478) echo "selected=\"selected\"";
+echo ">No.478 - 掃除小精靈 ‧ 布朗尼 （5星）</option>";
+echo "<option value=\"479\"";
+if($id == 479) echo "selected=\"selected\"";
+echo ">No.479 - 沉思的賢者 ‧ 山特古羅斯 （6星）</option>";
+echo "<option value=\"480\"";
+if($id == 480) echo "selected=\"selected\"";
+echo ">No.480 - 色慾胎飼魔母 （6星）</option>";
+echo "<option value=\"481\"";
+if($id == 481) echo "selected=\"selected\"";
+echo ">No.481 - 記憶與遺忘‧女武神烏爾德 （6星）</option>";
+echo "<option value=\"482\"";
+if($id == 482) echo "selected=\"selected\"";
+echo ">No.482 - 開端與終結‧女武神斯庫爾德 （6星）</option>";
+echo "<option value=\"483\"";
+if($id == 483) echo "selected=\"selected\"";
+echo ">No.483 - 命定與改變‧女武神薇兒丹蒂 （6星）</option>";
+echo "<option value=\"484\"";
+if($id == 484) echo "selected=\"selected\"";
+echo ">No.484 - 神木之眷‧永祭之伊登 （6星）</option>";
+echo "<option value=\"485\"";
+if($id == 485) echo "selected=\"selected\"";
+echo ">No.485 - 破刃之鐮‧布倫希爾德 （6星）</option>";
+echo "<option value=\"486\"";
+if($id == 486) echo "selected=\"selected\"";
+echo ">No.486 - 水龍牙棋 （3星）</option>";
+echo "<option value=\"487\"";
+if($id == 487) echo "selected=\"selected\"";
+echo ">No.487 - 火龍牙棋 （3星）</option>";
+echo "<option value=\"488\"";
+if($id == 488) echo "selected=\"selected\"";
+echo ">No.488 - 木龍牙棋 （3星）</option>";
+echo "<option value=\"489\"";
+if($id == 489) echo "selected=\"selected\"";
+echo ">No.489 - 光龍牙棋 （3星）</option>";
+echo "<option value=\"490\"";
+if($id == 490) echo "selected=\"selected\"";
+echo ">No.490 - 暗龍牙棋 （3星）</option>";
+echo "<option value=\"491\"";
+if($id == 491) echo "selected=\"selected\"";
+echo ">No.491 - 仰望者瘋帽 （6星）</option>";
+echo "<option value=\"492\"";
+if($id == 492) echo "selected=\"selected\"";
+echo ">No.492 - 狂人三月兔 （6星）</option>";
+echo "<option value=\"493\"";
+if($id == 493) echo "selected=\"selected\"";
+echo ">No.493 - 建言者書頁蟲 （6星）</option>";
+echo "<option value=\"494\"";
+if($id == 494) echo "selected=\"selected\"";
+echo ">No.494 - 餐桌騎士睡鼠 （6星）</option>";
+echo "<option value=\"495\"";
+if($id == 495) echo "selected=\"selected\"";
+echo ">No.495 - 魔郡咧齒貓 （6星）</option>";
+echo "<option value=\"496\"";
+if($id == 496) echo "selected=\"selected\"";
+echo ">No.496 - 魔境之主 紅心女王 （6星）</option>";
+echo "<option value=\"497\"";
+if($id == 497) echo "selected=\"selected\"";
+echo ">No.497 - 笑容守護犬 （5星）</option>";
+echo "<option value=\"498\"";
+if($id == 498) echo "selected=\"selected\"";
+echo ">No.498 - 福德神寵 ‧ 笑犬 （6星）</option>";
+echo "<option value=\"499\"";
+if($id == 499) echo "selected=\"selected\"";
+echo ">No.499 - 怒顏守護犬 （5星）</option>";
+echo "<option value=\"500\"";
+if($id == 500) echo "selected=\"selected\"";
+echo ">No.500 - 懲惡神衛 ‧ 怒犬 （6星）</option>";
+echo "<option value=\"501\"";
+if($id == 501) echo "selected=\"selected\"";
+echo ">No.501 - 韶光仙獸 ‧ 年 （6星）</option>";
+echo "<option value=\"502\"";
+if($id == 502) echo "selected=\"selected\"";
+echo ">No.502 - 覓果幻獸 （5星）</option>";
+echo "<option value=\"503\"";
+if($id == 503) echo "selected=\"selected\"";
+echo ">No.503 - 原始滄龍 （0星）</option>";
+echo "<option value=\"504\"";
+if($id == 504) echo "selected=\"selected\"";
+echo ">No.504 -  （0星）</option>";
+echo "<option value=\"505\"";
+if($id == 505) echo "selected=\"selected\"";
+echo ">No.505 -  （0星）</option>";
+echo "<option value=\"506\"";
+if($id == 506) echo "selected=\"selected\"";
+echo ">No.506 - 不滅戰意‧費雷 （7星）</option>";
+echo "<option value=\"507\"";
+if($id == 507) echo "selected=\"selected\"";
+echo ">No.507 - 烈火懲責‧提爾 （7星）</option>";
+echo "<option value=\"508\"";
+if($id == 508) echo "selected=\"selected\"";
+echo ">No.508 - 唁魂之喚‧費蕾雅 （7星）</option>";
+echo "<option value=\"509\"";
+if($id == 509) echo "selected=\"selected\"";
+echo ">No.509 - 轟雷鳴動‧索爾 （7星）</option>";
+echo "<option value=\"510\"";
+if($id == 510) echo "selected=\"selected\"";
+echo ">No.510 - 不赦眚惡‧洛基 （7星）</option>";
+echo "<option value=\"511\"";
+if($id == 511) echo "selected=\"selected\"";
+echo ">No.511 - 乾坎天帝‧青龍 （6星）</option>";
+echo "<option value=\"512\"";
+if($id == 512) echo "selected=\"selected\"";
+echo ">No.512 - 坎艮神鳥‧朱雀 （6星）</option>";
+echo "<option value=\"513\"";
+if($id == 513) echo "selected=\"selected\"";
+echo ">No.513 - 震巽靈帝‧玄武 （6星）</option>";
+echo "<option value=\"514\"";
+if($id == 514) echo "selected=\"selected\"";
+echo ">No.514 - 离坤獸皇‧白虎 （6星）</option>";
+echo "<option value=\"515\"";
+if($id == 515) echo "selected=\"selected\"";
+echo ">No.515 - 兌中邪帝‧饕餮 （6星）</option>";
+echo "<option value=\"516\"";
+if($id == 516) echo "selected=\"selected\"";
+echo ">No.516 - 復活火鳥 （2星）</option>";
+echo "<option value=\"517\"";
+if($id == 517) echo "selected=\"selected\"";
+echo ">No.517 - 魅影劍客 （3星）</option>";
+echo "<option value=\"518\"";
+if($id == 518) echo "selected=\"selected\"";
+echo ">No.518 - 靈光飛刀手 （4星）</option>";
+echo "<option value=\"519\"";
+if($id == 519) echo "selected=\"selected\"";
+echo ">No.519 - 生命之光‧伊施妲 （6星）</option>";
+echo "<option value=\"520\"";
+if($id == 520) echo "selected=\"selected\"";
+echo ">No.520 - 傲慢幽狼酋長 （6星）</option>";
+echo "<option value=\"521\"";
+if($id == 521) echo "selected=\"selected\"";
+echo ">No.521 - 蝦兵‧蟹將 （3星）</option>";
+echo "<option value=\"522\"";
+if($id == 522) echo "selected=\"selected\"";
+echo ">No.522 - 甲兵‧鎧將 （4星）</option>";
+echo "<option value=\"523\"";
+if($id == 523) echo "selected=\"selected\"";
+echo ">No.523 - 修道客 （3星）</option>";
+echo "<option value=\"524\"";
+if($id == 524) echo "selected=\"selected\"";
+echo ">No.524 - 崑崙道士 （4星）</option>";
+echo "<option value=\"525\"";
+if($id == 525) echo "selected=\"selected\"";
+echo ">No.525 - 桃木精 （3星）</option>";
+echo "<option value=\"526\"";
+if($id == 526) echo "selected=\"selected\"";
+echo ">No.526 - 千里眼 （4星）</option>";
+echo "<option value=\"527\"";
+if($id == 527) echo "selected=\"selected\"";
+echo ">No.527 - 尋道者 （3星）</option>";
+echo "<option value=\"528\"";
+if($id == 528) echo "selected=\"selected\"";
+echo ">No.528 - 散仙神女 （4星）</option>";
+echo "<option value=\"529\"";
+if($id == 529) echo "selected=\"selected\"";
+echo ">No.529 - 柳鬼 （3星）</option>";
+echo "<option value=\"530\"";
+if($id == 530) echo "selected=\"selected\"";
+echo ">No.530 - 順風耳 （4星）</option>";
+echo "<option value=\"531\"";
+if($id == 531) echo "selected=\"selected\"";
+echo ">No.531 - 太師聞仲 （5星）</option>";
+echo "<option value=\"532\"";
+if($id == 532) echo "selected=\"selected\"";
+echo ">No.532 - 普化天尊‧聞仲 （6星）</option>";
+echo "<option value=\"533\"";
+if($id == 533) echo "selected=\"selected\"";
+echo ">No.533 - 道僧燃燈 （5星）</option>";
+echo "<option value=\"534\"";
+if($id == 534) echo "selected=\"selected\"";
+echo ">No.534 - 錠光如來‧燃燈 （6星）</option>";
+echo "<option value=\"535\"";
+if($id == 535) echo "selected=\"selected\"";
+echo ">No.535 - 靈將楊戩 （5星）</option>";
+echo "<option value=\"536\"";
+if($id == 536) echo "selected=\"selected\"";
+echo ">No.536 - 清源仙將‧楊戩 （6星）</option>";
+echo "<option value=\"537\"";
+if($id == 537) echo "selected=\"selected\"";
+echo ">No.537 - 仙道姜尚 （5星）</option>";
+echo "<option value=\"538\"";
+if($id == 538) echo "selected=\"selected\"";
+echo ">No.538 - 封神仙帥‧姜子牙 （6星）</option>";
+echo "<option value=\"539\"";
+if($id == 539) echo "selected=\"selected\"";
+echo ">No.539 - 仙道申公豹 （5星）</option>";
+echo "<option value=\"540\"";
+if($id == 540) echo "selected=\"selected\"";
+echo ">No.540 - 號雷鬥罡‧申公豹 （6星）</option>";
+echo "<option value=\"541\"";
+if($id == 541) echo "selected=\"selected\"";
+echo ">No.541 - 傀儡仙童 （5星）</option>";
+echo "<option value=\"542\"";
+if($id == 542) echo "selected=\"selected\"";
+echo ">No.542 - 三清祖師‧元始天尊 （6星）</option>";
+echo "<option value=\"543\"";
+if($id == 543) echo "selected=\"selected\"";
+echo ">No.543 - 靈寶天尊‧通天教主 （6星）</option>";
+echo "<option value=\"544\"";
+if($id == 544) echo "selected=\"selected\"";
+echo ">No.544 - 異界使者 （0星）</option>";
+echo "<option value=\"545\"";
+if($id == 545) echo "selected=\"selected\"";
+echo ">No.545 - 腫脹之女 （0星）</option>";
+echo "<option value=\"546\"";
+if($id == 546) echo "selected=\"selected\"";
+echo ">No.546 - 諾弗‧刻 （3星）</option>";
+echo "<option value=\"547\"";
+if($id == 547) echo "selected=\"selected\"";
+echo ">No.547 - 腹蛇異兵 （3星）</option>";
+echo "<option value=\"548\"";
+if($id == 548) echo "selected=\"selected\"";
+echo ">No.548 - 異神之胎 （3星）</option>";
+echo "<option value=\"549\"";
+if($id == 549) echo "selected=\"selected\"";
+echo ">No.549 - 銀曉信徒 （3星）</option>";
+echo "<option value=\"550\"";
+if($id == 550) echo "selected=\"selected\"";
+echo ">No.550 - 噬土魔蟲 （3星）</option>";
+echo "<option value=\"551\"";
+if($id == 551) echo "selected=\"selected\"";
+echo ">No.551 - 深潛的異族 （5星）</option>";
+echo "<option value=\"552\"";
+if($id == 552) echo "selected=\"selected\"";
+echo ">No.552 - 深潛者之僕‧蟆鰣 （6星）</option>";
+echo "<option value=\"553\"";
+if($id == 553) echo "selected=\"selected\"";
+echo ">No.553 - 魔焰吸血鬼 （5星）</option>";
+echo "<option value=\"554\"";
+if($id == 554) echo "selected=\"selected\"";
+echo ">No.554 - 永焰之渴‧唐納德 （6星）</option>";
+echo "<option value=\"555\"";
+if($id == 555) echo "selected=\"selected\"";
+echo ">No.555 - 巨蟾異獸 （5星）</option>";
+echo "<option value=\"556\"";
+if($id == 556) echo "selected=\"selected\"";
+echo ">No.556 - 食魂魔蟾‧札特瓜 （6星）</option>";
+echo "<option value=\"557\"";
+if($id == 557) echo "selected=\"selected\"";
+echo ">No.557 - 幻神化身 （5星）</option>";
+echo "<option value=\"558\"";
+if($id == 558) echo "selected=\"selected\"";
+echo ">No.558 - 幻夢古神‧諾斯登 （6星）</option>";
+echo "<option value=\"559\"";
+if($id == 559) echo "selected=\"selected\"";
+echo ">No.559 - 異域蟲族 （5星）</option>";
+echo "<option value=\"560\"";
+if($id == 560) echo "selected=\"selected\"";
+echo ">No.560 - 門鑰之僕‧米戈 （6星）</option>";
+echo "<option value=\"561\"";
+if($id == 561) echo "selected=\"selected\"";
+echo ">No.561 - 奈亞拉托提普 （0星）</option>";
+echo "<option value=\"562\"";
+if($id == 562) echo "selected=\"selected\"";
+echo ">No.562 - 黃衣魅影‧哈斯塔 （6星）</option>";
+echo "<option value=\"563\"";
+if($id == 563) echo "selected=\"selected\"";
+echo ">No.563 - 負罪役夫尼祿 （0星）</option>";
 }
