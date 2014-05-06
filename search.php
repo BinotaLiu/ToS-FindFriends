@@ -53,7 +53,7 @@ if(!empty($_GET['keyword'])){
   //查資料：
   $data['searchName'] = "包含「" . $db->fix_string($_GET['keyword']) . "」的卡片";
   $data['dbResult'] = $db->query("SELECT * FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . " LIMIT " . $page*10 . ", 10");
-  $data['totalPage'] = $db->query("SELECT COUNT(*) FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . " LIMIT " . $page*10 . ", 10")[0][0];
+  $data['totalPage'] = floor(intval($db->query("SELECT COUNT(*) FROM `user_card` WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName . " LIMIT " . $page*10 . ", 10")[0][0]) / 10);
   foreach($data['dbResult'] as $count => $value){
     $data['cardName'][$count] = $db->fetch_where('card', array('card_name'), array('card_id' => $value['card_id']))[0]['card_name'];
   }
