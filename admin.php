@@ -67,11 +67,11 @@ if($_SESSION['user_level'] != 1){
           break;
         case 'add':
           if(!empty($_POST['title'])){
-            $db->insert('official_topic', array(
-                                            'title' => $_POST['title'],
-                                           'author' => $data['uid'],
-                                             'time' => time(),
-                                          'content' => $_POST['content']));
+            $db->query('INSERT INTO official_topic (`title`, `author`, `time`, `content`) VALUES (' .
+                       '"' . $db->fix_string($_POST['title']) . '",' .
+                       '"' . $data['uid'] . '",' . 
+                       '"' . time() . '",' .
+                       '"' .  $_POST['content'] . '")');
             $data['success'] = TRUE;
           }
           include 'views/admin_topic_add.php';
@@ -79,12 +79,7 @@ if($_SESSION['user_level'] != 1){
         case 'edit':
           //如果收到了就……
           if(!empty($_POST['title'])){
-            $db->update('official_topic', array('*'), array(
-                                                      'title' => $_POST['title'],
-                                                     'author' => $_POST['author'],
-                                                       'time' => $_POST['time'],
-                                                    'content' => $_POST['content']), array(
-                                                        'tid' => $_GET['tid']));
+            $db->query('UPDATE official_topic SET `title`="' . $_POST['title'] . '", `author`="' . $_POST['author'] . '", `time`="' . $_POST['time'] . '", `content`="' . $_POST['content'] . '" WHERE `tid`="' . $_GET['tid'] . '"');
             $data['success'] = TRUE;
           }
           $data['topic'] = $db->fetch_where('official_topic', array('*'), array('tid' => $_GET['tid']))[0];
@@ -95,6 +90,9 @@ if($_SESSION['user_level'] != 1){
           $data['topic'] = $db->fetch('official_topic');
           include 'views/admin_topic_view.php';
       }
+      break;
+    case 'user':
+
       break;
     case 'home':
     default:
