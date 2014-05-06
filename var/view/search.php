@@ -39,11 +39,14 @@ if(!defined('IN_MOUGE'))
   </div>
 <?php endforeach;?>
   <div class="small-12 column">
-    <div class="small-12 medium-4 medium-offset-8 panel column">
+    <div class="small-12 medium-5 medium-offset-7 panel column">
       <ul class="inline-list">
-<?php for($i = 1, $pPage = $page+1; $i<=10 && $pPage <= $data['totalPage']; $i++. $pPage++): ?>
+<?php for($i = 1, $pPage = $page + 1, $tPage = $data['totalCount'] / 10 + 1;
+          $i <= 10 && $pPage + $i <= $data['totalCount'];
+          $i++, $pPage++): ?>
         <li><a href="search.php?card=<?=$card?>&keyword=<?=$keyword?>&page=<?=$pPage?>"><?=$pPage?></a></li>
 <?php endfor; ?>
+        <li>...</li>
       </ul>
     </div>
   </div>
