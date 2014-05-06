@@ -42,6 +42,9 @@ if(!defined('IN_MOUGE'))
       body {
         background: #EEE;
       }
+      .alert-box h4 {
+        color: #EEE;
+      }
     </style>
   </head>
   <body>
