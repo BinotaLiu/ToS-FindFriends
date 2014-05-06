@@ -70,7 +70,8 @@ if($loginStatus){
 
 $data['topic'] = $db->query('SELECT `tid`, `time`, `title`, `content`' .
                             'FROM `official_topic`' .
-                            'ORDER BY -`time`');
+                            'ORDER BY -`time`' .
+                            'LIMIT 10');
 include 'views/main_official-topic.php';
 
 include 'views/footer.php';

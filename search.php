@@ -55,7 +55,7 @@ if(!empty($_GET['keyword'])){
   $data['dbResult'] = $db->query(
                              "SELECT * FROM `user_card` " . 
                              "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and" . $queryCardName .
-                             "ORDER BY `logtime` " .
+                             "ORDER BY -`logtime` " .
                              "LIMIT " . $page*10 . ", 10");
   $data['totalCount'] = $db->query(
                              "SELECT COUNT(*) FROM `user_card` " . 
@@ -80,6 +80,7 @@ if(!empty($_GET['keyword'])){
                                "SELECT * FROM `user_card` " . 
                                "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and " .
                                      "`card_id` = " . $card_id . " " .
+                               "ORDER BY -`logtime` " .
                                "LIMIT " . $page*10 . ", 10");
     $data['totalCount'] = $db->query(
                                "SELECT COUNT(*) FROM `user_card` " . 
