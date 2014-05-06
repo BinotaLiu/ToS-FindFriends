@@ -4,7 +4,7 @@ if(!defined('IN_MOUGE'))
 ?>
       <div class="large-12 panel column">
         <h3>我的代表</h3>
-        <p>您好，<?=$data['userName']?>，下列為您目前的代表資訊：</a>
+        <p>您好，<?=$data['userName']?>，下列為您目前的代表資訊：</p>
         <div class="clear"></div>
         <div class="row">
           <div class="small-3 medium-2 column">
