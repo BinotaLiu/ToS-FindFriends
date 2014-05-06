@@ -61,9 +61,9 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
   //銷毀 SESSION，提示登出。
   $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "已登出！感謝您的使用，正在回到首頁";
-  include 'var/view/header.php';
-  include 'var/view/redirect.php';
-  include 'var/view/footer.php';
+  include 'views/header.php';
+  include 'views/redirect.php';
+  include 'views/footer.php';
   unset($_SESSION['user_id']);
   unset($_SESSION['user_token']);
   unset($_SESSION['user_name']);
@@ -75,9 +75,9 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
 if($loginStatus){
   $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "您已登入！無需重複登入，正在回到首頁";
-  include 'var/view/header.php';
-  include 'var/view/redirect.php';
-  include 'var/view/footer.php';
+  include 'views/header.php';
+  include 'views/redirect.php';
+  include 'views/footer.php';
   die();
 }
 
@@ -108,9 +108,9 @@ if($_GET['method'] == "persona"){
 
       $data['url'] = $redirectUrl;
       $data['notice'] = "登入成功，正在回到首頁";
-      include 'var/view/header.php';
-      include 'var/view/redirect.php';
-      include 'var/view/footer.php';
+      include 'views/header.php';
+      include 'views/redirect.php';
+      include 'views/footer.php';
     } else {
       //先銷毀Cookie：
       unset($_SESSION['user_id']);
@@ -121,16 +121,16 @@ if($_GET['method'] == "persona"){
 
       $data['url'] = $config['system']['basicurl'];
       $data['notice'] = "錯誤，詳細訊息：" . $result->reason;
-      include 'var/view/header.php';
-      include 'var/view/redirect.php';
-      include 'var/view/footer.php';
+      include 'views/header.php';
+      include 'views/redirect.php';
+      include 'views/footer.php';
     }
   } else {
     $data['url'] = $config['system']['basicurl'];
     $data['notice'] = "錯誤，正在回到首頁";
-    include 'var/view/header.php';
-    include 'var/view/redirect.php';
-    include 'var/view/footer.php';
+    include 'views/header.php';
+    include 'views/redirect.php';
+    include 'views/footer.php';
   }
 } else {
   try{
@@ -141,9 +141,9 @@ if($_GET['method'] == "persona"){
   } catch(FacebookRequestException $e){
     $data['url'] = $config['system']['basicurl'];
     $data['notice'] = "載入 Facebook SDK 時發生錯誤，錯誤訊息：<br>" . $e;
-    include 'var/view/header.php';
-    include 'var/view/redirect.php';
-    include 'var/view/redirect.php';
+    include 'views/header.php';
+    include 'views/redirect.php';
+    include 'views/redirect.php';
   }
   $session = $helper->getSessionFromRedirect();
 
@@ -179,9 +179,9 @@ if($_GET['method'] == "persona"){
       $data['notice'] = "發生錯誤，代碼 " . $e->getCode() . "，詳細訊息<br>" . $e->getMessage();
     }//catch
 
-    include 'var/view/header.php';
-    include 'var/view/redirect.php';
-    include 'var/view/footer.php';
+    include 'views/header.php';
+    include 'views/redirect.php';
+    include 'views/footer.php';
   }else{
     header("Location: {$helper->getLoginUrl()}", true, 302);
   }

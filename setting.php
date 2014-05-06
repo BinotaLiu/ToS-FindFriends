@@ -41,9 +41,9 @@ if($loginStatus){
 if(!$loginStatus) {
   $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "請先登入";
-  include 'var/view/header.php';
-  include 'var/view/redirect.php';
-  include 'var/view/footer.php';
+  include 'views/header.php';
+  include 'views/redirect.php';
+  include 'views/footer.php';
   die();
 }
 
@@ -64,9 +64,7 @@ if(!empty($_POST['nickname'])){
 }else
   $data['form']['nickname'] = $myInfo[0]['nickname'];
 
-include 'var/view/header.php';
-
-include 'var/view/setting.php';
-
-include 'var/view/footer.php';
+include 'views/header.php';
+include 'views/setting.php';
+include 'views/footer.php';
 

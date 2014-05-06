@@ -41,9 +41,9 @@ $data['expire'] = false;
 if(!$loginStatus) {
   $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "請先登入";
-  include 'var/view/header.php';
-  include 'var/view/redirect.php';
-  include 'var/view/footer.php';
+  include 'views/header.php';
+  include 'views/redirect.php';
+  include 'views/footer.php';
   die();
 }
 
@@ -156,9 +156,7 @@ if(!empty($_POST['tos_id'])){
   }
 }
 
-include 'var/view/header.php';
-
-include 'var/view/mycard.php';
-
-include 'var/view/footer.php';
+include 'views/header.php';
+include 'views/mycard.php';
+include 'views/footer.php';
 

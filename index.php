@@ -65,9 +65,9 @@ if($loginStatus){
   }else{
     $data['card'] = $_SESSION['card'];
   }
-  include 'var/view/main_loggedin.php';
+  include 'views/main_loggedin.php';
 }else
-  include 'var/view/main_nologin.php';
+  include 'views/main_nologin.php';
 
-include 'var/view/footer.php';
+include 'views/footer.php';
 

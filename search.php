@@ -94,9 +94,7 @@ if(!empty($_GET['keyword'])){
   //輸出錯誤頁
 }
 
-include 'var/view/header.php';
-
-include 'var/view/search.php';
-
-include 'var/view/footer.php';
+include 'views/header.php';
+include 'views/search.php';
+include 'views/footer.php';
 
