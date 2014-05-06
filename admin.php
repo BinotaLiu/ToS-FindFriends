@@ -52,6 +52,19 @@ if($_SESSION['user_level'] != 1){
   switch($mod){
     case 'topic':
       switch($act){
+        case 'del':
+          if(!empty($_POST['confirm'])){
+            $db->delete('official_topic', array('tid' => $_GET['tid']))[0];
+            $data['deleted'] = true;
+          }else{
+            $data['topic'] = $db->fetch_where('official_topic', array('*'), array('tid' => $_GET['tid']))[0];
+            $data['topic']['author_name'] = $db->fetch_where(
+                                                   'user',
+                                                   array('nickname'),
+                                                   array('uid' => $data['topic']['author']))[0]['nickname'];
+          }
+          include 'views/admin_topic_del.php';
+          break;
         case 'add':
           if(!empty($_POST['title'])){
             $db->insert('official_topic', array(
@@ -61,7 +74,7 @@ if($_SESSION['user_level'] != 1){
                                           'content' => $_POST['content']));
             $data['success'] = TRUE;
           }
-            include 'views/admin_topic_add.php';
+          include 'views/admin_topic_add.php';
           break;
         case 'edit':
           //如果收到了就……

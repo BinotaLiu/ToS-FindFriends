@@ -157,9 +157,16 @@ Class Database
         return @mysql_query($queryString);
     }
 
-    public static function delete($table, $field, $value)
+    public static function delete($table, $where = null)
     {
-        return @mysql_query("DELETE FROM " . $table . " WHERE " . $field . "=" . $value) or false;
+        if($where){
+            $myWhere = "";
+            foreach ($where as $key => $value) {
+                $myWhere .= self::fix_string($key) ."=\"" . self::fix_string($value) . "\",";
+            }
+            $myWhere = substr($myWhere, 0, -1);
+        }
+        return @mysql_query("DELETE FROM " . $table . ($where ? " WHERE {$myWhere}" : "")) or false;
     }
 
     public static function fix_string($string)
