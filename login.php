@@ -92,7 +92,7 @@ if($_GET['method'] == "persona"){
       if(!$db_result){
         $name = split("@", $result->email)[0];
         $uid  = $db->insert('user', array('nickname' => $name, 'email' => $result->email, 'regtime' => time()));
-        $redirectUrl = $config['system']['basicurl'] . "/setting.php";
+        $redirectUrl = $config['system']['basicurl'] . "setting.php";
       } else {
         $db->update('user', array('lastlogin' => time()), array('uid' => $db_result[0]['uid']));
         $uid  = $db_result[0]['uid'];
@@ -160,7 +160,7 @@ if($_GET['method'] == "persona"){
                                    'facebook_id' => $user_profile->getId(),
                                        'regtime' => time() ));
         $name = $user_profile->getName();
-        $redirectUrl = $config['system']['basicurl'] . "/setting.php";
+        $redirectUrl = $config['system']['basicurl'] . "setting.php";
       }else{
         $db->update('user', array('lastlogin'=>time()), array('uid'=>$result[0]['uid']));
         $uid  = $result[0]['uid'];
