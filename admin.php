@@ -49,6 +49,8 @@ if($_SESSION['user_level'] != 1){
   $mod = empty($_GET['mod']) ? "home" : $_GET['mod'];
   $act = empty($_GET['act']) ? "default" : $_GET['act'];
 
+  $page = empty($_GET['page']) ? 1 : $_GET['page'];
+
   switch($mod){
     case 'topic':
       switch($act){
@@ -92,7 +94,12 @@ if($_SESSION['user_level'] != 1){
       }
       break;
     case 'user':
-
+      switch($act){
+        case 'view':
+        default:
+          $data['user'] = $db->fetch('user', array('*'), ($page-1)*10, 10);
+          include 'views/admin_user_view.php';
+      }//switch($act)
       break;
     case 'home':
     default:
