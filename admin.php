@@ -95,6 +95,18 @@ if($_SESSION['user_level'] != 1){
       break;
     case 'user':
       switch($act){
+        case 'del':
+          if(!empty($_POST['confirm'])){
+            $db->delete('user', array('uid' => $_GET['uid']))[0];
+            $data['deleted'] = true;
+          }else{
+            $data['user'] = $db->fetch_where('user', array('uid', 'nickname'), array('uid' => $_GET['uid']))[0];
+          }
+          include 'views/admin_user_del.php';
+          break;
+        case 'setadmin':
+          $db->update('user', array('user_level' => $_GET['type']), array('uid' => $_GET['uid']));
+          $data['success'] = $_GET['type'] ? "已將使用者設為管理員" : "已將使用者還原為普通使用者";
         case 'view':
         default:
           $data['user'] = $db->fetch('user', array('*'), ($page-1)*10, 10);
