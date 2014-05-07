@@ -75,6 +75,14 @@ if(!defined('IN_MOUGE'))
 <?php if($_SESSION['user_level'] == 1): ?>
           <li><a href="admin.php">管理中心</a></li>
 <?php endif; ?>
+          <li class="has-dropdown">
+            <a href="#">說明</a>
+            <ul class="dropdown">
+              <li><a href="feedback.php">意見回饋</a></li>
+              <li><a href="tutorial.php">使用說明</a></li>
+              <li><a href="about.php">關於我們</a></li>
+            </ul>
+          </li>
           <li><a href="<?php if(!empty($_SESSION['login_method']) && $_SESSION['login_method'] == 'persona') { ?>javascript:navigator.id.logout()<?php } else { ?>login.php?logout=true<?php } ?>">登出</a></li>
 <?php else: ?>
           <li><a href="login.php?method=facebook">Facebook 登入</a></li>
