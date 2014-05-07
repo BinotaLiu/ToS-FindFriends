@@ -66,7 +66,8 @@ if(!defined('IN_MOUGE'))
 <?php if($loginStatus == 1): ?>
           <li class="show-for-medium-up"><a href="#">您好，<?=$data['userName']?>！</a></li>
           <li><a href="index.php">網站首頁</a></li>
-          <li><a href="admin.php?mod=topic&action=admin">管理公告</a></li>
+          <li><a href="admin.php?mod=topic&act=view">管理公告</a></li>
+          <li><a href="admin.php?mod=user&act=view">管理使用者</a></li>
           <li><a href="<?php if(!empty($_SESSION['login_method']) && $_SESSION['login_method'] == 'persona') { ?>javascript:navigator.id.logout()<?php } else { ?>login.php?logout=true<?php } ?>">登出</a></li>
 <?php endif; ?>
         </ul>

@@ -13,6 +13,7 @@ if(!defined('IN_MOUGE'))
     請選擇您要進行的項目：
     <ul>
       <li><a href="admin.php?mod=topic">管理公告</a></li>
+      <li><a href="admin.php?mod=user">管理使用者</a></li>
       <li><a href="index.php">回到網站</a></li>
       <li><a href="login.php?logout=true">登出</a></li>
     </ul>
