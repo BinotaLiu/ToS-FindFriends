@@ -79,7 +79,7 @@ if(!defined('IN_MOUGE'))
             <a href="#">說明</a>
             <ul class="dropdown">
               <li><a href="feedback.php">意見回饋</a></li>
-              <li><a href="tutorial.php">使用說明</a></li>
+              <?php //<li><a href="tutorial.php">使用說明</a></li> ?>
               <li><a href="about.php">關於我們</a></li>
             </ul>
           </li>
