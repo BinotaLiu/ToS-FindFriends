@@ -3,14 +3,14 @@ if(!defined('IN_MOUGE'))
   die("Access Denied");
 ?>
 <!doctype html>
-<html lang="zh-TW">
+<html lang="zh-TW" manifest="res/cards/cards.appcache">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?=$data['title']?></title>
-  <link rel="stylesheet" href="res/css/foundation.css"> 
-  <script src="res/js/vendor/modernizr.js"></script>
+  <link rel="stylesheet" href="<?=$config['system']['basicurl']?>res/css/foundation.css"> 
+  <script src="<?=$config['system']['basicurl']?>res/js/vendor/modernizr.js"></script>
 <?php if(!$loginStatus or (!empty($_SESSION['login_method']) && $_SESSION['login_method'] == "persona")): ?>
   <script src="https://login.persona.org/include.js"></script>
   <script>
@@ -61,7 +61,7 @@ if(!defined('IN_MOUGE'))
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><a href="index.php"><?=$data['nav_title']?></a></h1>
+      <h1><a href="<?=$config['system']['basicurl']?>"><?=$data['nav_title']?></a></h1>
     </li>
     <li class="toggle-topbar menu-icon">
       <a href="#">
@@ -75,26 +75,26 @@ if(!defined('IN_MOUGE'))
     <ul class="right">
         <?php if($loginStatus == 1): ?>
       <li class="show-for-medium-up"><a href="#">您好，<?=$data['userName']?>！</a></li>
-      <li><a href="setting.php">個人設定</a></li>
-      <li><a href="mycard.php">編輯代表資訊</a></li>
+      <li><a href="<?=$config['system']['basicurl']?>setting/">個人設定</a></li>
+      <li><a href="<?=$config['system']['basicurl']?>mycard/">編輯代表資訊</a></li>
         <?php if($_SESSION['user_level'] == 1): ?>
-      <li><a href="admin.php">管理中心</a></li>
+      <li><a href="<?=$config['system']['basicurl']?>admin/">管理中心</a></li>
         <?php endif; ?>
       <li class="has-dropdown">
         <a href="#">說明</a>
         <ul class="dropdown">
-          <li><a href="feedback.php">意見回饋</a></li>
+          <li><a href="<?=$config['system']['basicurl']?>feedback/">意見回饋</a></li>
           <?php //<li><a href="tutorial.php">使用說明</a></li> ?>
-          <li><a href="about.php">關於我們</a></li>
+          <li><a href="<?=$config['system']['basicurl']?>about/">關於我們</a></li>
         </ul>
       </li>
       <li>
-        <a href="<?php if(!empty($_SESSION['login_method']) && $_SESSION['login_method'] == 'persona') { ?>javascript:navigator.id.logout()<?php } else { ?>login.php?logout=true<?php } ?>">
+        <a href="<?php if(!empty($_SESSION['login_method']) && $_SESSION['login_method'] == 'persona') { ?>javascript:navigator.id.logout()<?php } else { ?><?=$config['system']['basicurl']?>logout/<?php } ?>">
           登出
         </a>
       </li>
         <?php else: ?>
-      <li><a href="login.php?method=facebook">Facebook 登入</a></li>
+      <li><a href="<?=$config['system']['basicurl']?>login/">Facebook 登入</a></li>
       <li><a href="javascript:navigator.id.request()">Persona 登入</a></li>
       <form id="login-form" method="POST" action="login.php?method=persona">
         <input id="assertion-field" type="hidden" name="assertion" value="">

@@ -22,7 +22,7 @@ if(!defined('IN_MOUGE'))
     <div class="clear"></div>
     <div class="row">
       <div class="small-3 medium-2 large-2 column">
-        <img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$value['card_id']}.png")) ? $value['card_id'] : "0"?>.png">
+        <img style="width=100%;height=auto;" src="<?=$config['system']['basicurl']?>res/cards/<?=(file_exists("res/cards/{$value['card_id']}.png")) ? $value['card_id'] : "0"?>.png">
       </div>
       <div class="small-9 medium-10 large-8 column">
         <h3>目前代表：<?=$data['cardName'][$count]?></h3>
@@ -42,14 +42,14 @@ if(!defined('IN_MOUGE'))
         </div>
         <div class="large-12">
           <ul class="large-block-grid-2">
-            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card1_id']}.png")) ? $data['second'][$count]['card1_id'] : "0"?>.png"></li>
-            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card2_id']}.png")) ? $data['second'][$count]['card2_id'] : "0"?>.png"></li>
+            <li><img style="width=100%;height=auto;" src="<?=$config['system']['basicurl']?>res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card1_id']}.png")) ? $data['second'][$count]['card1_id'] : "0"?>.png"></li>
+            <li><img style="width=100%;height=auto;" src="<?=$config['system']['basicurl']?>res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card2_id']}.png")) ? $data['second'][$count]['card2_id'] : "0"?>.png"></li>
           </ul>
         </div>
         <div class="larg-12">
           <ul class="large-block-grid-2">
-            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card3_id']}.png")) ? $data['second'][$count]['card3_id'] : "0"?>.png"></li>
-            <li><img style="width=100%;height=auto;" src="res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card4_id']}.png")) ? $data['second'][$count]['card4_id'] : "0"?>.png"></li>
+            <li><img style="width=100%;height=auto;" src="<?=$config['system']['basicurl']?>res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card3_id']}.png")) ? $data['second'][$count]['card3_id'] : "0"?>.png"></li>
+            <li><img style="width=100%;height=auto;" src="<?=$config['system']['basicurl']?>res/cards/<?=(file_exists("res/cards/{$data['second'][$count]['card4_id']}.png")) ? $data['second'][$count]['card4_id'] : "0"?>.png"></li>
           </ul>
         </div>
       </div>
@@ -61,7 +61,7 @@ if(!defined('IN_MOUGE'))
       <ul class="pagination">
         <?php if($page>0) : ?>
         <li>
-          <a href="search.php?card=<?=$card?>&keyword=<?=$keyword?>&page=<?=($page-10 > 0) ? '1' : $page-10?>">
+          <a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=($page-10 > 0) ? '1' : $page-10?>/">
         <?php else: ?>
         <li class="arrow unavailable">
           <a href="#">
@@ -69,23 +69,23 @@ if(!defined('IN_MOUGE'))
           &laquo;
           </a>
         </li>
-        <li class="current"><a href="search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$page+1?>"><?=$page+1?></a></li>
+        <li class="current"><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . htmlentities($keyword) : '';?>/<?=$page+1?>/"><?=$page+1?></a></li>
 <?php for($i = 2, $pPage = $page + 2;
           $i <= 10 && $pPage <= $data['totalPage'];
           $i++, $pPage++):
       /*[Note]: 停止條件：
                   1. 輸出了 10 頁以上。
                   2. 輸出的頁數超過了總頁數。*/?>
-        <li><a href="search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$pPage?>"><?=$pPage?></a></li>
+        <li><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=$pPage?>/"><?=$pPage?></a></li>
 <?php endfor; ?>
         <li>
-<?php if($page+10<$data['totalPage']) { ?><a href="search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$page+10?>">
+<?php if($page+10<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=$page+10?>/">
         ...
 <?php }
       if($page+10<$data['totalPage']) { ?></a><?php } ?>
         </li>
         <li>
-<?php if($page+1<$data['totalPage']) { ?><a href="search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$page+2?>"><? } ?>
+<?php if($page+1<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=$page+2?>/"><? } ?>
       &raquo;
 <?php if($page+1<$data['totalPage']){ ?></a><?php } ?>
         </li>
@@ -103,8 +103,7 @@ include 'views/cards_option.php'; ?>
               <div class="row collapse">
                 <div class="small-7 column">
                   <select name="card">
-                    <option value="0">-- 選擇卡片 --</option>
-                    <?php showCardList(null); ?>
+                    <?php showCardList(0); ?>
                   </select>
                 </div>
                 <div class="small-5 column">
@@ -115,7 +114,7 @@ include 'views/cards_option.php'; ?>
             <div class="large-6 column">
               <div class="row collapse">
                 <div class="small-7 column">
-                  <input type="text" name="keyword" placeholder="依卡片名稱搜尋"></input>
+                  <input type="text" name="keyword" placeholder="依卡片名稱搜尋">
                 </div>
                 <div class="small-5 column">
                   <button class="postfix" type="submit" value="1">找戰友！</button>

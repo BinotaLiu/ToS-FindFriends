@@ -39,7 +39,7 @@ if(!defined('IN_MOUGE'))
         </div>
       </div>
     <div class="small-12 medium-11 column">
-        <a class="button radius large right" href="mycard.php">編輯我的代表</a>
+        <a class="button radius large right" href="<?=$config['system']['basicurl']?>mycard/">編輯我的代表</a>
     </div>
   </div>
 </div>
