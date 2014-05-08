@@ -78,24 +78,26 @@ if(!empty($_POST['tos_id'])){
 
   //保存入庫
   //檢查是否已有記錄
-  if(empty($data['error']) && $card_record){
-    //已有記錄 -> Update
-    $db->update('user_card', array(
-                               'tos_id' => $_POST['tos_id'],
-                               'detail' => $_POST['detail'],
-                              'card_id' => $_POST['card_id'],
-                           'card_level' => $_POST['card_level'],
-                          'skill_level' => ($_POST['skill_level'] == -1) ? "MAX" : $_POST['skill_level'],
-                              'logtime' => time()), array('uid' => $data['uid']));
-  } else {
-    $db->insert('user_card', array(
-                                  'uid' => $data['uid'],
-                               'tos_id' => $_POST['tos_id'],
-                               'detail' => $_POST['detail'],
-                              'card_id' => $_POST['card_id'],
-                           'card_level' => $_POST['card_level'],
-                          'skill_level' => ($_POST['skill_level'] == -1) ? "MAX" : $_POST['skill_level'],
-                              'logtime' => time()));
+  if(empty($data['error'])){
+    if($card_record){
+      //已有記錄 -> Update
+      $db->update('user_card', array(
+                                 'tos_id' => $_POST['tos_id'],
+                                 'detail' => $_POST['detail'],
+                                'card_id' => $_POST['card_id'],
+                             'card_level' => $_POST['card_level'],
+                            'skill_level' => ($_POST['skill_level'] == -1) ? "MAX" : $_POST['skill_level'],
+                                'logtime' => time()), array('uid' => $data['uid']));
+    } else {
+      $db->insert('user_card', array(
+                                    'uid' => $data['uid'],
+                                 'tos_id' => $_POST['tos_id'],
+                                 'detail' => $_POST['detail'],
+                                'card_id' => $_POST['card_id'],
+                             'card_level' => $_POST['card_level'],
+                            'skill_level' => ($_POST['skill_level'] == -1) ? "MAX" : $_POST['skill_level'],
+                                'logtime' => time()));
+    }
   }
 
   $data['form']['tos_id'] = $_POST['tos_id'];
