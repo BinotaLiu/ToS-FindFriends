@@ -11,6 +11,8 @@ session_start();
 require_once 'config.inc.php';
 require_once 'src/database.php';
 
+require_once 'cards.inc.php';
+
 $db = new Database;
 $db->connect($config['database']['host'], $config['database']['user'], $config['database']['passwd']);
 $db->select($config['database']['name']);
@@ -23,9 +25,12 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
     $loginStatus = 1;
   else{
     $loginStatus = 0;
-    unset($_SESSION['user_id']);
-    unset($_SESSION['user_token']);
-    unset($_SESSION['user_name']);
+  unset($_SESSION['user_id']);
+  unset($_SESSION['user_token']);
+  unset($_SESSION['user_name']);
+  unset($_SESSION['login_method']);
+  unset($_SESSION['email']);
+  unset($_SESSION['card']);
   }
 }else{
   $loginStatus = 0;
@@ -65,10 +70,7 @@ if(!empty($_GET['keyword'])){
   $data['totalPage'] = ceil($data['totalCount'] / 10);
   if($data['dbResult'])
   foreach($data['dbResult'] as $count => $value){
-    $data['cardName'][$count] = $db->fetch_where(
-                                       'card',
-                                       array('card_name'),
-                                       array('card_id' => $value['card_id']))[0]['card_name'];
+    $data['cardName'][$count] = $cardInfo[$value['card_id']]['cardName'];
   }
   $data['usersName'] = array();
   $data['second']    = array();
@@ -82,7 +84,7 @@ if(!empty($_GET['keyword'])){
   if(!empty($_GET['card'])){
     $card_id = intval($_GET['card']);
     //先抓卡片名稱
-    $data['searchName'] = $db->fetch_where('card', array('card_name'), array('card_id' => $card_id))[0]['card_name'];
+    $data['searchName'] = $cardInfo[$card_id]['cardName'];
     $data['dbResult'] = $db->query(
                                "SELECT * FROM `user_card` " . 
                                "WHERE `logtime` >= " . (intval(time()) - (60*60*24*60)) . " and " .
