@@ -17,8 +17,7 @@ include 'views/cards_option.php';
               <div class="row collapse">
                 <div class="small-10 column">
                   <select name="card">
-                    <option value="0">-- 選擇卡片 --</option>
-                    <?php showCardList(null); ?>
+                    <?php showCardList(0); ?>
                   </select>
                 </div>
                 <div class="small-2 column">

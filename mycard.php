@@ -21,9 +21,12 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
     $loginStatus = 1;
   else{
     $loginStatus = 0;
-    unset($_SESSION['user_id']);
-    unset($_SESSION['user_token']);
-    unset($_SESSION['user_name']);
+  unset($_SESSION['user_id']);
+  unset($_SESSION['user_token']);
+  unset($_SESSION['user_name']);
+  unset($_SESSION['login_method']);
+  unset($_SESSION['email']);
+  unset($_SESSION['card']);
   }
 }else{
   $loginStatus = 0;

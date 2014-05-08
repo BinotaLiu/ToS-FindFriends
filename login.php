@@ -69,6 +69,7 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
   unset($_SESSION['user_name']);
   unset($_SESSION['login_method']);
   unset($_SESSION['email']);
+  unset($_SESSION['card']);
   die();
 }
 

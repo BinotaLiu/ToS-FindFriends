@@ -66,7 +66,6 @@ include 'views/cards_option.php';
             </div>
             <div class="small-9 column">
               <select id="card_id" name="card_id">
-                <option value="0">-- 選擇卡片 --</option>
                 <?php showCardList($data['form']['card_id']); ?>
               </select>
             </div>
@@ -106,7 +105,6 @@ include 'views/cards_option.php';
           </div>
           <div class="small-9 column">
             <select id="card<?=$i?>_id" name="card<?=$i?>_id">
-              <option value="0">-- 選擇卡片 --</option>
               <?php showCardList($data['form']['card' . $i . '_id']); ?>
             </select>
           </div>
