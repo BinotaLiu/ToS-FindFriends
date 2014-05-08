@@ -5,13 +5,13 @@ include 'views/cards_option.php';
 ?>
 <div class="row">
   <?php if($data['success']): ?>
-  <div data-alert class="alert-box success radius">
-    <h4>資料更新成功！</h4>
+  <div data-alert class="alert-box success radius medium-6 medium-offset-3 column">
+    <h4 class="text-center">資料更新成功！</h4>
     <a href="#" class="close">&times;</a>
   </div>
   <?php endif; ?>
   <?php if($data['expire']): ?>
-  <div data-alert class="alert-box warning radius medium-6 medium-offset-3">
+  <div data-alert class="alert-box warning radius medium-6 medium-offset-3 column">
     <h5>您的資料已經 60 天沒有更新了！<br>
         系統已自動凍結您的資料，<br>
         並且不會在搜尋結果中顯示出來。<br>
@@ -20,7 +20,7 @@ include 'views/cards_option.php';
   </div>
   <?php endif; ?>
   <?php if($data['error']): ?>
-  <div data-alert class="alert-box alert radius">
+  <div data-alert class="alert-box alert radius column">
     <h4><?=$data['error']?></h4>
     <a href="#" class="close">&times;</a>
   </div>
@@ -29,7 +29,7 @@ include 'views/cards_option.php';
   <div class="small-12 column">
     <h1>我的卡片</h1>
   </div>
-  <form action="mycard.php" method="post">
+  <form action="mycard.php" method="post" data-abide>
   <div class="small-12 panel column">
     <h3>我的資料</h3>
       <div class="row">
@@ -39,7 +39,7 @@ include 'views/cards_option.php';
               <label for="tos_id" class="right inline">玩家 UID</label>
             </div>
             <div class="small-9 column">
-              <input id="tos_id" name="tos_id" type="number" value="<?=$data['form']['tos_id']?>" placeholder="請輸入神魔之塔玩家 UID">
+              <input id="tos_id" name="tos_id" type="number" value="<?=$data['form']['tos_id']?>" placeholder="請輸入神魔之塔玩家 UID" required pattern="([9][0-9]{7,7}|[0-8][0-9]{8,8})">
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@ include 'views/cards_option.php';
   </div>
 
   <div class="small-12 panel column">
-    <h3>目前的代表：</h3>
+    <h3>我的代表：</h3>
       <div class="row">
         <div class="small-12 column">
           <div class="row">
@@ -78,7 +78,7 @@ include 'views/cards_option.php';
               <label for="card_level" class="right inline">卡片等級</label>
             </div>
             <div class="small-9 column">
-              <input type="number" id="card_level" name="card_level" value="<?=$data['form']['card_level']?>" placeholder="請輸入卡片等級" min="1" max="99">
+              <input type="number" id="card_level" name="card_level" value="<?=$data['form']['card_level']?>" placeholder="請輸入卡片等級" min="1" max="99" required pattern="[0-9]+">
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ include 'views/cards_option.php';
               <label for="skill_level" class="right inline">技能等級</label>
             </div>
             <div class="small-9 column">
-              <input type="number" id="skill_level" name="skill_level" value="<?=$data['form']['skill_level']?>" placeholder="請輸入技能等級" min="-1" max="15">
+              <input type="number" id="skill_level" name="skill_level" value="<?=$data['form']['skill_level']?>" placeholder="請輸入技能等級" min="-1" max="15" required pattern="[0-9]">
             </div>
           </div>
         </div>
@@ -115,8 +115,8 @@ include 'views/cards_option.php';
       <?php endfor; ?>
     </div>
   </div>
-  <div class="small-4 small-offset-7 medium-3 medium-offset-8 large-2 large-offset-10">
-    <button class="small-12 large radius" type="submit">保存</button>
+  <div class="small-12 column">
+    <button class="right large radius" type="submit">保存</button>
   </div>
   </form>
 </div>

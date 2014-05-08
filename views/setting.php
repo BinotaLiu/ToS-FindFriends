@@ -6,7 +6,6 @@ if(!defined('IN_MOUGE'))
     <div class="small-12 column">
       <h1>設定</h1>
     </div>
-    <div class="clear"></div>
     <form action="setting.php" method="post">
     <div class="small-12 panel column">
       <h3>個人資料</h3>
@@ -31,8 +30,8 @@ if(!defined('IN_MOUGE'))
           </div>
       </div>
     </div>
-    <div class="small-4 small-offset-7 medium-3 medium-offset-8 large-2 large-offset-10">
-      <button class="small-12 large radius" type="submit">保存</button>
+    <div class="small-12 column">
+      <button class="right large radius" type="submit">保存</button>
     </div>
     </form>
 
