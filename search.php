@@ -41,7 +41,7 @@ if($loginStatus){
 //先看看要查詢的東西：
 $page = empty($_GET['page']) ? 0 : intval($_GET['page']) - 1;
 $keyword = empty($_GET['keyword']) ? "" : $db->fix_string($_GET['keyword']);
-$card = empty($_GET['card']) ? 1 : $db->fix_string($_GET['card']);
+$card = empty($_GET['card']) ? "" : $db->fix_string($_GET['card']);
 if(!empty($_GET['keyword'])){
   //先找卡片名稱：
   $findCardsName = $db->query("SELECT `card_id` FROM `card` WHERE `card_name` REGEXP '.*" . $db->fix_string($_GET['keyword']) . ".*'");
@@ -96,7 +96,7 @@ if(!empty($_GET['keyword'])){
     $data['totalPage']  = ceil($data['totalCount'] / 10);
     for($i=0;$i<4;$i++) $data['cardName'][$i] = $data['searchName'];
     $data['usersName'] = array();
-    $data['second'][]  = array();
+    $data['second']  = array();
     if($data['dbResult'])
     foreach($data['dbResult'] as $user){
       $data['usersName'][] = $db->fetch_where('user', array('nickname'), array('uid' => $user['uid']))[0]['nickname'];
