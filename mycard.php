@@ -57,12 +57,12 @@ if($card_record)
 $data['error'] = "";
 //檢查 POST 
 if(!empty($_POST['tos_id'])){
-  if(strlen($_POST['tos_id']) < 8 || strlen($_POST['tos_id']) > 10)
-    $data['error'] = "您的玩家 UID 有誤，請確認<br>";
-  else{
-   if(substr($_POST['tos_id'], 0, 1) == "9" && strlen($_POST['tos_id']) != 8)
-     $data['error'] = "您的玩家 UID 有誤，請確認<br>";
-   else if(strlen($_POST['tos_id']) > 9)
+  if(substr($_POST['tos_id'], 0, 1) == "9"){
+    if(strlen($_POST['tos_id']) != 8){
+      $data['error'] = "您的玩家 UID 有誤，請確認<br>";
+    }
+  }else{
+   if(strlen($_POST['tos_id']) != 9)
      $data['error'] = "您的玩家 UID 有誤，請確認<br>";
   }
 
