@@ -11,6 +11,8 @@ session_start();
 require_once 'config.inc.php';
 require_once 'src/database.php';
 
+require_once 'cards.inc.php';
+
 $db = new Database;
 $db->connect($config['database']['host'], $config['database']['user'], $config['database']['passwd']);
 $db->select($config['database']['name']);
@@ -23,9 +25,12 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
     $loginStatus = 1;
   else{
     $loginStatus = 0;
-    unset($_SESSION['user_id']);
-    unset($_SESSION['user_token']);
-    unset($_SESSION['user_name']);
+  unset($_SESSION['user_id']);
+  unset($_SESSION['user_token']);
+  unset($_SESSION['user_name']);
+  unset($_SESSION['login_method']);
+  unset($_SESSION['email']);
+  unset($_SESSION['card']);
   }
 }else{
   $loginStatus = 0;
@@ -44,14 +49,14 @@ include 'views/main_search.php';
 if($loginStatus){
   //先抓自己的代表資訊：
   if(empty($_SESSION['card'])){
-    $myCard = $db->fetch_where('user_card', array('*'), array('uid' => $data['uid']));
+    $myCard = $db->fetch_where('user_card', array('*'), array('uid' => $data['uid']))[0];
+    $secCardInfo = $db->fetch_where('user_card_second', array('card1_id', 'card2_id', 'card3_id', 'card4_id'), array('uid' => $data['uid']))[0];
     if($myCard){
-      $cardInfo = $db->fetch_where('card', array('*'), array('card_id' => $myCard[0]['card_id']));
-      $_SESSION['card']['card_id'] = $myCard[0]['card_id'];
-      $_SESSION['card']['name'] = $cardInfo[0]['card_name'];
-      $_SESSION['card']['card_level'] = $myCard[0]['card_level'];
-      $_SESSION['card']['skill_level'] = $myCard[0]['skill_level'];
-      $_SESSION['card']['detail'] = $myCard[0]['detail'];
+      $_SESSION['card']['card_id'] = $myCard['card_id'];
+      $_SESSION['card']['name'] = $cardInfo[$myCard['card_id']]['cardName'];
+      $_SESSION['card']['card_level'] = $myCard['card_level'];
+      $_SESSION['card']['skill_level'] = $myCard['skill_level'];
+      $_SESSION['card']['detail'] = $myCard['detail'];
     }else{
       //還沒登錄過代表資訊：
       $_SESSION['card']['card_id'] = 0;
@@ -59,6 +64,14 @@ if($loginStatus){
       $_SESSION['card']['card_level'] = "0";
       $_SESSION['card']['skill_level'] = "0";
       $_SESSION['card']['detail'] = "若要登錄代表，請點擊下方「編輯我的代表資訊」。";
+    }
+    if($secCardInfo){
+      $_SESSION['card'] = array_merge($secCardInfo, $_SESSION['card']);
+    }else{
+      $_SESSION['card']['card1_id'] = 0;
+      $_SESSION['card']['card2_id'] = 0;
+      $_SESSION['card']['card3_id'] = 0;
+      $_SESSION['card']['card4_id'] = 0;
     }
     $data['card'] = $_SESSION['card'];
   }else{
