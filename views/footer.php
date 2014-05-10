@@ -5,7 +5,12 @@ if(!defined('IN_MOUGE'))
 
 <div class="row">
   <div class="small-11 small-offset-1 medium-offset-0 column">
-    <h6 style="color:#777;font-size:.7em;">2012-2014 &copy; Studio-MouGE, All Right Reserved.<br>Online Version: <?=$config['system']['version']?></h6>
+    <h5 style="color:#777;font-size:.7em;">
+    2012-2014 &copy; Studio-MouGE, All Right Reserved.</h5>
+    <h6 style="color:#777;font-size:.65em;">
+    Online Version: <?=$config['system']['version']?><br>
+    Page generated at <?=date("Y-m-d G:i:s", time())?><br>
+    Page Seed: <?=(!empty($_COOKIE['__tos123_sessid'])) ? htmlentities($_COOKIE['__tos123_sessid']) : "First visit."?></h6>
   </div>
 </div>
 

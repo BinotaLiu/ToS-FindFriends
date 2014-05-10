@@ -8,6 +8,7 @@
 define('IN_MOUGE', true);
 
 session_start();
+set_time_limit(60);
 
 require_once 'config.inc.php';
 require_once 'src/database.php';
@@ -61,15 +62,18 @@ if($loginStatus && !empty($_GET['logout']) && $_GET['logout']){
   //銷毀 SESSION，提示登出。
   $data['url'] = $config['system']['basicurl'];
   $data['notice'] = "已登出！感謝您的使用，正在回到首頁";
-  include 'views/header.php';
-  include 'views/redirect.php';
-  include 'views/footer.php';
+  $loginStatus = 0;
   unset($_SESSION['user_id']);
   unset($_SESSION['user_token']);
   unset($_SESSION['user_name']);
   unset($_SESSION['login_method']);
   unset($_SESSION['email']);
   unset($_SESSION['card']);
+  $_SESSION['user_token'] = "Logged out.";
+  setcookie('MOUGESESSID', '', time()-60*60*24*360*4);
+  include 'views/header.php';
+  include 'views/redirect.php';
+  include 'views/footer.php';
   die();
 }
 

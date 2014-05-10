@@ -8,11 +8,13 @@ if(!defined('IN_MOUGE'))
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="mouge_sessid" content="<?=(!empty($_COOKIE['__tos123_sessid'])) ? $_COOKIE['__tos123_sessid'] : "init"?>">
   <title><?=$data['title']?></title>
   <link rel="stylesheet" href="<?=$config['system']['basicurl']?>res/css/foundation.css"> 
   <script src="<?=$config['system']['basicurl']?>res/js/vendor/modernizr.js"></script>
 <?php if(!$loginStatus or (!empty($_SESSION['login_method']) && $_SESSION['login_method'] == "persona")): ?>
-  <script src="https://login.persona.org/include.js"></script>
+  <script src="//login.persona.org/include.js"></script>
   <script>
     navigator.id.watch({
       loggedInUser:<?php if(!empty($_SESSION['email'])) { echo $_SESSION['email']; } else { ?>null<? }?>,
@@ -95,7 +97,7 @@ if(!defined('IN_MOUGE'))
       </li>
         <?php else: ?>
       <li><a href="<?=$config['system']['basicurl']?>login/">Facebook 登入</a></li>
-      <li><a href="javascript:navigator.id.request()">Persona 登入</a></li>
+      <li><a href="javascript:navigator.id.request()">E-Mail 登入</a></li>
       <form id="login-form" method="POST" action="<?=$config['system']['basicurl']?>login.php?method=persona">
         <input id="assertion-field" type="hidden" name="assertion" value="">
       </form>
