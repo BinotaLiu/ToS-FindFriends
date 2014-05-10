@@ -54,6 +54,7 @@ if(!defined('IN_MOUGE'))
   </head>
   <body>
 
+<div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
@@ -73,3 +74,4 @@ if(!defined('IN_MOUGE'))
         </ul>
       </section>
     </nav>
+</div>

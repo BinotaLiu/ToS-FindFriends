@@ -78,7 +78,7 @@ if(!defined('IN_MOUGE'))
       <li><a href="<?=$config['system']['basicurl']?>setting/">個人設定</a></li>
       <li><a href="<?=$config['system']['basicurl']?>mycard/">編輯代表資訊</a></li>
         <?php if($_SESSION['user_level'] == 1): ?>
-      <li><a href="<?=$config['system']['basicurl']?>admin/">管理中心</a></li>
+      <li><a href="<?=$config['system']['basicurl']?>admin.php">管理中心</a></li>
         <?php endif; ?>
       <li class="has-dropdown">
         <a href="#">說明</a>
