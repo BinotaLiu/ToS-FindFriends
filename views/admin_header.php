@@ -69,6 +69,7 @@ if(!defined('IN_MOUGE'))
           <li><a href="index.php">網站首頁</a></li>
           <li><a href="admin.php?mod=topic&act=view">管理公告</a></li>
           <li><a href="admin.php?mod=user&act=view">管理使用者</a></li>
+          <li><a href="admin.php?mod=feedback">檢視意見回饋</a></li>
           <li><a href="<?php if(!empty($_SESSION['login_method']) && $_SESSION['login_method'] == 'persona') { ?>javascript:navigator.id.logout()<?php } else { ?>login.php?logout=true<?php } ?>">登出</a></li>
 <?php endif; ?>
         </ul>

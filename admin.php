@@ -61,6 +61,13 @@ if($_SESSION['user_level'] != 1){
   $page = empty($_GET['page']) ? 1 : $_GET['page'];
 
   switch($mod){
+    case 'feedback':
+      case 'view':
+      default:
+        $data['feedback'] = $db->fetch('feedback');
+        include 'views/admin_feedback_view.php';
+
+      break;
     case 'topic':
       switch($act){
         case 'del':
