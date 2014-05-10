@@ -39,7 +39,7 @@ include 'views/cards_option.php';
               <label for="tos_id" class="right inline">玩家 UID</label>
             </div>
             <div class="small-9 column">
-              <input id="tos_id" name="tos_id" type="number" value="<?=$data['form']['tos_id']?>" placeholder="請輸入神魔之塔玩家 UID" required pattern="([9][0-9]{7,7}|[0-8][0-9]{8,8})">
+              <input id="tos_id" name="tos_id" type="number" value="<?=$data['form']['tos_id']?>" placeholder="請輸入神魔之塔玩家 UID" required pattern="[1-9][0-9]{6,8})">
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $loginStatus = 0;
 }
 
-$data['title'] = "徵戰友 | 遇見先鋒 - Powered by MouGE";
+$data['title'] = "編輯代表 - 徵戰友 | TOS123 - Powered by MouGE";
 $data['nav_title'] = "徵戰友";
 if($loginStatus){
   $data['uid'] = $_SESSION['user_id'];
@@ -60,13 +60,8 @@ if($card_record)
 $data['error'] = "";
 //檢查 POST 
 if(!empty($_POST['tos_id'])){
-  if(substr($_POST['tos_id'], 0, 1) == "9"){
-    if(strlen($_POST['tos_id']) != 8){
-      $data['error'] = "您的玩家 UID 有誤，請確認<br>";
-    }
-  }else{
-   if(strlen($_POST['tos_id']) != 9)
-     $data['error'] = "您的玩家 UID 有誤，請確認<br>";
+  if(strlen($_POST['tos_id']) < 7 || strlen($_POST['tos_id']) >9){
+    $data['error'] = "您的玩家 UID 有誤，請確認<br>";
   }
 
   if(intval($_POST['card_id']) > 563 || intval($_POST['card_id']) <= 0 ||

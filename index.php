@@ -36,14 +36,19 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $loginStatus = 0;
 }
 
-$data['title'] = "徵戰友 | 遇見先鋒 - Powered by MouGE";
+$data['title'] = "徵戰友 | TOS123 - Powered by MouGE";
 $data['nav_title'] = "徵戰友";
 if($loginStatus){
   $data['uid'] = $_SESSION['user_id'];
   $data['userName'] = $_SESSION['user_name'];
 }
 
+if(!empty($_GET['notutorial']))
+  setcookie("notutorial", 'true', time()+60*60*24*360);
+
 include 'views/header.php';
+if(empty($_GET['notutorial']))
+  include 'views/main_tutorial.php';
 include 'views/main_search.php';
 
 if($loginStatus){

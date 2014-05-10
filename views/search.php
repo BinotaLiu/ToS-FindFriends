@@ -61,7 +61,7 @@ if(!defined('IN_MOUGE'))
       <ul class="pagination">
         <?php if($page>0) : ?>
         <li>
-          <a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urldecode($keyword) : '';?>?page=<?=($page-10 > 0) ? '1' : $page-10?>">
+          <a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urldecode($keyword) : '';?>&page=<?=(($page-10) < 0) ? '1' : $page-10?>">
         <?php else: ?>
         <li class="arrow unavailable">
           <a href="#">
@@ -76,7 +76,7 @@ if(!defined('IN_MOUGE'))
       /*[Note]: 停止條件：
                   1. 輸出了 10 頁以上。
                   2. 輸出的頁數超過了總頁數。*/?>
-        <li><a href="<?=$config['system']['basicurl']?>search.php<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$pPage?>"><?=$pPage?></a></li>
+        <li><a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$pPage?>"><?=$pPage?></a></li>
 <?php endfor; ?>
         <li>
 <?php if($page+10<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$page+10?>">
@@ -97,6 +97,7 @@ if(!defined('IN_MOUGE'))
 include 'views/cards_option.php'; ?>
   <div class="small-12 panel column">
     <h3>這裡什麼都沒有，要不要換個東西搜尋看看？</h3>
+    <h3>（封測期間，我們還有足夠的使用者，歡迎您<a href="<?=$config['system']['basicurl']?>macard/">登記自己的代表！</a>）</h3>
         <form action="search.php" method="get">
           <div class="row">
             <div class="large-6 column">

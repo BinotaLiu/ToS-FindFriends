@@ -37,6 +37,15 @@ if($loginStatus){
   $data['uid'] = $_SESSION['user_id'];
   $data['userName'] = $_SESSION['user_name'];
 }
+if(!$loginStatus) {
+  $data['url'] = $config['system']['basicurl'];
+  $data['notice'] = "請先登入";
+  include 'views/header.php';
+  include 'views/redirect.php';
+  include 'views/footer.php';
+  die();
+}
+
 
 if($_SESSION['user_level'] != 1){
   include 'views/header.php';

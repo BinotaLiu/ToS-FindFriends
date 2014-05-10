@@ -10,6 +10,8 @@ if(!defined('IN_MOUGE'))
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="cache-control" content="no-cache">
   <meta name="mouge_sessid" content="<?=(!empty($_COOKIE['__tos123_sessid'])) ? $_COOKIE['__tos123_sessid'] : "init"?>">
+  <meta name="keywords" content="神魔之塔,神魔之塔徵戰友,徵戰友,哪裡有神魔之塔徵戰友,神魔ID">
+  <meta name="description" content="TOS123 是目前最專業的神魔之塔徵戰友工具之一，搭載最新、最強的徵戰友功能，幫您找到最適合的戰友，讓您更容易過關！">
   <title><?=$data['title']?></title>
   <link rel="stylesheet" href="<?=$config['system']['basicurl']?>res/css/foundation.css"> 
   <script src="<?=$config['system']['basicurl']?>res/js/vendor/modernizr.js"></script>
@@ -35,7 +37,7 @@ if(!defined('IN_MOUGE'))
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-50660741-2', 'studio-mouge.org');
+    ga('create', 'UA-50660741-2', 'tos123.tw');
     ga('send', 'pageview');
   </script>
   <style type="text/css">

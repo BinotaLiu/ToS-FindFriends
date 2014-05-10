@@ -1,8 +1,8 @@
 <?php
 /*
- * Filename: setting.php
+ * Filename: mycard.php
  * $Id$
- * 設定頁，用於提供使用者進行設定。
+ * 檢視我的卡片資訊。
  */
 define('IN_MOUGE', true);
 
@@ -15,8 +15,6 @@ $db = new Database;
 $db->connect($config['database']['host'], $config['database']['user'], $config['database']['passwd']);
 $db->select($config['database']['name']);
 
-
-//检查用户登录状态
 if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $checkToken = md5($config['secret']['key'][1] . md5($_SESSION['user_id'] . $config['secret']['key'][0]));
   if($_SESSION['user_token'] == $checkToken)
@@ -34,12 +32,14 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $loginStatus = 0;
 }
 
-$data['title'] = "設定 - 徵戰友 | TOS123 - Powered by MouGE";
+$data['title'] = "編輯代表 - 徵戰友 | TOS123 - Powered by MouGE";
 $data['nav_title'] = "徵戰友";
 if($loginStatus){
   $data['uid'] = $_SESSION['user_id'];
   $data['userName'] = $_SESSION['user_name'];
 }
+$data['success'] = false;
+$data['expire'] = false;
 
 if(!$loginStatus) {
   $data['url'] = $config['system']['basicurl'];
@@ -50,24 +50,6 @@ if(!$loginStatus) {
   die();
 }
 
-$myInfo = $db->fetch_where('user', array('*'), array('uid' => $data['uid']));
-
-if($myInfo[0]['facebook_id'])
-  $data['form']['loginmethod'] = "Facebook (UID:" . $myInfo[0]['facebook_id'] . ")";
-else
-  $data['form']['loginmethod'] = "Persona (E-Mail: " . $myInfo[0]['email'] . ")";
-
-if(!empty($_POST['nickname'])){
-  $db->update('user', array('nickname' => $_POST['nickname']), array('uid' => $data['uid']));
-  $fixed_nickname = $db->fix_string($_POST['nickname']);
-  $data['form']['nickname'] = $fixed_nickname;
-  //复写SESSION 中的资讯：
-  $_SESSION['user_name'] = $fixed_nickname;
-  $data['userName'] = $fixed_nickname;
-}else
-  $data['form']['nickname'] = $myInfo[0]['nickname'];
-
 include 'views/header.php';
-include 'views/setting.php';
 include 'views/footer.php';
 

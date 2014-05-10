@@ -23,7 +23,7 @@ endif;
       <input type="text" name="title">
     </label>
     <label>內文：
-      <textarea name="content"></textarea>
+      <textarea name="content" rows="15"></textarea>
     </label>
     <button class="large radius" type="submit">保存</button>
     <a class="button large radius success" href="admin.php?mod=topic&act=view">回到列表</a>

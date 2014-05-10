@@ -34,15 +34,6 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_token'])){
   $loginStatus = 0;
 }
 
-$data['title'] = "徵戰友 | 遇見先鋒 - Powered by MouGE";
-$data['nav_title'] = "徵戰友";
-if($loginStatus){
-  $data['uid'] = $_SESSION['user_id'];
-  $data['userName'] = $_SESSION['user_name'];
-}
-
-include 'views/header.php';
-
 if(!empty($_GET['tid'])){
   //抓取 topic
   $result = $db->fetch_where('official_topic', array('*'), array('tid' => $_GET['tid']));
@@ -50,12 +41,35 @@ if(!empty($_GET['tid'])){
     $data['topic'] = $result[0];
     //抓 Username
     $data['topic']['author_name'] = $db->fetch_where('user', array('nickname'), array('uid' => $data['topic']['author']))[0]['nickname'];
+    $data['title'] = $data['topic']['title'] . " - 公告 - 徵戰友 | TOS123 - Powered by MouGE";
+    $data['nav_title'] = "徵戰友";
+    if($loginStatus){
+      $data['uid'] = $_SESSION['user_id'];
+      $data['userName'] = $_SESSION['user_name'];
+    }
+
+    include 'views/header.php';
     include 'views/topic_content.php';
   }else{
+    $data['title'] = "公告 - 徵戰友 | 遇見先鋒 - Powered by MouGE";
+    $data['nav_title'] = "徵戰友";
+    if($loginStatus){
+      $data['uid'] = $_SESSION['user_id'];
+      $data['userName'] = $_SESSION['user_name'];
+    }
+
+    include 'views/header.php';
     include 'views/topic_notfound.php';
   }
 }else{
   //表示無此topic
+  $data['title'] = "公告 - 徵戰友 | 遇見先鋒 - Powered by MouGE";
+  $data['nav_title'] = "徵戰友";
+  if($loginStatus){
+    $data['uid'] = $_SESSION['user_id'];
+    $data['userName'] = $_SESSION['user_name'];
+  }
+  include 'views/header.php';
   include 'views/topic_notfound.php';
 }
 

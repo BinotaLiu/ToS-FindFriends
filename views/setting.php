@@ -31,6 +31,7 @@ if(!defined('IN_MOUGE'))
       </div>
     </div>
     <div class="small-12 column">
+      <a href="<?=$config['system']['basicurl']?>mycard/" class="left large radius success button">編輯我的代表資訊</a>
       <button class="right large radius" type="submit">保存</button>
     </div>
     </form>
