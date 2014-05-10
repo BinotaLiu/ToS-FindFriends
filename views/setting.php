@@ -6,7 +6,7 @@ if(!defined('IN_MOUGE'))
     <div class="small-12 column">
       <h1>設定</h1>
     </div>
-    <form action="setting.php" method="post">
+    <form action="<?=$config['system']['basicurl']?>setting/" method="post">
     <div class="small-12 panel column">
       <h3>個人資料</h3>
       <div class="row">
