@@ -61,7 +61,7 @@ if(!defined('IN_MOUGE'))
       <ul class="pagination">
         <?php if($page>0) : ?>
         <li>
-          <a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=($page-10 > 0) ? '1' : $page-10?>/">
+          <a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urldecode($keyword) : '';?>?page=<?=($page-10 > 0) ? '1' : $page-10?>">
         <?php else: ?>
         <li class="arrow unavailable">
           <a href="#">
@@ -69,23 +69,23 @@ if(!defined('IN_MOUGE'))
           &laquo;
           </a>
         </li>
-        <li class="current"><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . htmlentities($keyword) : '';?>/<?=$page+1?>/"><?=$page+1?></a></li>
+        <li class="current"><a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . htmlentities($keyword) : '';?>?page=<?=$page+1?>"><?=$page+1?></a></li>
 <?php for($i = 2, $pPage = $page + 2;
           $i <= 10 && $pPage <= $data['totalPage'];
           $i++, $pPage++):
       /*[Note]: 停止條件：
                   1. 輸出了 10 頁以上。
                   2. 輸出的頁數超過了總頁數。*/?>
-        <li><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=$pPage?>/"><?=$pPage?></a></li>
+        <li><a href="<?=$config['system']['basicurl']?>search.php<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$pPage?>"><?=$pPage?></a></li>
 <?php endfor; ?>
         <li>
-<?php if($page+10<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=$page+10?>/">
+<?php if($page+10<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$page+10?>">
         ...
 <?php }
       if($page+10<$data['totalPage']) { ?></a><?php } ?>
         </li>
         <li>
-<?php if($page+1<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search/<?php echo !empty($card) ? 'card/' . $card : ''; echo !empty($keyword) ? 'keyword/' . urlencode($keyword) : '';?>/<?=$page+2?>/"><? } ?>
+<?php if($page+1<$data['totalPage']) { ?><a href="<?=$config['system']['basicurl']?>search.php?<?php echo !empty($card) ? 'card=' . $card : ''; echo !empty($keyword) ? 'keyword=' . urlencode($keyword) : '';?>&page=<?=$page+2?>"><? } ?>
       &raquo;
 <?php if($page+1<$data['totalPage']){ ?></a><?php } ?>
         </li>

@@ -23,7 +23,7 @@ if(!defined('IN_MOUGE'))
         login_form.submit();
       },
       onlogout: function () {
-        window.location = 'login.php?method=persona&logout=true';
+        window.location = '<?=$config['system']['basicurl']?>login.php?method=persona&logout=true';
       }
     });
   </script>
@@ -96,7 +96,7 @@ if(!defined('IN_MOUGE'))
         <?php else: ?>
       <li><a href="<?=$config['system']['basicurl']?>login/">Facebook 登入</a></li>
       <li><a href="javascript:navigator.id.request()">Persona 登入</a></li>
-      <form id="login-form" method="POST" action="login.php?method=persona">
+      <form id="login-form" method="POST" action="<?=$config['system']['basicurl']?>login.php?method=persona">
         <input id="assertion-field" type="hidden" name="assertion" value="">
       </form>
         <?php endif; ?>

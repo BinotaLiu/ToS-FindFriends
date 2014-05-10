@@ -29,7 +29,7 @@ include 'views/cards_option.php';
   <div class="small-12 column">
     <h1>我的卡片</h1>
   </div>
-  <form action="mycard.php" method="post" data-abide>
+  <form action="<?=$config['system']['basicurl']?>mycard/" method="post" data-abide>
   <div class="small-12 panel column">
     <h3>我的資料</h3>
       <div class="row">
@@ -77,7 +77,7 @@ include 'views/cards_option.php';
               <label for="card_level" class="right inline">卡片等級</label>
             </div>
             <div class="small-9 column">
-              <input type="number" id="card_level" name="card_level" value="<?=$data['form']['card_level']?>" placeholder="請輸入卡片等級" min="1" max="99" required pattern="[0-9]+">
+              <input type="number" id="card_level" name="card_level" value="<?=$data['form']['card_level']?>" placeholder="請輸入卡片等級" min="1" max="99" required pattern="[0-9]{1,2}">
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ include 'views/cards_option.php';
               <label for="skill_level" class="right inline">技能等級</label>
             </div>
             <div class="small-9 column">
-              <input type="number" id="skill_level" name="skill_level" value="<?=$data['form']['skill_level']?>" placeholder="請輸入技能等級" min="-1" max="15" required pattern="[0-9]">
+              <input type="number" id="skill_level" name="skill_level" value="<?=$data['form']['skill_level']?>" placeholder="請輸入技能等級" min="-1" max="15" required pattern="([0-9]|1[0-5])">
             </div>
           </div>
         </div>

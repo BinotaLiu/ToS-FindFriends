@@ -69,7 +69,11 @@ if(!empty($_POST['tos_id'])){
      $data['error'] = "您的玩家 UID 有誤，請確認<br>";
   }
 
-  if(intval($_POST['card_id']) > 563 || intval($_POST['card_id']) <= 0)
+  if(intval($_POST['card_id']) > 563 || intval($_POST['card_id']) <= 0 ||
+     intval($_POST['card1_id']) > 563 || intval($_POST['card1_id']) < 0 ||
+     intval($_POST['card2_id']) > 563 || intval($_POST['card2_id']) < 0 ||
+     intval($_POST['card3_id']) > 563 || intval($_POST['card3_id']) < 0 ||
+     intval($_POST['card4_id']) > 563 || intval($_POST['card4_id']) < 0 )
     $data['error'] .= "您選擇的卡片有誤，請確認<br>";
 
   if(intval($_POST['card_level']) > 99 || intval($_POST['card_level']) <= 0)

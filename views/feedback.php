@@ -8,7 +8,7 @@ if(empty($data['success'])): ?>
     <h2>意見回饋</h2>
   </div>
   <div class="small-12 column">
-    <form action="feedback.php" method="post">
+    <form action="<?=$config['system']['basicurl']?>feedback/" method="post">
       <div class="small-12 panel column">
         <div class="row">
           <div class="small-12 medium-3 column">
