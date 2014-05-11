@@ -51,6 +51,10 @@ if(!$loginStatus) {
   die();
 }
 
+if(!empty($_GET['keyword'])){
+  $result = $db->query("SELECT `card_id` FROM `card` WHERE `card_name` REGEXP '.*" . $db->fix_string($_GET['keyword']) . ".*'");
+}
+
 include 'views/header.php';
 include 'views/card_picker.php';
 include 'views/footer.php';

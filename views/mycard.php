@@ -64,10 +64,13 @@ include 'views/cards_option.php';
             <div class="small-3 column">
               <label for="card_id" class="right inline">卡片</label>
             </div>
-            <div class="small-9 column">
+            <div class="small-6 column">
               <select id="card_id" name="card_id">
                 <?php showCardList($data['form']['card_id']); ?>
               </select>
+            </div>
+            <div class="small-3 column openpicker">
+              <a href="#" class="postfix button" id="0_picker">...選擇...</a>
             </div>
           </div>
         </div>
@@ -103,10 +106,13 @@ include 'views/cards_option.php';
           <div class="small-3 column">
             <label for="card<?=$i?>_id" class="right inline">候補 <?=$i?></label>
           </div>
-          <div class="small-9 column">
+          <div class="small-6 column">
             <select id="card<?=$i?>_id" name="card<?=$i?>_id">
               <?php showCardList($data['form']['card' . $i . '_id']); ?>
             </select>
+          </div>
+          <div class="small-3 column openpicker">
+            <a href="#" class="postfix button" id="<?=$i?>_picker">...選擇...</a>
           </div>
         </div>
       </div>

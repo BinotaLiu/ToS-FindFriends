@@ -18,6 +18,20 @@ if(!defined('IN_MOUGE'))
 <script src="<?=$config['system']['basicurl']?>res/js/foundation.min.js"></script>
 <script>
   $(document).foundation();
+
+  $('#0_picker').click(function(){openPicker(0);});
+  $('#1_picker').click(function(){openPicker(1);});
+  $('#2_picker').click(function(){openPicker(2);});
+  $('#3_picker').click(function(){openPicker(3);});
+  $('#4_picker').click(function(){openPicker(4);});
+
+  function openPicker(id){
+    window.open('<?=$config['system']['basicurl']?>card_picker.php?id='+id, '請選擇卡片', "height=600, width=800, scrollbars=yes");
+  };
+  function setParent(fid, cid){
+    $('#card'+fid+'_id', window.opener.document).val(cid);
+    self.close();
+  }
 </script>
 </body>
 </html>
